@@ -1,0 +1,901 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-size: 14px;
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 136 63% 39%; /* #2D993D - New brand green */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 136 63% 39%;
+  --chart-1: 136 63% 39%;
+  --chart-2: 136 45% 55%;
+  --chart-3: 136 25% 75%;
+  --chart-4: 136 15% 85%;
+  --chart-5: 136 10% 90%;
+  --radius: 0.625rem;
+  --sidebar: 0 0% 98%;
+  --sidebar-foreground: 240 5.3% 26.1%;
+  --sidebar-primary: 136 63% 39%;
+  --sidebar-primary-foreground: 0 0% 98%;
+  --sidebar-accent: 240 4.8% 95.9%;
+  --sidebar-accent-foreground: 240 5.9% 10%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-ring: 136 63% 39%;
+  
+  /* Brand color palette */
+  --brand-50: 136 100% 95%;   /* Very light green */
+  --brand-100: 136 85% 90%;   /* Light green */
+  --brand-200: 136 75% 80%;   /* Lighter green */
+  --brand-300: 136 70% 70%;   /* Medium light green */
+  --brand-400: 136 65% 55%;   /* Medium green */
+  --brand-500: 136 63% 39%;   /* Main brand color #2D993D */
+  --brand-600: 136 70% 32%;   /* Darker green */
+  --brand-700: 136 75% 25%;   /* Dark green */
+  --brand-800: 136 80% 18%;   /* Very dark green */
+  --brand-900: 136 85% 12%;   /* Darkest green */
+  
+  /* Custom max-width utilities */
+  --max-width-8xl: 96rem; /* 1536px */
+}
+
+.dark {
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 215 20.2% 65.1%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+  --sidebar: 240 5.9% 10%;
+  --sidebar-foreground: 0 0% 98%;
+  --sidebar-primary: 224 71.4% 4.1%;
+  --sidebar-primary-foreground: 210 20% 98%;
+  --sidebar-accent: 240 3.7% 15.9%;
+  --sidebar-accent-foreground: 210 20% 98%;
+  --sidebar-border: 240 3.7% 15.9%;
+  --sidebar-ring: 217.2 32.6% 17.5%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom max-width utilities */
+@layer utilities {
+  .max-w-8xl {
+    max-width: var(--max-width-8xl);
+  }
+  
+  /* Custom blur utilities */
+  .blur-xs {
+    filter: blur(2px);
+  }
+  
+  /* Glassy overlay effects */
+  .glass-overlay {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  }
+  
+  .glass-overlay-dark {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Consistent card heights for better grid layouts */
+  .card-height-sm {
+    height: 200px;
+  }
+  
+  .card-height-md {
+    height: 280px;
+  }
+  
+  .card-height-lg {
+    height: 350px;
+  }
+  
+  .card-height-xl {
+    height: 400px;
+  }
+  
+  /* Service cards consistent height */
+  .service-card-height {
+    min-height: 340px;
+    height: 340px;
+  }
+  
+  /* Services page cards consistent height */
+  .services-page-card-height {
+    min-height: 520px;
+    height: 520px;
+  }
+  
+  /* Mobile-specific services page cards height */
+  .services-page-card-height-mobile {
+    min-height: 380px;
+    height: 380px;
+  }
+  
+  @media (min-width: 768px) {
+    .services-page-card-height-mobile {
+      min-height: 520px;
+      height: 520px;
+    }
+  }
+  
+  /* Team member cards */
+  .team-card-height {
+    min-height: 240px;
+    height: 240px;
+  }
+  
+  /* Stats cards */
+  .stats-card-height {
+    min-height: 140px;
+    height: 140px;
+  }
+  
+  /* Blog cards */
+  .blog-card-height {
+    min-height: 380px;
+    height: 380px;
+  }
+  
+  /* Partner logo cards */
+  .partner-card-height {
+    min-height: 120px;
+    height: 120px;
+  }
+}
+
+/* Refined Hover Effects System */
+@layer utilities {
+  /* Standard transition timing and easing */
+  .transition-refined {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .transition-refined-fast {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .transition-refined-slow {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 400ms;
+  }
+
+  /* Button Hover Effects */
+  .btn-hover-primary {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .btn-hover-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(45, 153, 61, 0.25);
+  }
+  
+  .btn-hover-secondary {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .btn-hover-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    background-color: #2D993D;
+    color: white;
+  }
+  
+  .btn-hover-scale {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .btn-hover-scale:hover {
+    transform: scale(1.02);
+  }
+
+  /* Card Hover Effects */
+  .card-hover-subtle {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .card-hover-subtle:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+  }
+  
+  .card-hover-lift {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .card-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(45, 153, 61, 0.08);
+  }
+  
+  .card-hover-scale {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .card-hover-scale:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+  }
+  
+  .card-hover-border {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .card-hover-border:hover {
+    border-color: #2D993D;
+    box-shadow: 0 8px 30px rgba(45, 153, 61, 0.12);
+  }
+
+  /* Interactive Element Hovers */
+  .interactive-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .interactive-hover:hover {
+    transform: translateY(-1px);
+  }
+  
+  .icon-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .icon-hover:hover {
+    transform: scale(1.1);
+  }
+  
+  .link-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .link-hover:hover {
+    color: #2D993D;
+  }
+
+  /* Service Card Specific Hovers - Removed to prevent double shadows */
+
+  /* Blog Card Hovers */
+  .blog-card-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .blog-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-color: #2D993D;
+  }
+  
+  .blog-card-hover:hover .blog-card-title {
+    color: #2D993D;
+  }
+
+  /* Team Member Hovers */
+  .team-member-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .team-member-hover:hover {
+    transform: scale(1.05);
+  }
+  
+  .team-avatar-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .team-avatar-hover:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(45, 153, 61, 0.3);
+  }
+
+  /* Timeline Card Hovers */
+  .timeline-card-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .timeline-card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  /* Social Icon Hovers */
+  .social-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .social-hover:hover {
+    transform: scale(1.15);
+  }
+
+  /* Navigation Hovers */
+  .nav-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .nav-hover:hover {
+    color: #2D993D;
+    transform: translateY(-1px);
+  }
+
+  /* Form Element Hovers */
+  .input-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .input-hover:hover {
+    border-color: #2D993D;
+    box-shadow: 0 0 0 3px rgba(45, 153, 61, 0.1);
+  }
+  
+  .input-hover:focus {
+    border-color: #2D993D;
+    box-shadow: 0 0 0 3px rgba(45, 153, 61, 0.2);
+  }
+
+  /* Brand Logo Hovers */
+  .brand-logo-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .brand-logo-hover:hover {
+    transform: scale(1.08);
+    filter: grayscale(0%);
+  }
+  
+  .brand-logo-hover img {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+    filter: grayscale(70%);
+    opacity: 0.8;
+  }
+  
+  .brand-logo-hover:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+  }
+  
+  /* Logo visibility and responsive sizing */
+  .logo-responsive {
+    min-width: 120px;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    image-rendering: crisp-edges;
+  }
+  
+  .logo-header {
+    min-height: 24px;
+    max-height: 40px;
+  }
+  
+  .logo-footer {
+    min-height: 32px;
+    max-height: 60px;
+  }
+  
+  @media (max-width: 640px) {
+    .logo-responsive {
+      min-width: 100px;
+      max-width: 160px;
+    }
+  }
+
+  /* Statistics Card Hovers */
+  .stats-card-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .stats-card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(45, 153, 61, 0.15);
+  }
+
+  /* Filter Button Hovers */
+  .filter-btn-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .filter-btn-hover:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Breadcrumb Hovers */
+  .breadcrumb-hover {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 200ms;
+  }
+  
+  .breadcrumb-hover:hover {
+    color: #2D993D;
+  }
+
+  /* Accessibility - Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .transition-refined,
+    .transition-refined-fast,
+    .transition-refined-slow,
+    .btn-hover-primary,
+    .btn-hover-secondary,
+    .btn-hover-scale,
+    .card-hover-subtle,
+    .card-hover-lift,
+    .card-hover-scale,
+    .card-hover-border,
+    .interactive-hover,
+    .icon-hover,
+    .link-hover,
+    .service-card-hover,
+    .blog-card-hover,
+    .team-member-hover,
+    .team-avatar-hover,
+    .timeline-card-hover,
+    .social-hover,
+    .nav-hover,
+    .input-hover,
+    .brand-logo-hover,
+    .stats-card-hover,
+    .filter-btn-hover,
+    .breadcrumb-hover {
+      transition: none;
+    }
+    
+    .btn-hover-primary:hover,
+    .btn-hover-secondary:hover,
+    .btn-hover-scale:hover,
+    .card-hover-subtle:hover,
+    .card-hover-lift:hover,
+    .card-hover-scale:hover,
+    .interactive-hover:hover,
+    .icon-hover:hover,
+    .service-card-hover:hover,
+    .blog-card-hover:hover,
+    .team-member-hover:hover,
+    .team-avatar-hover:hover,
+    .timeline-card-hover:hover,
+    .social-hover:hover,
+    .nav-hover:hover,
+    .brand-logo-hover:hover,
+    .stats-card-hover:hover,
+    .filter-btn-hover:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Custom animations for PlanfirmaAi page */
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.05);
+    }
+  }
+  
+  @keyframes float-gentle {
+    0%, 100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-15px) translateX(5px);
+    }
+    66% {
+      transform: translateY(-5px) translateX(-3px);
+    }
+  }
+  
+  @keyframes bubble-float {
+    0%, 100% {
+      transform: translateY(0px) scale(1) rotate(0deg);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-25px) scale(1.1) rotate(180deg);
+      opacity: 0.8;
+    }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-reverse {
+    animation: float 8s ease-in-out infinite reverse;
+  }
+  
+  .animate-float-alt {
+    animation: float-gentle 7s ease-in-out infinite;
+  }
+  
+  .animate-bubble-float {
+    animation: bubble-float 10s ease-in-out infinite;
+  }
+}
+
+/* Scroll-based animations for cards and elements */
+@layer utilities {
+  /* Keyframes for scroll animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes rotateIn {
+    from {
+      opacity: 0;
+      transform: rotate(-10deg) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(0deg) scale(1);
+    }
+  }
+  
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+    70% {
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Base scroll animation classes */
+  .scroll-animate {
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-animate.animate {
+    opacity: 1;
+  }
+  
+  /* Specific animation types */
+  .scroll-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-fade-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-fade-down {
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-fade-down.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-fade-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-fade-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .scroll-fade-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-fade-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .scroll-scale-in {
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-scale-in.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .scroll-slide-up {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-slide-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .scroll-rotate-in {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .scroll-rotate-in.animate {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  
+  .scroll-bounce-in {
+    opacity: 0;
+    transform: scale(0.3);
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .scroll-bounce-in.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Card-specific animations */
+  .card-fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-fade-up.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card-scale-fade {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-scale-fade.animate {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  
+  .card-slide-in {
+    opacity: 0;
+    transform: translateY(50px) rotateX(15deg);
+    transform-origin: center bottom;
+    transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card-slide-in.animate {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+  }
+  
+  /* Stagger animation delays */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+  .stagger-7 { animation-delay: 0.7s; }
+  .stagger-8 { animation-delay: 0.8s; }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-animate,
+    .scroll-fade-up,
+    .scroll-fade-down,
+    .scroll-fade-left,
+    .scroll-fade-right,
+    .scroll-scale-in,
+    .scroll-slide-up,
+    .scroll-rotate-in,
+    .scroll-bounce-in,
+    .card-fade-up,
+    .card-scale-fade,
+    .card-slide-in {
+      transition: none;
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Additional floating animations for enhanced AI page */
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(-10px); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes float-alt {
+  0%, 100% { transform: translateY(-5px); }
+  50% { transform: translateY(15px); }
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.animate-float-alt {
+  animation: float-alt 10s ease-in-out infinite;
+}

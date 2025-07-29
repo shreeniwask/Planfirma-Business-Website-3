@@ -1,0 +1,1 @@
+// This file has been removed as we now use actual SVG logos from the internet instead of custom generated ones.

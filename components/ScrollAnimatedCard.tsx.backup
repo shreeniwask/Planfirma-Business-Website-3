@@ -1,0 +1,116 @@
+import React, { ReactNode } from 'react';
+import { useScrollAnimation } from './useScrollAnimation';
+
+interface ScrollAnimatedCardProps {
+  children: ReactNode;
+  animation?: 'fade-up' | 'fade-down' | 'fade-left' | 'fade-right' | 'scale-in' | 'slide-up' | 'rotate-in' | 'bounce-in' | 'card-fade-up' | 'card-scale-fade' | 'card-slide-in';
+  delay?: number;
+  threshold?: number;
+  className?: string;
+  as?: keyof JSX.IntrinsicElements;
+  hover?: boolean;
+  triggerOnce?: boolean;
+}
+
+export const ScrollAnimatedCard: React.FC<ScrollAnimatedCardProps> = ({
+  children,
+  animation = 'card-fade-up',
+  delay = 0,
+  threshold = 0.1,
+  className = '',
+  as = 'div',
+  hover = true,
+  triggerOnce = true,
+}) => {
+  const { elementRef, isVisible } = useScrollAnimation({
+    threshold,
+    delay,
+    triggerOnce,
+    rootMargin: '0px 0px -50px 0px',
+  });
+
+  const Component = as;
+
+  const animationClass = `scroll-${animation}`;
+  const hoverClass = hover ? 'card-hover-lift' : '';
+  const visibleClass = isVisible ? 'animate' : '';
+
+  return (
+    <Component
+      ref={elementRef as any}
+      className={[animationClass, hoverClass, visibleClass, className].filter(Boolean).join(' ')}
+    >
+      {children}
+    </Component>
+  );
+};
+
+// Specialized components for common use cases
+export const ScrollAnimatedSection: React.FC<{
+  children: ReactNode;
+  className?: string;
+  animation?: ScrollAnimatedCardProps['animation'];
+  delay?: number;
+}> = ({ children, className = '', animation = 'fade-up', delay = 0 }) => (
+  <ScrollAnimatedCard
+    as="section"
+    animation={animation}
+    delay={delay}
+    className={className}
+    hover={false}
+  >
+    {children}
+  </ScrollAnimatedCard>
+);
+
+export const ScrollAnimatedDiv: React.FC<{
+  children: ReactNode;
+  className?: string;
+  animation?: ScrollAnimatedCardProps['animation'];
+  delay?: number;
+  hover?: boolean;
+}> = ({ children, className = '', animation = 'fade-up', delay = 0, hover = false }) => (
+  <ScrollAnimatedCard
+    animation={animation}
+    delay={delay}
+    className={className}
+    hover={hover}
+  >
+    {children}
+  </ScrollAnimatedCard>
+);
+
+// Grid component with staggered animations
+interface ScrollAnimatedGridProps {
+  children: ReactNode[];
+  className?: string;
+  itemClassName?: string;
+  animation?: ScrollAnimatedCardProps['animation'];
+  staggerDelay?: number;
+  hover?: boolean;
+}
+
+export const ScrollAnimatedGrid: React.FC<ScrollAnimatedGridProps> = ({
+  children,
+  className = '',
+  itemClassName = '',
+  animation = 'card-fade-up',
+  staggerDelay = 100,
+  hover = true,
+}) => {
+  return (
+    <div className={className}>
+      {children.map((child, index) => (
+        <ScrollAnimatedCard
+          key={index}
+          animation={animation}
+          delay={index * staggerDelay}
+          className={itemClassName}
+          hover={hover}
+        >
+          {child}
+        </ScrollAnimatedCard>
+      ))}
+    </div>
+  );
+};

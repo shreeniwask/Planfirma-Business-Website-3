@@ -4,7 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import NavigationBar from './BackButton';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import { FileText, Repeat, BarChart2 } from 'lucide-react';
+import { FileText, Repeat, BarChart2, Shield, Zap, Users, Settings, Database, Cloud, Lock, Smartphone, Globe, TrendingUp, DollarSign, Clock, Award, Target, Lightbulb, BarChart3, CheckCircle, Cpu, Wrench, Palette } from 'lucide-react';
 
 interface ServiceData {
   id: string;
@@ -26,7 +26,7 @@ interface ServiceDetailProps {
 }
 
 export default function ServiceDetail({ service, onNavigate, servicesData, onNavigateToService }: ServiceDetailProps) {
-  const [activeTab, setActiveTab] = useState<'overview' | 'process' | 'investment'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'benefits' | 'process' | 'investment'>('overview');
   const [animatedStats, setAnimatedStats] = useState({ efficiency: 0, cost: 0, time: 0, satisfaction: 0 });
 
   // Wrapper for Header/NavBar to match their expected signature
@@ -241,19 +241,19 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
     }, [value, delay]);
 
     return (
-      <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 group">
         <div className="text-center">
-          <div className="text-3xl lg:text-4xl font-bold mb-2 text-gray-900" style={{ color: currentConfig.color }}>
+          <div className="text-3xl lg:text-4xl font-bold mb-2 text-gray-900">
             {Math.round(currentValue)}{suffix}
           </div>
-          <div className="text-sm lg:text-base text-gray-600 font-medium">{label}</div>
+          <div className="text-sm lg:text-base text-gray-800 font-medium">{label}</div>
         </div>
-        <div className="mt-4 bg-gray-200 rounded-full h-2 overflow-hidden">
+        <div className="mt-4 bg-gray-300 rounded-full h-2 overflow-hidden">
           <div 
             className="h-2 rounded-full transition-all duration-1000 ease-out"
             style={{ 
               width: `${(currentValue / (suffix === '%' ? 100 : value)) * 100}%`,
-              backgroundColor: currentConfig.color
+              backgroundColor: '#2D993D' 
             }}
           ></div>
         </div>
@@ -267,7 +267,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
         <div className="flex flex-col items-center">
           <div 
             className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shadow-lg"
-            style={{ backgroundColor: currentConfig.color }}
+            style={{ backgroundColor: '#2D993D' }}
           >
             {index + 1}
           </div>
@@ -276,50 +276,129 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
           )}
         </div>
         <div className="flex-1 pb-8">
-          <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4" style={{ borderLeftColor: currentConfig.color }}>
+          <div className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4" style={{ borderLeftColor: '#2D993D' }}>
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-lg lg:text-xl font-bold text-gray-800">{step.title}</h3>
-              <span className="px-3 py-1 bg-gray-100 rounded-full text-sm font-medium text-gray-600">
+              <h3 className="text-lg lg:text-xl font-bold text-gray-900">{step.title}</h3>
+              <span className="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium text-gray-800">
                 {step.duration}
               </span>
             </div>
-            <p className="text-gray-600 leading-relaxed">{step.description}</p>
+            <p className="text-gray-800 leading-relaxed">{step.description}</p>
           </div>
         </div>
       </div>
     </div>
   );
 
-  const FeatureCard = ({ feature }: { feature: string; index: number }) => (
-    <div className="group relative">
-      <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-2 border-transparent hover:border-gray-200">
-        <div className="flex items-center gap-4 mb-4">
+  // Function to get appropriate icon for features with no duplicates
+  const getFeatureIcon = (feature: string, index: number, usedIcons: Set<any>) => {
+    const iconMap = [
+      Shield, Zap, Users, Settings, Database, Cloud, Lock, Smartphone, 
+      Globe, Cpu, Wrench, Palette, Target, Award, BarChart3
+    ];
+    
+    // Try to match feature text to appropriate icon
+    const featureLower = feature.toLowerCase();
+    let selectedIcon;
+    
+    if (featureLower.includes('security') || featureLower.includes('secure')) selectedIcon = Shield;
+    else if (featureLower.includes('performance') || featureLower.includes('fast') || featureLower.includes('speed')) selectedIcon = Zap;
+    else if (featureLower.includes('user') || featureLower.includes('team') || featureLower.includes('collaboration')) selectedIcon = Users;
+    else if (featureLower.includes('config') || featureLower.includes('setting') || featureLower.includes('management')) selectedIcon = Settings;
+    else if (featureLower.includes('data') || featureLower.includes('database') || featureLower.includes('storage')) selectedIcon = Database;
+    else if (featureLower.includes('cloud') || featureLower.includes('remote')) selectedIcon = Cloud;
+    else if (featureLower.includes('mobile') || featureLower.includes('app')) selectedIcon = Smartphone;
+    else if (featureLower.includes('web') || featureLower.includes('global') || featureLower.includes('worldwide')) selectedIcon = Globe;
+    else if (featureLower.includes('process') || featureLower.includes('cpu') || featureLower.includes('computing')) selectedIcon = Cpu;
+    else if (featureLower.includes('tool') || featureLower.includes('integration')) selectedIcon = Wrench;
+    else if (featureLower.includes('design') || featureLower.includes('ui') || featureLower.includes('interface')) selectedIcon = Palette;
+    else if (featureLower.includes('analytics') || featureLower.includes('report') || featureLower.includes('insight')) selectedIcon = BarChart3;
+    
+    // If matched icon is already used, find next available
+    if (selectedIcon && !usedIcons.has(selectedIcon)) {
+      usedIcons.add(selectedIcon);
+      return selectedIcon;
+    }
+    
+    // Find first unused icon from the map
+    for (const icon of iconMap) {
+      if (!usedIcons.has(icon)) {
+        usedIcons.add(icon);
+        return icon;
+      }
+    }
+    
+    // Fallback if all icons are used (shouldn't happen with 15 icons)
+    return iconMap[index % iconMap.length];
+  };
+
+  // Generate feature description based on the feature text
+  const getFeatureDescription = (feature: string) => {
+    const featureLower = feature.toLowerCase();
+    
+    if (featureLower.includes('security') || featureLower.includes('secure')) 
+      return "Advanced protection measures to safeguard your data and systems";
+    if (featureLower.includes('performance') || featureLower.includes('fast') || featureLower.includes('speed')) 
+      return "Optimized for high-speed operations and maximum efficiency";
+    if (featureLower.includes('user') || featureLower.includes('team') || featureLower.includes('collaboration')) 
+      return "Designed to enhance team productivity and user experience";
+    if (featureLower.includes('config') || featureLower.includes('setting') || featureLower.includes('management')) 
+      return "Flexible configuration options to match your specific needs";
+    if (featureLower.includes('data') || featureLower.includes('database') || featureLower.includes('storage')) 
+      return "Robust data handling with secure storage and easy access";
+    if (featureLower.includes('cloud') || featureLower.includes('remote')) 
+      return "Cloud-based solution for seamless remote access and scalability";
+    if (featureLower.includes('mobile') || featureLower.includes('app')) 
+      return "Mobile-optimized interface for productivity on the go";
+    if (featureLower.includes('web') || featureLower.includes('global') || featureLower.includes('worldwide')) 
+      return "Global accessibility with web-based deployment";
+    if (featureLower.includes('analytics') || featureLower.includes('report') || featureLower.includes('insight')) 
+      return "Comprehensive analytics and reporting for data-driven decisions";
+    if (featureLower.includes('design') || featureLower.includes('ui') || featureLower.includes('interface')) 
+      return "Intuitive design focused on user experience and usability";
+    if (featureLower.includes('automation') || featureLower.includes('auto')) 
+      return "Automated processes to reduce manual work and improve efficiency";
+    if (featureLower.includes('integration') || featureLower.includes('connect')) 
+      return "Seamless integration with your existing systems and workflows";
+    
+    return "Enhanced functionality designed to improve your business operations";
+  };
+
+  const FeatureCard = ({ feature, index, usedIcons }: { feature: string; index: number; usedIcons: Set<any> }) => {
+    const IconComponent = getFeatureIcon(feature, index, usedIcons);
+    const description = getFeatureDescription(feature);
+    
+    return (
+      <div className="group relative h-full">
+        <div className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300 h-full flex flex-col text-center">
           <div 
-            className="w-12 h-12 rounded-xl flex items-center justify-center text-white text-xl"
-            style={{ backgroundColor: currentConfig.color }}
+            className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform"
+            style={{ backgroundColor: '#2D993D' }}
           >
-            ✓
+            <IconComponent size={20} className="text-white md:w-8 md:h-8" />
           </div>
-          <h3 className="text-lg font-bold text-gray-800 group-hover:text-gray-900 transition-colors">
+          <h3 className="text-sm md:text-lg font-bold text-gray-900 leading-tight mb-2 md:mb-3 group-hover:text-black transition-colors">
             {feature}
           </h3>
-        </div>
-        <div className="h-1 bg-gray-200 group-hover:bg-gray-300 transition-all duration-300"></div>
+          <p className="text-xs md:text-sm text-gray-700 leading-relaxed flex-1 group-hover:text-gray-800 transition-colors">
+            {description}
+          </p>
       </div>
     </div>
   );
+  };
 
   const TechBadge = ({ tech, index }: { tech: string; index: number }) => (
     <div 
-      className="group relative px-6 py-3 bg-white rounded-full border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md"
+      className="group relative px-6 py-3 bg-gray-50 rounded-full border-2 border-gray-300 hover:border-gray-400 transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-md"
       style={{ animationDelay: `${index * 100}ms` }}
     >
       <div className="flex items-center gap-3">
         <div 
           className="w-3 h-3 rounded-full"
-          style={{ backgroundColor: currentConfig.color }}
+          style={{ backgroundColor: '#2D993D' }}
         ></div>
-        <span className="font-semibold text-gray-700 group-hover:text-gray-900 transition-colors">
+        <span className="font-semibold text-gray-900 group-hover:text-black transition-colors">
           {tech}
         </span>
       </div>
@@ -337,34 +416,35 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
   }) => (
     <button
       onClick={onClick}
-      className="group flex items-center gap-4 p-6 bg-white rounded-xl border-2 border-gray-200 hover:border-gray-300 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
+      className="group flex items-center gap-2 md:gap-4 p-3 md:p-6 bg-gray-50 rounded-lg md:rounded-xl border-2 border-gray-300 hover:border-gray-400 transition-all duration-300 hover:shadow-lg transform hover:-translate-y-1"
     >
       {direction === 'previous' && (
         <div 
-          className="flex items-center justify-center w-12 h-12 rounded-full group-hover:scale-110 transition-transform"
-          style={{ backgroundColor: currentConfig.color }}
+          className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full group-hover:scale-110 transition-transform"
+          style={{ backgroundColor: '#2D993D' }}
         >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </div>
       )}
       
       <div className={`flex-1 ${direction === 'previous' ? 'text-left' : 'text-right'}`}>
-        <div className="text-sm text-gray-500 mb-1 uppercase tracking-wide font-medium">
-          {direction === 'previous' ? 'Previous Service' : 'Next Service'}
+        <div className="text-xs md:text-sm text-gray-700 mb-1 uppercase tracking-wide font-medium">
+          {direction === 'previous' ? 'Previous' : 'Next'}
+          <span className="hidden sm:inline"> Service</span>
         </div>
-        <div className="font-bold text-lg text-gray-800 group-hover:text-gray-900 transition-colors">
+        <div className="font-bold text-sm md:text-lg text-gray-900 group-hover:text-black transition-colors leading-tight">
           {targetService.title}
         </div>
       </div>
       
       {direction === 'next' && (
         <div 
-          className="flex items-center justify-center w-12 h-12 rounded-full group-hover:scale-110 transition-transform"
-          style={{ backgroundColor: currentConfig.color }}
+          className="flex items-center justify-center w-8 h-8 md:w-12 md:h-12 rounded-full group-hover:scale-110 transition-transform"
+          style={{ backgroundColor: '#2D993D' }}
         >
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </div>
@@ -402,8 +482,8 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
       
       {/* Enhanced Hero Section */}
       <section className="relative w-full overflow-hidden">
-        <div className="absolute inset-0" style={{ backgroundColor: currentConfig.lightBg }}></div>
-        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16 md:py-24 lg:py-32">
+        <div className="absolute inset-0 bg-gray-50"></div>
+        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             
             {/* Service Content */}
@@ -426,7 +506,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                 </div>
               </div>
               
-              <div className="text-[18px] md:text-[20px] lg:text-[22px] text-gray-700 leading-relaxed">
+              <div className="text-[18px] md:text-[20px] lg:text-[22px] text-gray-900 leading-relaxed">
                 <p>{service.fullDescription}</p>
               </div>
               
@@ -448,7 +528,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                 </button>
                 <button 
                   onClick={() => onNavigate('services')} 
-                  className="bg-white border-2 border-[var(--primary,#2D993D)] text-[var(--foreground,#111)] px-10 py-4 rounded-xl font-bold hover:border-[var(--primary,#2D993D)] hover:shadow-lg transition-all transform hover:scale-105 text-[18px] flex-1 sm:flex-none"
+                  className="bg-gray-100 border-2 border-gray-400 text-gray-900 px-10 py-4 rounded-xl font-bold hover:bg-gray-200 hover:border-gray-500 hover:shadow-lg transition-all transform hover:scale-105 text-[18px] flex-1 sm:flex-none"
                 >
                   Explore All Services
                 </button>
@@ -470,17 +550,17 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                   />
                   <div className="absolute inset-0 bg-black/20"></div>
                   <div className="absolute bottom-6 left-6 right-6">
-                    <div className="bg-white/90 backdrop-blur-sm rounded-xl p-4">
+                                            <div className="bg-gray-100/95 backdrop-blur-sm rounded-xl p-4">
                       <div className="flex items-center gap-3">
                         <div 
                           className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm"
-                          style={{ backgroundColor: currentConfig.color }}
+                          style={{ backgroundColor: '#2D993D' }}
                         >
                           ✓
                         </div>
                         <div>
                           <div className="font-bold text-gray-900">Enterprise Ready</div>
-                          <div className="text-sm text-gray-600">Trusted by 100+ companies worldwide</div>
+                          <div className="text-sm text-gray-800">Trusted by 100+ companies worldwide</div>
                         </div>
                       </div>
                     </div>
@@ -494,16 +574,17 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
 
       {/* Interactive Tabs Section */}
       <section className="relative w-full">
-        <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-16 md:py-24">
+        <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-20">
           
           {/* Enhanced Tab Navigation with Radio Button Style */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
             <div className="bg-gray-50 rounded-2xl p-2 shadow-inner border border-gray-200">
-              <div className="flex gap-4">
+              <div className="flex gap-1 md:gap-2 lg:gap-4">
                 {[
-                  { id: 'overview', label: 'Service Overview', icon: <FileText className="w-5 h-5" /> },
-                  { id: 'process', label: 'Implementation Process', icon: <Repeat className="w-5 h-5" /> },
-                  { id: 'investment', label: 'Investment & ROI', icon: <BarChart2 className="w-5 h-5" /> }
+                  { id: 'overview', label: 'Overview', fullLabel: 'Service Overview', icon: <FileText className="w-4 h-4 md:w-5 md:h-5" /> },
+                  { id: 'benefits', label: 'Benefits', fullLabel: 'Business Benefits', icon: <TrendingUp className="w-4 h-4 md:w-5 md:h-5" /> },
+                  { id: 'process', label: 'Process', fullLabel: 'Implementation Process', icon: <Repeat className="w-4 h-4 md:w-5 md:h-5" /> },
+                  { id: 'investment', label: 'ROI', fullLabel: 'Investment & ROI', icon: <BarChart2 className="w-4 h-4 md:w-5 md:h-5" /> }
                 ].map((tab) => (
                   <label key={tab.id} className="relative cursor-pointer group">
                     <input
@@ -515,14 +596,14 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                       className="sr-only"
                     />
                     <div
-                      className={`flex items-center gap-3 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform relative overflow-hidden ${
+                      className={`flex items-center gap-2 md:gap-3 px-2 md:px-4 lg:px-6 py-2 md:py-3 lg:py-4 rounded-xl font-semibold transition-all duration-300 transform relative overflow-hidden ${
                         activeTab === tab.id
                           ? 'text-white shadow-lg scale-105'
-                          : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100 hover:scale-102'
+                          : 'text-gray-900 hover:text-black hover:bg-gray-200 hover:scale-102'
                       }`}
                       style={activeTab === tab.id ? {
-                        backgroundColor: 'hsl(var(--brand-500))',
-                        boxShadow: '0 8px 25px -5px hsl(var(--brand-500), 0.25)'
+                        backgroundColor: '#2D993D',
+                        boxShadow: '0 8px 25px -5px rgba(45, 153, 61, 0.25)'
                       } : {}}
                     >
                       {/* Radio indicator */}
@@ -531,9 +612,9 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                           className={`w-5 h-5 rounded-full border-2 transition-all duration-300 ${
                             activeTab === tab.id 
                               ? 'border-white bg-white' 
-                              : 'border-gray-300 group-hover:border-gray-400'
+                              : 'border-gray-400 group-hover:border-gray-500'
                           }`}
-                          style={activeTab === tab.id ? { borderColor: 'hsl(var(--brand-500))' } : {}}
+                          style={activeTab === tab.id ? { borderColor: '#2D993D' } : {}}
                         >
                           {activeTab === tab.id && (
                             <div 
@@ -545,9 +626,13 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                       </div>
                       
                       {/* Icon and Label */}
-                      <span className="text-lg flex items-center">{tab.icon}</span>
-                      <span className="hidden md:inline text-sm lg:text-base font-medium">
-                        {tab.label}
+                      <span className="text-base md:text-lg flex items-center">{tab.icon}</span>
+                      {/* Show label only for active tab on mobile, always show on desktop */}
+                      <span className={`text-xs sm:text-sm md:text-base font-medium transition-all duration-200 ${
+                        activeTab === tab.id ? 'block' : 'hidden md:block'
+                      }`}>
+                        <span className="md:hidden">{tab.label}</span>
+                        <span className="hidden md:inline">{tab.fullLabel}</span>
                       </span>
                       
                       {/* Active state background effect */}
@@ -575,67 +660,150 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
           </div>
 
           {/* Tab Content */}
-          <div className="min-h-[600px]">
+          <div className="min-h-[400px] md:min-h-[500px]">
             {activeTab === 'overview' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-                
-                {/* Features Section */}
                 <div>
-                  <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-8">
+                <div className="text-center mb-6 md:mb-8">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
                     Key Features
                   </h2>
-                  <div className="space-y-6">
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                    Essential capabilities designed to transform your business operations
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6">
                     {service.features && service.features.length > 0 ? (
-                      service.features.map((feature, index) => (
-                        <FeatureCard key={index} feature={feature} index={index} />
-                      ))
-                    ) : (
-                      <p className="text-gray-600">No features available for this service.</p>
+                    (() => {
+                      const featureUsedIcons = new Set();
+                      return service.features.map((feature, index) => (
+                        <FeatureCard key={index} feature={feature} index={index} usedIcons={featureUsedIcons} />
+                      ));
+                    })()
+                  ) : (
+                    <p className="text-gray-600 col-span-full text-center">No features available for this service.</p>
                     )}
                   </div>
                 </div>
+            )}
                 
-                {/* Benefits Infographic */}
+            {activeTab === 'benefits' && (
                 <div>
-                  <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-8">
+                <div className="text-center mb-6 md:mb-8 lg:mb-10">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
                     Business Benefits
                   </h2>
-                  <div className="space-y-4">
+                  <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                    Measurable advantages and strategic value our solution brings to your business
+                  </p>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {service.benefits && service.benefits.length > 0 ? (
-                      service.benefits.map((benefit, index) => (
-                        <div key={index} className="group relative">
-                          <div className="flex items-start gap-4 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 hover:border-gray-200">
-                            <div 
-                              className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 mt-1 group-hover:scale-110 transition-transform"
-                              style={{ backgroundColor: currentConfig.color }}
-                            >
-                              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                              </svg>
+                    (() => {
+                      const benefitUsedIcons = new Set();
+                      
+                      // Function to get appropriate icon for benefits with no duplicates
+                      const getBenefitIcon = (benefit: string, index: number, usedIcons: Set<any>) => {
+                        const benefitLower = benefit.toLowerCase();
+                        const iconMap = [TrendingUp, DollarSign, Clock, Award, Target, Lightbulb, BarChart3, CheckCircle, Shield, Zap];
+                        let selectedIcon;
+                        
+                        if (benefitLower.includes('growth') || benefitLower.includes('increase') || benefitLower.includes('improve')) selectedIcon = TrendingUp;
+                        else if (benefitLower.includes('cost') || benefitLower.includes('save') || benefitLower.includes('reduce') || benefitLower.includes('budget')) selectedIcon = DollarSign;
+                        else if (benefitLower.includes('time') || benefitLower.includes('faster') || benefitLower.includes('quick') || benefitLower.includes('speed')) selectedIcon = Clock;
+                        else if (benefitLower.includes('quality') || benefitLower.includes('excellence') || benefitLower.includes('award') || benefitLower.includes('best')) selectedIcon = Award;
+                        else if (benefitLower.includes('target') || benefitLower.includes('goal') || benefitLower.includes('objective') || benefitLower.includes('focus')) selectedIcon = Target;
+                        else if (benefitLower.includes('innovation') || benefitLower.includes('creative') || benefitLower.includes('idea') || benefitLower.includes('smart')) selectedIcon = Lightbulb;
+                        else if (benefitLower.includes('analytics') || benefitLower.includes('data') || benefitLower.includes('insight') || benefitLower.includes('report')) selectedIcon = BarChart3;
+                        else if (benefitLower.includes('success') || benefitLower.includes('complete') || benefitLower.includes('achieve')) selectedIcon = CheckCircle;
+                        else if (benefitLower.includes('security') || benefitLower.includes('protect') || benefitLower.includes('safe')) selectedIcon = Shield;
+                        else if (benefitLower.includes('efficiency') || benefitLower.includes('performance') || benefitLower.includes('optimize')) selectedIcon = Zap;
+                        
+                        // If matched icon is already used, find next available
+                        if (selectedIcon && !usedIcons.has(selectedIcon)) {
+                          usedIcons.add(selectedIcon);
+                          return selectedIcon;
+                        }
+                        
+                        // Find first unused icon from the map
+                        for (const icon of iconMap) {
+                          if (!usedIcons.has(icon)) {
+                            usedIcons.add(icon);
+                            return icon;
+                          }
+                        }
+                        
+                        // Fallback if all icons are used
+                        return iconMap[index % iconMap.length];
+                      };
+
+                      // Generate benefit description based on the benefit text
+                      const getBenefitDescription = (benefit: string) => {
+                        const benefitLower = benefit.toLowerCase();
+                        
+                        if (benefitLower.includes('growth') || benefitLower.includes('increase') || benefitLower.includes('improve')) 
+                          return "Measurable improvements in key performance indicators and business outcomes";
+                        if (benefitLower.includes('cost') || benefitLower.includes('save') || benefitLower.includes('reduce') || benefitLower.includes('budget')) 
+                          return "Significant cost reductions through optimized processes and resource utilization";
+                        if (benefitLower.includes('time') || benefitLower.includes('faster') || benefitLower.includes('quick') || benefitLower.includes('speed')) 
+                          return "Accelerated workflows and reduced time-to-market for faster results";
+                        if (benefitLower.includes('quality') || benefitLower.includes('excellence') || benefitLower.includes('award') || benefitLower.includes('best')) 
+                          return "Enhanced quality standards and excellence in service delivery";
+                        if (benefitLower.includes('target') || benefitLower.includes('goal') || benefitLower.includes('objective') || benefitLower.includes('focus')) 
+                          return "Clear goal alignment and focused execution for strategic objectives";
+                        if (benefitLower.includes('innovation') || benefitLower.includes('creative') || benefitLower.includes('idea') || benefitLower.includes('smart')) 
+                          return "Innovative solutions that drive creative problem-solving and competitive advantage";
+                        if (benefitLower.includes('analytics') || benefitLower.includes('data') || benefitLower.includes('insight') || benefitLower.includes('report')) 
+                          return "Data-driven insights that enable informed decision-making and strategic planning";
+                        if (benefitLower.includes('success') || benefitLower.includes('complete') || benefitLower.includes('achieve')) 
+                          return "Proven track record of successful implementations and achievement of business goals";
+                        if (benefitLower.includes('security') || benefitLower.includes('protect') || benefitLower.includes('safe')) 
+                          return "Comprehensive security measures that protect your valuable data and assets";
+                        if (benefitLower.includes('efficiency') || benefitLower.includes('performance') || benefitLower.includes('optimize')) 
+                          return "Optimized performance that maximizes efficiency and productivity across operations";
+                        
+                        return "Strategic advantages that drive long-term business success and growth";
+                      };
+                      
+                      return service.benefits.map((benefit, index) => {
+                        const IconComponent = getBenefitIcon(benefit, index, benefitUsedIcons);
+                        const description = getBenefitDescription(benefit);
+                        
+                        return (
+                          <div key={index} className="group relative h-full">
+                            <div className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300 h-full flex flex-col text-center">
+                              <div 
+                                className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform"
+                                style={{ backgroundColor: '#2D993D' }}
+                              >
+                                <IconComponent size={24} className="text-white md:w-8 md:h-8" />
                             </div>
-                            <div className="flex-1">
-                              <p className="text-[16px] md:text-[18px] text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                              <h4 className="text-sm md:text-lg font-bold text-gray-900 leading-tight mb-2 md:mb-3 group-hover:text-black transition-colors">
                                 {benefit}
+                              </h4>
+                              <p className="text-xs md:text-sm text-gray-700 leading-relaxed flex-1 group-hover:text-gray-800 transition-colors">
+                                {description}
                               </p>
                             </div>
                           </div>
-                        </div>
-                      ))
+                        );
+                      });
+                    })()
                     ) : (
-                      <p className="text-gray-600">No benefits available for this service.</p>
+                    <p className="text-gray-600 col-span-full text-center">No benefits available for this service.</p>
                     )}
-                  </div>
                 </div>
               </div>
             )}
 
             {activeTab === 'process' && (
               <div>
-                <div className="text-center mb-12">
-                  <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-6">
+                <div className="text-center mb-6 md:mb-8 lg:mb-10">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
                     Implementation Process
                   </h2>
-                  <p className="text-[18px] md:text-[20px] text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                  <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
                     Our proven methodology ensures smooth implementation and maximum value delivery
                   </p>
                 </div>
@@ -655,45 +823,45 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
 
             {activeTab === 'investment' && (
               <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-12">
-                  <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-6">
+                <div className="text-center mb-6 md:mb-8 lg:mb-10">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
                     Investment & ROI
                   </h2>
-                  <p className="text-[18px] md:text-[20px] text-gray-700 leading-relaxed">
+                  <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
                     Transparent pricing with measurable returns on your investment
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
-                    <div className="text-4xl mb-4">💰</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Setup Investment</h3>
-                    <div className="text-2xl font-bold mb-2" style={{ color: currentConfig.color }}>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
+                  <div className="bg-gray-50 rounded-2xl p-4 md:p-6 shadow-lg border border-gray-300 text-center">
+                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">💰</div>
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Setup Investment</h3>
+                    <div className="text-2xl font-bold mb-2 text-gray-900">
                       {currentConfig.investment.setup}
                     </div>
-                    <p className="text-gray-700">One-time implementation cost</p>
+                    <p className="text-gray-800">One-time implementation cost</p>
                   </div>
                   
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
-                    <div className="text-4xl mb-4">📊</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Monthly Support</h3>
-                    <div className="text-2xl font-bold mb-2" style={{ color: currentConfig.color }}>
+                  <div className="bg-gray-50 rounded-2xl p-4 md:p-6 shadow-lg border border-gray-300 text-center">
+                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">📊</div>
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Monthly Support</h3>
+                    <div className="text-2xl font-bold mb-2 text-gray-900">
                       {currentConfig.investment.monthly}
                     </div>
-                    <p className="text-gray-600">Ongoing maintenance & support</p>
+                    <p className="text-gray-800">Ongoing maintenance & support</p>
                   </div>
                   
-                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200 text-center">
-                    <div className="text-4xl mb-4">📈</div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Expected ROI</h3>
-                    <div className="text-2xl font-bold mb-2" style={{ color: currentConfig.color }}>
+                  <div className="bg-gray-50 rounded-2xl p-4 md:p-6 shadow-lg border border-gray-300 text-center">
+                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">📈</div>
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Expected ROI</h3>
+                    <div className="text-2xl font-bold mb-2 text-gray-900">
                       {currentConfig.investment.roi}
                     </div>
                     <p className="text-gray-600">Within 12-18 months</p>
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 rounded-2xl p-8 text-center">
+                <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Ready to Calculate Your ROI?</h3>
                   <p className="text-gray-600 mb-6">Get a personalized assessment based on your specific requirements</p>
                   <button 
@@ -737,7 +905,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
       {/* Service Navigation */}
       <section className="py-16 md:py-24">
         <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-4 md:gap-8">
             <NavigationButton 
               direction="previous"
               targetService={previousService}
@@ -753,7 +921,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24" style={{ backgroundColor: 'var(--primary, #2D993D)' }}>
+      <section className="py-16 md:py-24 bg-[#2D993D]">
         <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 text-center">
           <h2 className="text-[32px] md:text-[42px] lg:text-[52px] font-bold text-white mb-6">
             Ready to Transform Your Business?
@@ -764,8 +932,8 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => onNavigate('contact')}
-              className="bg-white px-10 py-4 rounded-xl font-bold hover:shadow-xl transition-all transform hover:scale-105 text-[18px]"
-              style={{ color: 'var(--primary, #2D993D)' }}
+              className="bg-white text-[#2D993D] px-10 py-4 rounded-xl font-bold hover:shadow-xl transition-all transform hover:scale-105 text-[18px] btn-hover-primary"
+              style={{ color: 'hsl(var(--brand-500))' }}
             >
               Start Your Project
             </button>

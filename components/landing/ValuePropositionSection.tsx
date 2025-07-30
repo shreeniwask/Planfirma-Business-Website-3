@@ -1,20 +1,24 @@
 import { ScrollAnimatedCard, ScrollAnimatedSection, ScrollAnimatedGrid } from '../ScrollAnimatedCard';
 import { valueProps } from './constants';
-import { Lightbulb, Building2, Rocket, Timer, Globe, Shield } from 'lucide-react';
+import { Lightbulb, Building2, Rocket, Settings, Globe, Shield } from 'lucide-react';
 
-const valuePropIconMap = {
-  Lightbulb,
-  Building2,
-  Rocket,
-  Timer,
-  Globe,
-  Shield,
-};
-
-function getValuePropIcon(name: string) {
-  const Icon = valuePropIconMap[name as keyof typeof valuePropIconMap];
-  if (!Icon) return null;
-  return <Icon className="w-10 h-10 md:w-12 md:h-12 text-[#2D993D]" />;
+function getValuePropIcon(emojiIcon: string) {
+  const iconMap: { [key: string]: any } = {
+    "💡": Lightbulb,
+    "🏗️": Building2, 
+    "🚀": Rocket,
+    "⚙️": Settings,
+    "🌍": Globe,
+    "🔒": Shield,
+  };
+  
+  const Icon = iconMap[emojiIcon];
+  if (!Icon) {
+    // Fallback to displaying the emoji if no Lucide icon matches
+    return <span className="text-5xl md:text-6xl">{emojiIcon}</span>;
+  }
+  
+  return <Icon className="w-12 h-12 md:w-16 md:h-16 text-[#2D993D]" strokeWidth={1.5} />;
 }
 
 export default function ValuePropositionSection() {

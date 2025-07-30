@@ -1,5 +1,6 @@
 import { ScrollAnimatedCard, ScrollAnimatedSection, ScrollAnimatedGrid } from '../ScrollAnimatedCard';
 import { testimonials } from './constants';
+import { ImageWithFallback } from '../figma/ImageWithFallback';
 
 export default function TestimonialsSection() {
   return (
@@ -47,8 +48,8 @@ export default function TestimonialsSection() {
 
                 {/* Author Info */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden">
-                    <img
+                  <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-200">
+                    <ImageWithFallback
                       src={testimonial.avatar}
                       alt={`${testimonial.author} avatar`}
                       className="w-full h-full object-cover"

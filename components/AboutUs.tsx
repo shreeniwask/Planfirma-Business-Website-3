@@ -3,6 +3,7 @@ import Header from './Header';
 import Footer from './Footer';
 import NavigationBar from './BackButton';
 import { ScrollAnimatedCard, ScrollAnimatedSection, ScrollAnimatedGrid } from './ScrollAnimatedCard';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import type { Page } from '../App';
 
 interface AboutUsProps {
@@ -20,13 +21,48 @@ const timelineData = [
 ];
 
 const teamMembers = [
-  { name: "Arun Srivastav", position: "CEO", avatar: "👨‍💼" },
-  { name: "Anuradha Srivastava", position: "CTO", avatar: "👩‍💻" },
-  { name: "Swati Rao", position: "Finance Manager", avatar: "👩‍💼" },
-  { name: "Kinjal Gandhi", position: "Product Manager", avatar: "👨‍💻" },
-  { name: "Ravinder Singh", position: "Delivery Manager", avatar: "👨‍🔧" },
-  { name: "Vinod Shirke", position: "Delivery Manager", avatar: "👨‍🔧" },
-  { name: "Joji Varghese", position: "Project Manager", avatar: "👨‍💼" }
+  { 
+    name: "Arun Srivastav", 
+    position: "CEO", 
+    avatar: "/images/team/arun-srivastav.webp",
+    linkedin: "https://www.linkedin.com/in/arun-srivastav"
+  },
+  { 
+    name: "Anuradha Srivastava", 
+    position: "CTO", 
+    avatar: "/images/team/anuradha-srivastava.webp",
+    linkedin: "https://www.linkedin.com/in/anuradha-srivastava"
+  },
+  { 
+    name: "Swati Rao", 
+    position: "Finance Manager", 
+    avatar: "/images/team/swati-rao.webp",
+    linkedin: "https://www.linkedin.com/in/swati-rao"
+  },
+  { 
+    name: "Kinjal Gandhi", 
+    position: "Product Manager", 
+    avatar: "/images/team/kinjal-gandhi.webp",
+    linkedin: "https://www.linkedin.com/in/kinjal-gandhi"
+  },
+  { 
+    name: "Ravinder Singh", 
+    position: "Delivery Manager", 
+    avatar: "/images/team/ravinder-singh.webp",
+    linkedin: "https://www.linkedin.com/in/ravinder-singh"
+  },
+  { 
+    name: "Vinod Shirke", 
+    position: "Delivery Manager", 
+    avatar: "/images/team/vinod-shirke.webp",
+    linkedin: "https://www.linkedin.com/in/vinod-shirke"
+  },
+  { 
+    name: "Joji Varghese", 
+    position: "Project Manager", 
+    avatar: "/images/team/joji-varghese.webp",
+    linkedin: "https://www.linkedin.com/in/joji-varghese"
+  }
 ];
 
 export default function AboutUs({ onNavigate }: AboutUsProps) {
@@ -248,9 +284,31 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               >
                 {teamMembers.slice(0, 4).map((member, index) => (
                   <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
-                    <div className="bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 flex items-center justify-center text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8 shadow-lg team-avatar-hover">
-                      {member.avatar}
-                    </div>
+                    <a 
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group cursor-pointer"
+                      aria-label={`View ${member.name}'s LinkedIn profile`}
+                    >
+                      <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-inner group-hover:border-[#2D993D] transition-all duration-300">
+                          <ImageWithFallback
+                            src={member.avatar}
+                            alt={`${member.name} - ${member.position}`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            category="team"
+                          />
+                        </div>
+                        {/* LinkedIn icon overlay */}
+                        <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
                     <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
                       <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
                       <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
@@ -268,9 +326,31 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
               >
                 {teamMembers.slice(4, 7).map((member, index) => (
                   <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
-                    <div className="bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 flex items-center justify-center text-5xl md:text-6xl lg:text-7xl mb-6 md:mb-8 shadow-lg team-avatar-hover">
-                      {member.avatar}
-                    </div>
+                    <a 
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group cursor-pointer"
+                      aria-label={`View ${member.name}'s LinkedIn profile`}
+                    >
+                      <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-inner group-hover:border-[#2D993D] transition-all duration-300">
+                          <ImageWithFallback
+                            src={member.avatar}
+                            alt={`${member.name} - ${member.position}`}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                            category="team"
+                          />
+                        </div>
+                        {/* LinkedIn icon overlay */}
+                        <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
                     <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
                       <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
                       <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>

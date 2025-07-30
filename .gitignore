@@ -30,3 +30,4 @@ pnpm-debug.log*
 # misc
 *.local
 *.log
+.vercel

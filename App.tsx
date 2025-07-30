@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Landing from './components/Landing';
 import Services from './components/Services';
 import AboutUs from './components/AboutUs';
@@ -112,6 +113,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {renderPage()}
+      <Analytics />
     </div>
   );
 }

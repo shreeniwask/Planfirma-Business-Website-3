@@ -43,7 +43,7 @@ export default function ValuePropositionSection() {
                 <div className="flex flex-col justify-center relative size-full">
                   <div className="box-border content-stretch flex flex-col gap-4 md:gap-6 h-full items-start justify-center px-6 md:px-8 lg:px-10 py-6 md:py-8 relative w-full">
                     <div className="text-4xl md:text-5xl">{getValuePropIcon(item.icon)}</div>
-                    <div className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[20px] md:text-[22px] lg:text-[24px]">
+                    <div className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[22px] md:text-[24px] lg:text-[26px]">
                       <p className="leading-tight">{item.title}</p>
                     </div>
                     <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed">{item.description}</p>

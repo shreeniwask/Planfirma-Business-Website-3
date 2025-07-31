@@ -116,11 +116,21 @@ export default function InteractiveHeroSection() {
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gradient-to-r from-[#30b6d0] to-[#40c6e0] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-                Experience Demo
+              <button className="group relative bg-gradient-to-r from-[#30b6d0] to-[#40c6e0] text-white px-8 py-4 rounded-xl font-semibold text-sm lg:text-base w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3">
+                <span>Experience Demo</span>
+                <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </button>
-              <button className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300">
-                Learn More
+              <button className="group relative bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-sm lg:text-base w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3">
+                <span>Learn More</span>
+                <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </button>
             </div>
             

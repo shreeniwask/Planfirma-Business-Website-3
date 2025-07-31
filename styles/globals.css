@@ -243,6 +243,41 @@
     background-color: #2D993D;
     color: white;
   }
+
+  /* Improved Hero Button Styles */
+  .hero-btn-primary {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .hero-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(45, 153, 61, 0.3);
+  }
+  
+  .hero-btn-secondary {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .hero-btn-secondary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /* AI Hero Button Styles */
+  .ai-hero-btn {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+  
+  .ai-hero-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.2);
+  }
   
   .btn-hover-scale {
     transition-property: all;

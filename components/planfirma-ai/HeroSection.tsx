@@ -123,10 +123,10 @@ export default function HeroSection({
           <ScrollAnimatedCard animation="fade-up" delay={600} className="flex flex-col sm:flex-row gap-4 lg:gap-6 w-full max-w-lg mx-auto" hover={false}>
             <button
               onClick={() => onNavigate('contact')}
-              className="flex-1 group flex items-center justify-center gap-3 px-8 py-4 lg:py-5 bg-white/20 backdrop-blur-md rounded-xl border border-white/30 text-white font-semibold text-base lg:text-lg tracking-wide drop-shadow-lg btn-hover-primary"
+              className="group relative flex items-center justify-center gap-3 px-8 py-4 lg:py-5 bg-white/20 backdrop-blur-md rounded-xl border border-white/30 text-white font-semibold text-sm lg:text-base tracking-wide drop-shadow-lg w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:bg-white/30 hover:border-white/40 hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
             >
-              <span>Schedule a consultation</span>
-              <div className="w-5 h-5 lg:w-6 lg:h-6 transition-refined group-hover:translate-x-1">
+              <span>Get Started</span>
+              <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                 <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                   <path d="M9 5l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
@@ -135,7 +135,7 @@ export default function HeroSection({
 
             <button
               onClick={() => onNavigate('about')}
-              className="flex-1 group flex items-center justify-center gap-3 px-8 py-4 lg:py-5 bg-white/15 backdrop-blur-md rounded-xl border border-white/25 text-white font-semibold text-base lg:text-lg tracking-wide drop-shadow-lg btn-hover-secondary"
+              className="group relative flex items-center justify-center gap-3 px-8 py-4 lg:py-5 bg-white/15 backdrop-blur-md rounded-xl border border-white/25 text-white font-semibold text-sm lg:text-base tracking-wide drop-shadow-lg w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:bg-white/25 hover:border-white/35 hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
             >
               <div className="w-6 h-6 flex-shrink-0">
                 <img
@@ -145,6 +145,11 @@ export default function HeroSection({
                 />
               </div>
               <span>View success stories</span>
+              <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+                  <path d="M9 5l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </button>
           </ScrollAnimatedCard>
 

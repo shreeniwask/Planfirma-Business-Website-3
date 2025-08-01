@@ -25,35 +25,35 @@ export interface Testimonial {
 export const brandsWeHelped: Brand[] = [
   {
     name: "Willis Tower Watson",
-    logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=100&fit=crop"
+    logo: "/images/brands/willis-tower-watson-logo.svg"
   },
   {
-    name: "Korn Ferry", 
-    logo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=100&fit=crop"
+    name: "Korn Ferry",
+    logo: "/images/brands/korn-ferry-logo.jpg"
   },
   {
     name: "Spykar",
-    logo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&h=100&fit=crop"
+    logo: "/images/brands/spykar-logo.avif"
   },
   {
     name: "Ubqool",
-    logo: "/images/brands/uboool-logo.png"
+    logo: "/images/brands/ubqool-logo.webp"
   },
   {
     name: "Astaguru",
-    logo: "/images/brands/astaguru-logo.png"
+    logo: "/images/brands/astaguru-logo.webp"
   },
   {
     name: "Ahli United Bank",
-    logo: "/images/brands/ahli-united-bank.png"
+    logo: "/images/brands/ahli-united-bank-logo.png"
   },
   {
     name: "Ilantus",
-    logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=200&h=100&fit=crop"
+    logo: "/images/brands/ilantus-logo.webp"
   },
   {
     name: "Investor Shoppe",
-    logo: "/images/brands/investor-shoppe.png"
+    logo: "/images/brands/investor-shoppe-logo.png"
   },
   {
     name: "Cruise Careers",
@@ -61,7 +61,7 @@ export const brandsWeHelped: Brand[] = [
   },
   {
     name: "Continental Belting",
-    logo: "/images/brands/continental-belting-logo.png"
+    logo: "/images/brands/continental-belting-logo.webp"
   }
 ];
 

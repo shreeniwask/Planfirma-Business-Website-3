@@ -49,16 +49,16 @@ export default function BrandsWeHelpedSection() {
             </ScrollAnimatedCard>
             
             <ScrollAnimatedGrid
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 lg:gap-5 mb-12 md:mb-14"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 lg:gap-10 mb-12 md:mb-14"
               animation="card-fade-up"
               staggerDelay={80}
             >
               {brandsWeHelped.map((brand, index) => (
-                <div key={index} className="h-16 md:h-18 lg:h-20 flex items-center justify-center p-3 md:p-4 bg-white rounded-lg border border-gray-200 hover:border-[#2D993D] hover:shadow-md transition-refined brand-logo-hover">
+                <div key={index} className="flex items-center justify-center p-2 md:p-3 brand-logo-hover">
                   <img
                     src={brand.logo}
                     alt={`${brand.name} logo`}
-                    className="h-6 md:h-7 lg:h-8 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="h-12 md:h-14 lg:h-16 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300 max-w-full"
                   />
                 </div>
               ))}
@@ -77,7 +77,7 @@ export default function BrandsWeHelpedSection() {
             </ScrollAnimatedCard>
             
             <ScrollAnimatedGrid
-              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-5 mb-12 md:mb-14"
+              className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-5 mb-12 md:mb-14"
               animation="card-fade-up"
               staggerDelay={100}
             >

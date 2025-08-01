@@ -292,8 +292,8 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                       aria-label={`View ${member.name}'s LinkedIn profile`}
                     >
                       <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-inner group-hover:border-[#2D993D] transition-all duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
+                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
                           <ImageWithFallback
                             src={member.avatar}
                             alt={`${member.name} - ${member.position}`}
@@ -334,8 +334,8 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                       aria-label={`View ${member.name}'s LinkedIn profile`}
                     >
                       <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-inner group-hover:border-[#2D993D] transition-all duration-300">
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
+                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
                           <ImageWithFallback
                             src={member.avatar}
                             alt={`${member.name} - ${member.position}`}

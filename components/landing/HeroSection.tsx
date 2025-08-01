@@ -33,7 +33,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 items-center lg:items-start justify-center lg:justify-start w-full">
                     <button 
                       onClick={() => onNavigate('contact')} 
-                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-xl cursor-pointer shadow-lg w-full sm:w-auto min-w-[220px] max-w-[280px] font-semibold text-[14px] md:text-[16px] tracking-wide transition-all duration-300 hover:bg-[#24802f] hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
+                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-xl cursor-pointer shadow-lg w-full sm:w-[220px] font-semibold text-[14px] md:text-[16px] tracking-wide transition-all duration-300 hover:bg-[#24802f] hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
                     >
                       <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
                         Get Started
@@ -47,10 +47,10 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                     
                     <button 
                       onClick={() => onNavigate('services')} 
-                      className="group relative bg-transparent border-2 border-[#2D993D] text-[#2D993D] flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-xl cursor-pointer w-full sm:w-auto min-w-[220px] max-w-[280px] font-semibold text-[14px] md:text-[16px] tracking-wide transition-all duration-300 hover:bg-[#2D993D] hover:text-white hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
+                      className="group relative bg-transparent border-2 border-[#2D993D] text-[#2D993D] flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-xl cursor-pointer w-full sm:w-[220px] font-semibold text-[14px] md:text-[16px] tracking-wide transition-all duration-300 hover:bg-[#2D993D] hover:text-white hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
                     >
                       <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-center tracking-[0.1px] leading-tight transition-colors duration-300">
-                        Check our services
+                        Our Services
                       </span>
                       <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                         <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">

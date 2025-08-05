@@ -1,5 +1,5 @@
 import { ScrollAnimatedCard, ScrollAnimatedSection } from '../ScrollAnimatedCard';
-import { AI_IMAGES, VIDEO_SOURCES, HERO_FEATURES } from './constants';
+import { VIDEO_SOURCES, HERO_FEATURES } from './constants';
 import type { Page } from '../../App';
 
 interface HeroSectionProps {
@@ -80,22 +80,22 @@ export default function HeroSection({
 
       {/* Hero Content Container with Parallax */}
       <div 
-        className="relative z-20 flex flex-col items-center justify-center h-full px-4 sm:px-6 lg:px-8 xl:px-12"
+        className="relative z-20 flex flex-col items-center justify-center h-full px-3 sm:px-6 lg:px-8 xl:px-12"
         style={{
           transform: transforms.content,
           willChange: 'transform'
         }}
       >
-        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-6 lg:space-y-8">
+        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-4 lg:space-y-8">
           
           {/* Badge */}
-          <ScrollAnimatedCard animation="scale-in" delay={200} className="inline-flex items-center gap-3 px-6 py-3 bg-white/15 backdrop-blur-md rounded-full border border-white/25 shadow-lg" hover={false}>
-            <div className="w-6 h-6 flex-shrink-0">
+          <ScrollAnimatedCard animation="scale-in" delay={200} className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white/15 backdrop-blur-md rounded-full border border-white/25 shadow-lg" hover={false}>
+            <div className="w-4 h-4 md:w-6 md:h-6 flex-shrink-0">
               <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 22 17">
                 <path d="M3 8l5 5 10-10" stroke="#30B6D0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <span className="text-white font-semibold text-sm lg:text-base tracking-wide drop-shadow-lg">
+            <span className="text-white font-semibold text-xs md:text-sm lg:text-base tracking-wide drop-shadow-lg">
               Proven Results for Growing Businesses
             </span>
           </ScrollAnimatedCard>
@@ -120,32 +120,15 @@ export default function HeroSection({
           </ScrollAnimatedCard>
 
           {/* CTA Buttons */}
-          <ScrollAnimatedCard animation="fade-up" delay={600} className="flex flex-col sm:flex-row gap-4 lg:gap-6 w-full max-w-lg mx-auto" hover={false}>
+          <ScrollAnimatedCard animation="fade-up" delay={600} className="flex justify-center w-full max-w-lg mx-auto mt-2" hover={false}>
             <button
               onClick={() => onNavigate('contact')}
-              className="group relative flex items-center justify-center gap-3 px-8 py-4 lg:py-5 bg-white/20 backdrop-blur-md rounded-xl border border-white/30 text-white font-semibold text-sm lg:text-base tracking-wide drop-shadow-lg w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:bg-white/30 hover:border-white/40 hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
+              className="group relative bg-[#30b6d0] text-white flex items-center justify-center px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#30b6d0]/40 min-w-[200px] max-w-[250px] transition-all duration-300 hover:bg-[#2a9bb8] hover:-translate-y-1 active:translate-y-0"
             >
-              <span>Get Started</span>
-              <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
-                <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
-                  <path d="M9 5l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-            </button>
-
-            <button
-              onClick={() => onNavigate('about')}
-              className="group relative flex items-center justify-center gap-3 px-8 py-4 lg:py-5 bg-white/15 backdrop-blur-md rounded-xl border border-white/25 text-white font-semibold text-sm lg:text-base tracking-wide drop-shadow-lg w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:bg-white/25 hover:border-white/35 hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
-            >
-              <div className="w-6 h-6 flex-shrink-0">
-                <img
-                  src={AI_IMAGES.avatar}
-                  alt="Success stories avatar"
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <span>View success stories</span>
-              <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+              <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                Get Started
+              </span>
+              <div className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1">
                 <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                   <path d="M9 5l7 7-7 7" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>

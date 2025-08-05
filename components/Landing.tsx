@@ -34,26 +34,29 @@ interface ServiceData {
 
 interface LandingProps {
   onNavigate: (page: Page, serviceId?: string) => void;
+  onNavigateToService?: (serviceId: string) => void;
   blogsData: BlogData[];
   servicesData: ServiceData[];
 }
 
-export default function Landing({ onNavigate, servicesData }: LandingProps) {
+export default function Landing({ onNavigate, onNavigateToService, servicesData }: LandingProps) {
   return (
-    <div className="bg-[#ffffff] flex flex-col items-start justify-start relative min-h-screen w-full">
+    <div className="bg-[#ffffff] flex flex-col items-center justify-start relative min-h-screen w-full">
       <Header onNavigate={onNavigate} currentPage="landing" />
       
-      <HeroSection onNavigate={onNavigate} />
+      <div className="w-full max-w-full">
+        <HeroSection onNavigate={onNavigate} />
+        
+        <ServicesSection onNavigate={onNavigate} servicesData={servicesData} />
+        
+        <TestimonialsSection />
+        
+        <ValuePropositionSection />
+        
+        <BrandsWeHelpedSection />
+      </div>
       
-      <ServicesSection onNavigate={onNavigate} servicesData={servicesData} />
-      
-      <TestimonialsSection />
-      
-      <ValuePropositionSection />
-      
-      <BrandsWeHelpedSection />
-      
-      <Footer onNavigate={onNavigate} theme="dark" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="dark" />
     </div>
   );
 }

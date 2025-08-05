@@ -9,12 +9,14 @@ import Blogs from './components/Blogs';
 import BlogDetail from './components/BlogDetail';
 import PlanfirmaAi from './components/PlanfirmaAi';
 import PlanfirmaCloud from './components/PlanfirmaCloud';
-
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfService from './components/TermsOfService';
+import CookiePolicy from './components/CookiePolicy';
 
 import { servicesData } from './data/servicesData';
 import { blogsData } from './data/blogsData';
 
-export type Page = 'landing' | 'services' | 'about' | 'contact' | 'service-detail' | 'blogs' | 'blog-detail' | 'planfirma-ai' | 'planfirma-cloud';
+export type Page = 'landing' | 'services' | 'about' | 'contact' | 'service-detail' | 'blogs' | 'blog-detail' | 'planfirma-ai' | 'planfirma-cloud' | 'privacy-policy' | 'terms-of-service' | 'cookie-policy';
 
 interface NavigationHistoryItem {
   page: Page;
@@ -87,26 +89,32 @@ function App() {
   const renderPage = () => {
     switch (currentPage) {
       case 'landing':
-        return <Landing onNavigate={navigateToPage} blogsData={blogsData} servicesData={servicesData} />;
+        return <Landing onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} servicesData={servicesData} />;
       case 'services':
-        return <Services onNavigate={navigateToPage} servicesData={servicesData} onBack={goBack} />;
+        return <Services onNavigate={navigateToPage} onNavigateToService={navigateToService} servicesData={servicesData} onBack={goBack} />;
       case 'about':
-        return <AboutUs onNavigate={navigateToPage} onBack={goBack} />;
+        return <AboutUs onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
       case 'contact':
-        return <ContactUs onNavigate={navigateToPage} onBack={goBack} />;
+        return <ContactUs onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
       case 'blogs':
-        return <Blogs onNavigate={navigateToPage} blogsData={blogsData} onBack={goBack} />;
+        return <Blogs onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} onBack={goBack} />;
       case 'planfirma-ai':
-        return <PlanfirmaAi onNavigate={navigateToPage} onBack={goBack} />;
+        return <PlanfirmaAi onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
       case 'planfirma-cloud':
         return <PlanfirmaCloud onNavigate={navigateToPage} onBack={goBack} />;
       case 'service-detail':
-        return selectedService ? <ServiceDetail service={selectedService} onNavigate={navigateToPage} onBack={goBack} servicesData={servicesData} onNavigateToService={navigateToService} /> : <Landing onNavigate={navigateToPage} blogsData={blogsData} servicesData={servicesData} />;
+        return selectedService ? <ServiceDetail service={selectedService} onNavigate={navigateToPage} onNavigateToService={navigateToService} servicesData={servicesData} onBack={goBack} /> : <Landing onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} servicesData={servicesData} />;
       case 'blog-detail':
-        return selectedBlog ? <BlogDetail blog={selectedBlog} onNavigate={navigateToPage} onBack={goBack} /> : <Blogs onNavigate={navigateToPage} blogsData={blogsData} onBack={goBack} />;
+        return selectedBlog ? <BlogDetail blog={selectedBlog} onNavigate={navigateToPage} onNavigateToService={navigateToService} /> : <Blogs onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} onBack={goBack} />;
+      case 'privacy-policy':
+        return <PrivacyPolicy onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
+      case 'terms-of-service':
+        return <TermsOfService onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
+      case 'cookie-policy':
+        return <CookiePolicy onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
 
       default:
-        return <Landing onNavigate={navigateToPage} blogsData={blogsData} servicesData={servicesData} />;
+        return <Landing onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} servicesData={servicesData} />;
     }
   };
 

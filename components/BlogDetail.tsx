@@ -17,11 +17,11 @@ interface BlogData {
 
 interface BlogDetailProps {
   blog: BlogData;
-  onNavigate: (page: Page, id?: string) => void;
-  onBack: () => void;
+  onNavigate: (page: Page) => void;
+  onNavigateToService?: (serviceId: string) => void;
 }
 
-export default function BlogDetail({ blog, onNavigate }: BlogDetailProps) {
+export default function BlogDetail({ blog, onNavigate, onNavigateToService }: BlogDetailProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
@@ -213,7 +213,7 @@ export default function BlogDetail({ blog, onNavigate }: BlogDetailProps) {
         </div>
       </div>
       
-      <Footer onNavigate={onNavigate} theme="dark" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="dark" />
     </div>
   );
 }

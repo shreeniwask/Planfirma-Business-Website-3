@@ -423,7 +423,7 @@ function TextContent() {
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             <p className="block leading-[24px]">
-              Leverage AI for smarter business decisions
+              Leverage AI for smarter business decisions
             </p>
           </div>
         </div>
@@ -480,7 +480,7 @@ function Zap() {
 function Container1() {
   return (
     <div
-      className="absolute bg-[#181818] bg-[#bfdbf7] rounded-2xl top-[266px] translate-x-[-50%]"
+      className="absolute bg-[#181818] rounded-2xl top-[266px] translate-x-[-50%]"
       data-name="Container"
       style={{ left: "calc(50% - 143.5px)" }}
     >
@@ -527,7 +527,7 @@ function Audio() {
 function Container2() {
   return (
     <div
-      className="absolute bg-[#181818] bg-[#bfdbf7] rounded-2xl top-[158px] translate-x-[-50%]"
+      className="absolute bg-[#181818] rounded-2xl top-[158px] translate-x-[-50%]"
       data-name="Container"
       style={{ left: "calc(50% + 146.5px)" }}
     >
@@ -599,7 +599,7 @@ function TextContent1() {
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             <p className="block leading-[24px]">
-              Empower businesses with innovative IT solutions
+              Empower businesses with innovative IT solutions
             </p>
           </div>
         </div>
@@ -747,7 +747,7 @@ function TextContent2() {
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             <p className="block leading-[24px]">
-              Protect critical data with AI-driven security
+              Protect critical data with AI-driven security
             </p>
           </div>
         </div>
@@ -852,7 +852,7 @@ function TextContent3() {
             style={{ fontVariationSettings: "'wdth' 100" }}
           >
             <p className="block leading-[24px]">
-              Seamless cloud migration and infrastructure management
+              Seamless cloud migration and infrastructure management
             </p>
           </div>
         </div>
@@ -919,7 +919,7 @@ function NestedContainer() {
 function Container7() {
   return (
     <div
-      className="absolute bg-[#bfdbf7] bg-[#efefef] rounded-2xl top-[156px] translate-x-[-50%] w-[255px]"
+      className="absolute bg-[#bfdbf7] rounded-2xl top-[156px] translate-x-[-50%] w-[255px]"
       data-name="Container"
       style={{ left: "calc(50% + 12.5px)" }}
     >
@@ -1546,7 +1546,7 @@ function PartnershipLogos() {
         </div>
         <LogoGrid />
       </div>
-      <div className="absolute border-[0px_0px_1.5px] border-[rgba(38,78,54,0)] border-solid inset-0 pointer-events-none rounded-2xl" />
+      <div className="absolute border-[0px_0px_1.5px] border-solid inset-0 pointer-events-none rounded-2xl" />
     </div>
   );
 }
@@ -1919,7 +1919,7 @@ function B2BTestimonialLogos() {
           <LogoGrid1 />
         </div>
       </div>
-      <div className="absolute border-[0px_0px_1.5px] border-[rgba(38,78,54,0)] border-solid inset-0 pointer-events-none" />
+      <div className="absolute border-[0px_0px_1.5px] border-solid inset-0 pointer-events-none" />
     </div>
   );
 }

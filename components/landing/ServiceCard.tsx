@@ -31,17 +31,17 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
         <div className="absolute top-7 right-7 w-4 h-4 bg-[#2D993D] opacity-20 rounded-full group-hover:scale-125 transition-refined delay-100"></div>
         
         {/* Content container */}
-        <div className="relative z-10 p-6 h-full flex flex-col">
+        <div className="relative z-10 p-4 md:p-6 h-full flex flex-col">
           {/* Icon and Title */}
-          <div className="flex items-center gap-4 mb-4 flex-shrink-0">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-lg flex items-center justify-center text-2xl transform group-hover:scale-110 transition-refined">
+          <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4 flex-shrink-0">
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-lg flex items-center justify-center text-xl md:text-2xl transform group-hover:scale-110 transition-refined">
               {(() => {
                 const Icon = getServiceIcon(service.id);
-                return Icon ? <Icon className="w-7 h-7 text-white" /> : '⚡';
+                return Icon ? <Icon className="w-5 h-5 md:w-7 md:h-7 text-white" /> : '⚡';
               })()}
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[18px] md:text-[20px] group-hover:text-[#2D993D] transition-refined leading-tight">
+              <h3 className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[14px] md:text-[18px] lg:text-[20px] group-hover:text-[#2D993D] transition-refined leading-tight">
                 {service.title}
               </h3>
             </div>
@@ -51,7 +51,7 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
           <div className="flex-grow mb-4 relative">
             {/* Default state - Description visible, features hidden */}
             <div className="group-hover:opacity-0 group-hover:transform group-hover:-translate-y-2 transition-refined ease-in-out">
-              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[14px] md:text-[16px] text-gray-600 leading-relaxed mb-4">
+              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[12px] md:text-[14px] lg:text-[16px] text-gray-600 leading-relaxed mb-3 md:mb-4">
                 {service.description}
               </p>
             </div>

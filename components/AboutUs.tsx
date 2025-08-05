@@ -8,6 +8,7 @@ import type { Page } from '../App';
 
 interface AboutUsProps {
   onNavigate: (page: Page) => void;
+  onNavigateToService?: (serviceId: string) => void;
   onBack: () => void;
 }
 
@@ -25,74 +26,75 @@ const teamMembers = [
     name: "Arun Srivastav", 
     position: "CEO", 
     avatar: "/images/team/arun-srivastav.webp",
-    linkedin: "https://www.linkedin.com/in/arun-srivastav"
+    linkedin: "https://www.linkedin.com/in/arun-srivastav-planfirma"
   },
   { 
     name: "Anuradha Srivastava", 
     position: "CTO", 
     avatar: "/images/team/anuradha-srivastava.webp",
-    linkedin: "https://www.linkedin.com/in/anuradha-srivastava"
+    linkedin: "https://www.linkedin.com/in/anuradha-srivastava-planfirma"
   },
   { 
     name: "Swati Rao", 
     position: "Finance Manager", 
     avatar: "/images/team/swati-rao.webp",
-    linkedin: "https://www.linkedin.com/in/swati-rao"
+    linkedin: "https://www.linkedin.com/in/swati-rao-planfirma"
   },
   { 
     name: "Kinjal Gandhi", 
     position: "Product Manager", 
     avatar: "/images/team/kinjal-gandhi.webp",
-    linkedin: "https://www.linkedin.com/in/kinjal-gandhi"
+    linkedin: "https://www.linkedin.com/in/kinjal-gandhi-planfirma"
   },
   { 
     name: "Ravinder Singh", 
     position: "Delivery Manager", 
     avatar: "/images/team/ravinder-singh.webp",
-    linkedin: "https://www.linkedin.com/in/ravinder-singh"
+    linkedin: "https://www.linkedin.com/in/ravinder-singh-planfirma"
   },
   { 
     name: "Vinod Shirke", 
     position: "Delivery Manager", 
     avatar: "/images/team/vinod-shirke.webp",
-    linkedin: "https://www.linkedin.com/in/vinod-shirke"
+    linkedin: "https://www.linkedin.com/in/vinod-shirke-planfirma"
   },
   { 
     name: "Joji Varghese", 
     position: "Project Manager", 
     avatar: "/images/team/joji-varghese.webp",
-    linkedin: "https://www.linkedin.com/in/joji-varghese"
+    linkedin: "https://www.linkedin.com/in/joji-varghese-planfirma"
   }
 ];
 
-export default function AboutUs({ onNavigate }: AboutUsProps) {
+export default function AboutUs({ onNavigate, onNavigateToService, onBack }: AboutUsProps) {
   return (
-    <div className="bg-[#ffffff] flex flex-col items-start justify-start relative min-h-screen w-full">
+    <div className="bg-[#ffffff] flex flex-col items-center justify-start relative min-h-screen w-full">
       <Header onNavigate={onNavigate} currentPage="about" />
       
       {/* Navigation Bar with Back Button and Breadcrumbs */}
       <NavigationBar 
         onNavigate={onNavigate} 
+        onBack={onBack}
         currentPage="about" 
       />
       
       {/* Hero Section */}
-      <ScrollAnimatedSection animation="fade-up" className="relative w-full">
-        <div className="box-border content-stretch flex flex-col gap-12 md:gap-16 lg:gap-20 items-start justify-start px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 relative w-full">
+      <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full">
+        <div className="box-border content-stretch flex flex-col gap-8 md:gap-16 lg:gap-20 items-start justify-start px-3 md:px-8 lg:px-16 py-8 md:py-16 lg:py-20 relative w-full">
           
           {/* Main Content */}
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between w-full max-w-8xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-between w-full max-w-8xl mx-auto">
             
             {/* Content */}
             <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left" hover={false}>
-              <div className="bg-green-100 px-4 py-2 rounded-full text-[#2D993D] text-sm font-semibold inline-block mb-10">
+              <div className="bg-green-100 px-4 py-2 rounded-full text-[#2D993D] text-sm font-semibold inline-block mb-6 md:mb-10">
                 About Us
               </div>
-              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[44px] md:text-[60px] lg:text-[72px] tracking-[-0.5px] leading-tight mb-8">
+              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[32px] md:text-[60px] lg:text-[72px] tracking-[-0.5px] leading-tight mb-6 md:mb-8">
                 Expert Business Consulting Solutions
               </h1>
-              <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[18px] md:text-[20px] lg:text-[22px] text-[#1c1c1c] tracking-[0.5px] leading-relaxed mb-10">
-                <p className="mb-6">
+              <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[16px] md:text-[20px] lg:text-[22px] text-[#1c1c1c] tracking-[0.5px] leading-relaxed mb-8 md:mb-10">
+                <p className="mb-4 md:mb-6">
                   We help businesses innovate, grow, and optimise operations with tailored solutions. Our expertise spans multiple industries, ensuring impactful results.
                 </p>
                 <p>
@@ -116,8 +118,8 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-8">Expert Team</h3>
-                  <p className="text-base md:text-lg text-gray-600">Building trust and growth through innovative solutions</p>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-6 md:mb-8">Transform Your Business</h3>
+                  <p className="text-base md:text-lg text-gray-600">With our comprehensive suite of professional services</p>
                 </div>
               </div>
             </ScrollAnimatedCard>
@@ -363,7 +365,7 @@ export default function AboutUs({ onNavigate }: AboutUsProps) {
         </div>
       </ScrollAnimatedSection>
 
-      <Footer onNavigate={onNavigate} theme="dark" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="light" />
     </div>
   );
 }

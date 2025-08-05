@@ -22,7 +22,8 @@ interface BlogData {
 }
 
 interface BlogsProps {
-  onNavigate: (page: Page, id?: string) => void;
+  onNavigate: (page: Page, blogId?: string) => void;
+  onNavigateToService?: (serviceId: string) => void;
   blogsData: BlogData[];
   onBack: () => void;
 }
@@ -104,7 +105,7 @@ function BlogCard({ blog, onNavigate, featured = false }: { blog: BlogData; onNa
 
 
 
-export default function Blogs({ onNavigate, blogsData }: BlogsProps) {
+export default function Blogs({ onNavigate, onNavigateToService, blogsData, onBack }: BlogsProps) {
   const [selectedCategory, setSelectedCategory] = React.useState<string>('All Posts');
   
   // Sort blogs by date (most recent first)
@@ -131,6 +132,7 @@ export default function Blogs({ onNavigate, blogsData }: BlogsProps) {
       {/* Navigation Bar with Back Button and Breadcrumbs */}
       <NavigationBar 
         onNavigate={onNavigate} 
+        onBack={onBack}
         currentPage="blogs" 
       />
       
@@ -241,7 +243,7 @@ export default function Blogs({ onNavigate, blogsData }: BlogsProps) {
         </div>
       </div>
       
-      <Footer onNavigate={onNavigate} theme="dark" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="light" />
     </div>
   );
 }

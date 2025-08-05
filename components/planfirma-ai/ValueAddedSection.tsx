@@ -20,12 +20,12 @@ export default function ValueAddedSection() {
 
         {/* Enhanced 3x2 Grid Layout */}
         <ScrollAnimatedGrid
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
           animation="card-slide-in"
           staggerDelay={150}
         >
           {VALUE_ADDED_FEATURES.map((feature, index) => (
-            <div key={index} className="group relative min-h-[320px] h-full overflow-hidden">
+            <div key={index} className="group relative min-h-[320px] h-full overflow-visible">
               
               {/* Floating Background Elements */}
               <div className="absolute inset-0 overflow-hidden opacity-40 pointer-events-none">
@@ -77,18 +77,6 @@ export default function ValueAddedSection() {
                   <p className="text-base sm:text-lg text-[#bfdbf7] leading-relaxed flex-1 group-hover:text-white/90 transition-colors duration-300">
                     {feature.description}
                   </p>
-                  
-                  {/* Hover Arrow */}
-                  <div className="mt-6 flex items-center justify-between opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                    <span className="text-[#30b6d0] font-semibold text-sm uppercase tracking-wide">
-                      Learn More
-                    </span>
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#30b6d0] to-[#40c6e0] rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
                 </div>
                 
                 {/* Subtle Border Glow */}
@@ -108,8 +96,15 @@ export default function ValueAddedSection() {
               Join leading companies who have transformed their operations with our AI solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-[#30b6d0] to-[#40c6e0] text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-                Start Your AI Journey
+              <button className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-lg transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0">
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                  Start Your AI Journey
+                </span>
+                <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </button>
               <button className="border-2 border-[#30b6d0] text-[#30b6d0] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#30b6d0] hover:text-white transition-all duration-300">
                 Schedule Demo

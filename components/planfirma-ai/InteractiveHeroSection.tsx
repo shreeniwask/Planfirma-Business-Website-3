@@ -54,9 +54,8 @@ export default function InteractiveHeroSection() {
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-32 h-32 bg-[#30b6d0]/20 rounded-full animate-float blur-xl"></div>
-        <div className="absolute top-40 right-32 w-24 h-24 bg-[#40c6e0]/30 rounded-full animate-float-reverse blur-lg"></div>
-        <div className="absolute bottom-32 left-40 w-20 h-20 bg-[#50d0f0]/25 rounded-full animate-float-alt blur-md"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 bg-[#30b6d0]/20 rounded-full animate-pulse blur-xl"></div>
+        <div className="absolute bottom-32 right-32 w-24 h-24 bg-[#40c6e0]/30 rounded-full animate-pulse blur-lg"></div>
       </div>
       
       <div className="relative z-10 max-w-8xl mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
@@ -97,36 +96,41 @@ export default function InteractiveHeroSection() {
             </div>
             
             {/* Feature Tabs */}
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 mb-2">
               {features.map((feature, index) => (
                 <button
                   key={feature.id}
                   onClick={() => setActiveFeature(index)}
-                  className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-semibold transition-all duration-300 text-base shadow-sm focus:outline-none focus:ring-2 focus:ring-[#30b6d0]/40 border-2 ${
                     activeFeature === index
-                      ? 'bg-white/20 backdrop-blur-md border border-white/30 shadow-xl'
-                      : 'bg-white/10 hover:bg-white/15 border border-white/20'
+                      ? 'bg-white/90 text-[#30b6d0] border-[#30b6d0] shadow-lg scale-105'
+                      : 'bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-[#30b6d0] hover:border-[#30b6d0]'
                   }`}
+                  style={activeFeature === index ? { boxShadow: '0 8px 25px -5px #30b6d040' } : {}}
                 >
                   <span className="text-2xl">{feature.icon}</span>
-                  <span className="text-white font-medium">{feature.title}</span>
+                  <span>{feature.title}</span>
                 </button>
               ))}
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group relative bg-gradient-to-r from-[#30b6d0] to-[#40c6e0] text-white px-8 py-4 rounded-xl font-semibold text-sm lg:text-base w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3">
-                <span>Experience Demo</span>
-                <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+            <div className="flex flex-col sm:flex-row gap-4 mt-2">
+              <button className="group relative bg-[#30b6d0] text-white flex items-center justify-center px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#30b6d0]/40 text-base w-full sm:w-auto min-w-[200px] max-w-[250px] transition-all duration-300 hover:bg-[#2a9bb8] hover:-translate-y-1 active:translate-y-0">
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                  Experience Demo
+                </span>
+                <div className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1">
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                     <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </button>
-              <button className="group relative bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-xl font-semibold text-sm lg:text-base w-full sm:w-auto min-w-[220px] max-w-[280px] transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-xl hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3">
-                <span>Learn More</span>
-                <div className="w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+              <button className="group relative bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#30b6d0]/40 text-base w-full sm:w-auto min-w-[200px] max-w-[250px] transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:-translate-y-1 active:translate-y-0 flex items-center justify-center gap-3">
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                  Learn More
+                </span>
+                <div className="w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1">
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                     <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>

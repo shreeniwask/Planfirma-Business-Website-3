@@ -7,11 +7,11 @@ interface PlanfirmaCloudProps {
 
 export default function PlanfirmaCloud({ onNavigate, onBack }: PlanfirmaCloudProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 flex items-center justify-center relative overflow-hidden">
+    <div className="bg-black flex flex-col items-start justify-start relative min-h-screen w-full">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
       </div>
 
@@ -91,9 +91,16 @@ export default function PlanfirmaCloud({ onNavigate, onBack }: PlanfirmaCloudPro
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button 
             onClick={() => onNavigate('contact')}
-            className="bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-8 py-4 rounded-full font-semibold hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
           >
-            Get Early Access
+            <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+              Get Early Access
+            </span>
+            <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+              <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
           </button>
           
           <button 
@@ -119,9 +126,9 @@ export default function PlanfirmaCloud({ onNavigate, onBack }: PlanfirmaCloudPro
       </div>
 
       {/* Floating Elements */}
-      <div className="absolute top-20 right-20 w-4 h-4 bg-cyan-400 rounded-full animate-ping hidden lg:block"></div>
-      <div className="absolute bottom-32 left-16 w-3 h-3 bg-purple-400 rounded-full animate-pulse hidden lg:block"></div>
-      <div className="absolute top-1/2 right-16 w-2 h-2 bg-blue-400 rounded-full animate-bounce hidden lg:block"></div>
+      <div className="absolute top-20 right-20 w-4 h-4 bg-cyan-400 rounded-full hidden lg:block"></div>
+      <div className="absolute bottom-32 left-16 w-3 h-3 bg-purple-400 rounded-full hidden lg:block"></div>
+      <div className="absolute top-1/2 right-16 w-2 h-2 bg-blue-400 rounded-full hidden lg:block"></div>
     </div>
   );
 }

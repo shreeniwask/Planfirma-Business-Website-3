@@ -8,10 +8,11 @@ import type { Page } from '../App';
 
 interface ContactUsProps {
   onNavigate: (page: Page) => void;
+  onNavigateToService?: (serviceId: string) => void;
   onBack: () => void;
 }
 
-export default function ContactUs({ onNavigate }: ContactUsProps) {
+export default function ContactUs({ onNavigate, onNavigateToService, onBack }: ContactUsProps) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -84,7 +85,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
 
     } catch (error) {
       console.error('Error submitting contact form:', error);
-      toast.error(`Failed to send message: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again or contact us directly at info@planfirma.com`);
+      toast.error(`Failed to send message: ${error instanceof Error ? error.message : 'Unknown error'}. Please try again or contact us directly at sales@planfirma.com`);
     } finally {
       setIsSubmitting(false);
     }
@@ -102,6 +103,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
       {/* Navigation Bar with Back Button and Breadcrumbs */}
       <NavigationBar 
         onNavigate={onNavigate} 
+        onBack={onBack}
         currentPage="contact" 
       />
       
@@ -134,7 +136,6 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
                   </div>
                   <div>
                     <p className="font-semibold text-[#1c1c1c]">Email here for any queries:</p>
-                    <p className="text-[rgba(0,0,0,0.7)]">info@planfirma.com</p>
                     <p className="text-[rgba(0,0,0,0.7)]">sales@planfirma.com</p>
                   </div>
                 </div>
@@ -147,7 +148,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
                   </div>
                   <div>
                     <p className="font-semibold text-[#1c1c1c]">Call us at:</p>
-                    <p className="text-[rgba(0,0,0,0.7)]">+91 815 105 3268</p>
+                    <p className="text-[rgba(0,0,0,0.7)]">+91 84510 53268</p>
                   </div>
                 </div>
                 
@@ -229,7 +230,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
                       value={formData.phone}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D993D] focus:border-transparent outline-none transition-colors"
-                      placeholder="+91 815 105 3268"
+                      placeholder="+91 84510 53268"
                     />
                   </div>
                 </div>
@@ -295,7 +296,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
         </div>
       </div>
       
-      <Footer onNavigate={onNavigate} theme="light" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="light" />
     </div>
   );
 }

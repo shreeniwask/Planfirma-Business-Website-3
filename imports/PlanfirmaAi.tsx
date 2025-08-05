@@ -1644,7 +1644,7 @@ function ArrowRight1() {
 function Button3() {
   return (
     <div
-      className="backdrop-blur-sm backdrop-filter bg-[#44c9e41a] bg-[rgba(255,255,255,0.05)] box-border content-stretch flex flex-row gap-2.5 h-14 items-center justify-start px-4 py-2 relative rounded-lg shrink-0"
+      className="backdrop-blur-sm backdrop-filter bg-[#44c9e41a] box-border content-stretch flex flex-row gap-2.5 h-14 items-center justify-start px-4 py-2 relative rounded-lg shrink-0"
       data-name="Button"
     >
       <div className="absolute border border-[#000000] border-solid inset-0 pointer-events-none rounded-lg" />

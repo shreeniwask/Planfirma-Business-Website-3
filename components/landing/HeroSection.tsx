@@ -30,10 +30,10 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   </div>
                   
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 items-center lg:items-start justify-center lg:justify-start w-full">
+                  <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 items-center lg:items-start justify-center lg:justify-start w-full mt-2">
                     <button 
                       onClick={() => onNavigate('contact')} 
-                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-xl cursor-pointer shadow-lg w-full sm:w-[220px] font-semibold text-[14px] md:text-[16px] tracking-wide transition-all duration-300 hover:bg-[#24802f] hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
+                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-full sm:w-[220px] text-base tracking-wide transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                     >
                       <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
                         Get Started
@@ -47,7 +47,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                     
                     <button 
                       onClick={() => onNavigate('services')} 
-                      className="group relative bg-transparent border-2 border-[#2D993D] text-[#2D993D] flex items-center justify-center px-8 md:px-10 py-4 md:py-5 rounded-xl cursor-pointer w-full sm:w-[220px] font-semibold text-[14px] md:text-[16px] tracking-wide transition-all duration-300 hover:bg-[#2D993D] hover:text-white hover:shadow-xl hover:-translate-y-1 active:translate-y-0"
+                      className="group relative bg-transparent border-2 border-[#2D993D] text-[#2D993D] flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:bg-[#2D993D] hover:text-white hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-full sm:w-[220px] text-base tracking-wide transition-all duration-300 hover:-translate-y-1 active:translate-y-0"
                     >
                       <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-center tracking-[0.1px] leading-tight transition-colors duration-300">
                         Our Services

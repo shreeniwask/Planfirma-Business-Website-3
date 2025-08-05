@@ -4,6 +4,7 @@ import type { Page } from '../App';
 
 interface BackButtonProps {
   onNavigate: (page: Page) => void;
+  onBack?: () => void;
   currentPage: Page;
   blogTitle?: string;
   serviceName?: string;
@@ -18,16 +19,23 @@ const pageNames = {
   'blogs': 'Blogs',
   'blog-detail': 'Blog Post',
   'planfirma-ai': 'Planfirma.ai',
-  'planfirma-cloud': 'Planfirma.cloud'
+  'planfirma-cloud': 'Planfirma.cloud',
+  'privacy-policy': 'Privacy Policy',
+  'terms-of-service': 'Terms of Service',
+  'cookie-policy': 'Cookie Policy'
 };
 
-function NavigationBar({ onNavigate, currentPage, blogTitle, serviceName }: BackButtonProps) {
+function NavigationBar({ onNavigate, onBack, currentPage, blogTitle, serviceName }: BackButtonProps) {
   const getBackDestination = (): { page: Page; label: string } => {
     switch (currentPage) {
       case 'blog-detail':
         return { page: 'blogs', label: 'Back to Blogs' };
       case 'service-detail':
         return { page: 'services', label: 'Back to Services' };
+      case 'privacy-policy':
+      case 'terms-of-service':
+      case 'cookie-policy':
+        return { page: 'landing', label: 'Back to Home' };
       default:
         return { page: 'landing', label: 'Back to Home' };
     }
@@ -82,6 +90,14 @@ function NavigationBar({ onNavigate, currentPage, blogTitle, serviceName }: Back
     ? "text-[#30b6d0] font-medium"
     : "text-[#1f7a8c] font-medium";
 
+  const handleBackClick = () => {
+    if (onBack) {
+      onBack();
+    } else {
+      onNavigate(page);
+    }
+  };
+
   return (
     <div className={containerClasses}>
       <div className="max-w-8xl mx-auto px-3 sm:px-4 md:px-8 lg:px-16">
@@ -89,7 +105,7 @@ function NavigationBar({ onNavigate, currentPage, blogTitle, serviceName }: Back
           
           {/* Back Button */}
           <button
-            onClick={() => onNavigate(page)}
+            onClick={handleBackClick}
             className={backButtonClasses}
           >
             <svg

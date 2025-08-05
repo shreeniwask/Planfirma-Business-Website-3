@@ -38,7 +38,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     { label: 'Blogs', page: 'blogs' as Page },
     { label: 'Contact', page: 'contact' as Page },
     { label: 'Planfirma.ai', page: 'planfirma-ai' as Page },
-    { label: 'Planfirma Cloud', page: 'planfirma-cloud' as Page },
+    { label: 'Planfirma.cloud', page: 'planfirma-cloud' as Page },
   ];
 
   return (
@@ -62,7 +62,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             <img
               src="/images/logos/planfirma-logo.svg"
               alt="Planfirma Logo"
-              className="h-10 md:h-12 w-auto cursor-pointer transition-transform hover:scale-105"
+              className="h-8 md:h-12 w-auto cursor-pointer transition-transform hover:scale-105"
               onClick={() => handleNavigation('landing')}
             />
 
@@ -84,17 +84,20 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             </nav>
 
             {/* CTA Button & Mobile Menu Button */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 md:space-x-4">
+              {/* Desktop CTA Button */}
               <button 
                 onClick={() => handleNavigation('contact')}
-                className={`hidden sm:flex items-center justify-center px-3 md:px-4 lg:px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105 ${
-                  isDark 
-                    ? 'bg-[#30b6d0] text-black hover:bg-[#40c6e0]' 
-                    : 'bg-[#2D993D] text-white hover:bg-[#3fab4a]'
-                }`}
-                style={!isDark ? { backgroundColor: 'hsl(var(--brand-500))' } : {}}
+                className="hidden md:flex group relative bg-[#2D993D] text-white items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg md:rounded-xl font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-0.5 active:translate-y-0"
               >
-                <span className="font-medium text-xs md:text-sm lg:text-base">Get Started</span>
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-xs sm:text-sm md:text-base">
+                  Get Started
+                </span>
+                <div className="ml-1 sm:ml-1.5 md:ml-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </button>
 
               {/* Mobile menu button */}
@@ -137,13 +140,16 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               {/* Mobile CTA Button */}
               <button 
                 onClick={() => handleNavigation('contact')}
-                className={`w-full px-4 py-3 rounded-lg transition-colors font-medium text-base mt-4 ${
-                  isDark 
-                    ? 'bg-[#30b6d0] text-black hover:bg-[#40c6e0]' 
-                    : 'bg-[#2D993D] text-white hover:bg-[#3fab4a]'
-                }`}
+                className="group relative bg-[#2D993D] text-white flex items-center justify-center px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-0.5 active:translate-y-0 w-full"
               >
-                Get Started
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-sm">
+                  Get Started
+                </span>
+                <div className="ml-1.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5">
+                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </button>
             </div>
           </div>

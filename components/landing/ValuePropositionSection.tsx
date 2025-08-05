@@ -34,19 +34,19 @@ export default function ValuePropositionSection() {
           </ScrollAnimatedCard>
           
           <ScrollAnimatedGrid
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12 w-full max-w-8xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-10 lg:gap-12 w-full max-w-8xl mx-auto"
             animation="card-fade-up"
             staggerDelay={120}
           >
             {valueProps.map((item, index) => (
               <div key={index} className="bg-white card-height-md relative rounded-2xl border border-gray-100 card-hover-subtle">
                 <div className="flex flex-col justify-center relative size-full">
-                  <div className="box-border content-stretch flex flex-col gap-4 md:gap-6 h-full items-start justify-center px-6 md:px-8 lg:px-10 py-6 md:py-8 relative w-full">
-                    <div className="text-4xl md:text-5xl">{getValuePropIcon(item.icon)}</div>
-                    <div className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[22px] md:text-[24px] lg:text-[26px]">
+                  <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 h-full items-start justify-center px-4 md:px-8 lg:px-10 py-4 md:py-8 relative w-full">
+                    <div className="text-3xl md:text-5xl">{getValuePropIcon(item.icon)}</div>
+                    <div className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[16px] md:text-[24px] lg:text-[26px]">
                       <p className="leading-tight">{item.title}</p>
                     </div>
-                    <p className="text-gray-600 text-[16px] md:text-[18px] leading-relaxed">{item.description}</p>
+                    <p className="text-gray-600 text-[12px] md:text-[18px] leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </div>

@@ -19,19 +19,21 @@ export default function FeaturesSection() {
       {/* Centered Features Grid with Large Horizontal Padding */}
       <div className="max-w-8xl mx-auto px-8 md:px-16 lg:px-20 xl:px-24">
         <ScrollAnimatedGrid
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center"
+          className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 justify-center"
           animation="card-slide-in"
           staggerDelay={200}
         >
           {FEATURES_DATA.map((feature, index) => (
             <div key={index} className="relative min-h-[320px] h-full overflow-hidden group">
               
-              {/* Floating Bubbles for Each Card */}
-              <div className="absolute inset-0 overflow-hidden opacity-60 pointer-events-none">
-                <div className={`absolute top-4 right-4 w-6 h-6 bg-[#30b6d0]/20 rounded-full animate-float blur-sm`} style={{ animationDelay: `${index * 500}ms` }}></div>
-                <div className={`absolute bottom-6 left-6 w-4 h-4 bg-[#40c6e0]/25 rounded-full animate-float-reverse blur-sm`} style={{ animationDelay: `${index * 700}ms` }}></div>
-                <div className={`absolute top-1/2 left-4 w-2 h-2 bg-[#30b6d0]/30 rounded-full animate-pulse`} style={{ animationDelay: `${index * 1000}ms` }}></div>
-                <div className={`absolute top-8 right-12 w-3 h-3 bg-[#40c6e0]/20 rounded-full animate-float-alt blur-sm`} style={{ animationDelay: `${index * 600}ms` }}></div>
+              {/* Floating Background Elements */}
+              <div className="absolute inset-0 overflow-hidden opacity-40 pointer-events-none">
+                <div 
+                  className="absolute top-4 right-4 w-6 h-6 bg-[#30b6d0]/20 rounded-full animate-pulse blur-sm"
+                ></div>
+                <div 
+                  className="absolute bottom-6 left-6 w-4 h-4 bg-[#40c6e0]/25 rounded-full animate-pulse blur-sm"
+                ></div>
               </div>
               
               <div className={`relative bg-white/10 backdrop-blur-md rounded-2xl lg:rounded-3xl border border-white/20 shadow-xl bg-gradient-to-br ${feature.gradient} p-6 lg:p-8 overflow-hidden group-hover:bg-white/15 group-hover:border-white/30 group-hover:shadow-2xl group-hover:-translate-y-2 transition-all duration-500 h-full flex flex-col`}>

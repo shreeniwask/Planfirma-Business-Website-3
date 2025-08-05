@@ -3,11 +3,33 @@ import type { Page } from '../App';
 
 interface FooterProps {
   onNavigate: (page: Page) => void;
+  onNavigateToService?: (serviceId: string) => void;
   theme?: 'light' | 'dark';
 }
 
-export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
+export default function Footer({ onNavigate, onNavigateToService, theme = 'dark' }: FooterProps) {
   const isDark = theme === 'dark';
+  
+  // Social media URLs
+  const socialLinks = {
+    facebook: 'https://www.facebook.com/planfirma',
+    instagram: 'https://www.instagram.com/planfirma',
+    twitter: 'https://twitter.com/planfirma',
+    linkedin: 'https://www.linkedin.com/company/planfirma'
+  };
+
+  const navigateToService = (serviceId: string) => {
+    if (onNavigateToService) {
+      onNavigateToService(serviceId);
+    } else {
+      // Fallback to services page if no callback provided
+      onNavigate('services');
+    }
+  };
+
+  const openSocialLink = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
   
   return (
     <ScrollAnimatedSection 
@@ -58,7 +80,11 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
           
           {/* Social Media Icons */}
           <div className="flex flex-row gap-4 items-start justify-start">
-            <div className="relative shrink-0 size-8 social-hover cursor-pointer">
+            <div 
+              className="relative shrink-0 size-8 social-hover cursor-pointer"
+              onClick={() => openSocialLink(socialLinks.facebook)}
+              title="Follow us on Facebook"
+            >
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                 <g id="facebook">
                   <path 
@@ -69,7 +95,11 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
                 </g>
               </svg>
             </div>
-            <div className="relative shrink-0 size-8 social-hover cursor-pointer">
+            <div 
+              className="relative shrink-0 size-8 social-hover cursor-pointer"
+              onClick={() => openSocialLink(socialLinks.instagram)}
+              title="Follow us on Instagram"
+            >
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                 <g id="instagram">
                   <path 
@@ -80,7 +110,11 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
                 </g>
               </svg>
             </div>
-            <div className="relative shrink-0 size-8 social-hover cursor-pointer">
+            <div 
+              className="relative shrink-0 size-8 social-hover cursor-pointer"
+              onClick={() => openSocialLink(socialLinks.twitter)}
+              title="Follow us on Twitter"
+            >
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                 <g id="twitter">
                   <path 
@@ -91,7 +125,11 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
                 </g>
               </svg>
             </div>
-            <div className="relative shrink-0 size-8 social-hover cursor-pointer">
+            <div 
+              className="relative shrink-0 size-8 social-hover cursor-pointer"
+              onClick={() => openSocialLink(socialLinks.linkedin)}
+              title="Follow us on LinkedIn"
+            >
               <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                 <g id="linkedin">
                   <path 
@@ -132,16 +170,16 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
             <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-2`}>
               <h4 className="text-lg font-bold leading-[24px]">Services</h4>
             </div>
-            <button onClick={() => onNavigate('service-detail')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
+            <button onClick={() => navigateToService('ai-machine-learning')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
               <p className="leading-[24px]">AI & Machine Learning</p>
             </button>
-            <button onClick={() => onNavigate('service-detail')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
+            <button onClick={() => navigateToService('cybersecurity')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
               <p className="leading-[24px]">Cybersecurity</p>
             </button>
-            <button onClick={() => onNavigate('service-detail')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
+            <button onClick={() => navigateToService('cloud-computing')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
               <p className="leading-[24px]">Cloud Computing</p>
             </button>
-            <button onClick={() => onNavigate('service-detail')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
+            <button onClick={() => navigateToService('devsecops')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
               <p className="leading-[24px]">DevSecOps</p>
             </button>
           </ScrollAnimatedCard>
@@ -155,10 +193,10 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
               <p className="leading-[24px]">Contact Us</p>
             </button>
             <div className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} text-left`}>
-              <p className="leading-[24px]">info@planfirma.com</p>
+              <p className="leading-[24px]">sales@planfirma.com</p>
             </div>
             <div className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} text-left`}>
-              <p className="leading-[24px]">+91 815 105 3268</p>
+              <p className="leading-[24px]">+91 84510 53268</p>
             </div>
           </ScrollAnimatedCard>
         </div>
@@ -171,13 +209,22 @@ export default function Footer({ onNavigate, theme = 'dark' }: FooterProps) {
             © 2024 Planfirma. All rights reserved.
           </div>
           <div className="flex gap-6 text-sm">
-            <button className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}>
+            <button 
+              onClick={() => onNavigate('privacy-policy')} 
+              className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}
+            >
               Privacy Policy
             </button>
-            <button className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}>
+            <button 
+              onClick={() => onNavigate('terms-of-service')} 
+              className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}
+            >
               Terms of Service
             </button>
-            <button className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}>
+            <button 
+              onClick={() => onNavigate('cookie-policy')} 
+              className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}
+            >
               Cookie Policy
             </button>
           </div>

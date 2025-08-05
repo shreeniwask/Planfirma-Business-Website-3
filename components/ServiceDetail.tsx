@@ -19,13 +19,13 @@ interface ServiceData {
 
 interface ServiceDetailProps {
   service: ServiceData;
-  onNavigate: (page: Page, serviceId?: string) => void;
-  onBack: () => void;
+  onNavigate: (page: Page) => void;
+  onNavigateToService?: (serviceId: string) => void;
   servicesData: ServiceData[];
-  onNavigateToService: (serviceId: string) => void;
+  onBack?: () => void;
 }
 
-export default function ServiceDetail({ service, onNavigate, servicesData, onNavigateToService }: ServiceDetailProps) {
+export default function ServiceDetail({ service, onNavigate, onNavigateToService, servicesData, onBack }: ServiceDetailProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'benefits' | 'process' | 'investment'>('overview');
   const [animatedStats, setAnimatedStats] = useState({ efficiency: 0, cost: 0, time: 0, satisfaction: 0 });
 
@@ -263,27 +263,27 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
 
   const ProcessStep = ({ step, index, isLast }: { step: any; index: number; isLast: boolean }) => (
     <div className="relative">
-      <div className="flex items-start gap-6">
+      <div className="flex items-start gap-4 md:gap-6">
         <div className="flex flex-col items-center">
           <div 
-            className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold shadow-lg"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-white font-bold shadow-lg"
             style={{ backgroundColor: '#2D993D' }}
           >
             {index + 1}
           </div>
           {!isLast && (
-            <div className="w-0.5 h-16 bg-gray-300 mt-4"></div>
+            <div className="w-0.5 h-12 md:h-16 bg-gray-300 mt-3 md:mt-4"></div>
           )}
         </div>
-        <div className="flex-1 pb-8">
-          <div className="bg-gray-50 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4" style={{ borderLeftColor: '#2D993D' }}>
-            <div className="flex items-center justify-between mb-3">
-              <h3 className="text-lg lg:text-xl font-bold text-gray-900">{step.title}</h3>
-              <span className="px-3 py-1 bg-gray-200 rounded-full text-sm font-medium text-gray-800">
+        <div className="flex-1 pb-6 md:pb-8">
+          <div className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-md hover:shadow-lg transition-all duration-300 border-l-4" style={{ borderLeftColor: '#2D993D' }}>
+            <div className="flex items-center justify-between mb-2 md:mb-3">
+              <h3 className="text-base md:text-lg lg:text-xl font-bold text-gray-900">{step.title}</h3>
+              <span className="px-2 md:px-3 py-1 bg-gray-200 rounded-full text-xs md:text-sm font-medium text-gray-800">
                 {step.duration}
               </span>
             </div>
-            <p className="text-gray-800 leading-relaxed">{step.description}</p>
+            <p className="text-sm md:text-base text-gray-800 leading-relaxed">{step.description}</p>
           </div>
         </div>
       </div>
@@ -370,22 +370,22 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
     
     return (
       <div className="group relative h-full">
-        <div className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300 h-full flex flex-col text-center">
+        <div className="bg-gray-50 rounded-xl p-3 md:p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300 h-full flex flex-col text-center">
           <div 
-            className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform"
             style={{ backgroundColor: '#2D993D' }}
           >
-            <IconComponent size={20} className="text-white md:w-8 md:h-8" />
+            <IconComponent size={18} className="text-white md:w-6 md:h-6" />
           </div>
-          <h3 className="text-sm md:text-lg font-bold text-gray-900 leading-tight mb-2 md:mb-3 group-hover:text-black transition-colors">
+          <h3 className="text-sm md:text-base font-bold text-gray-900 leading-tight mb-1 md:mb-2 group-hover:text-black transition-colors">
             {feature}
           </h3>
           <p className="text-xs md:text-sm text-gray-700 leading-relaxed flex-1 group-hover:text-gray-800 transition-colors">
             {description}
           </p>
+        </div>
       </div>
-    </div>
-  );
+    );
   };
 
   const TechBadge = ({ tech, index }: { tech: string; index: number }) => (
@@ -478,19 +478,20 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
         onNavigate={handleNavigateSimple} 
         currentPage="service-detail" 
         serviceName={service.title}
+        onBack={onBack}
       />
       
       {/* Enhanced Hero Section */}
       <section className="relative w-full overflow-hidden">
         <div className="absolute inset-0 bg-gray-50"></div>
         <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 items-center">
             
             {/* Service Content */}
-            <div className="space-y-8">
-              <div className="flex items-center gap-6">
+            <div className="space-y-6 md:space-y-8">
+              <div className="flex items-center gap-4 md:gap-6">
                 <div 
-                  className="w-20 h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center text-4xl lg:text-5xl shadow-2xl transform hover:scale-105 transition-transform"
+                  className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-4xl lg:text-5xl shadow-2xl transform hover:scale-105 transition-transform"
                   style={{ backgroundColor: currentConfig.color }}
                 >
                   {currentConfig.icon}
@@ -521,10 +522,16 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
               <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 pt-6">
                 <button 
                   onClick={() => onNavigate('contact')} 
-                  className="bg-[#2D993D] text-white px-10 py-4 rounded-xl font-bold hover:shadow-xl transition-all transform hover:scale-105 text-[18px] flex-1 sm:flex-none shadow-lg"
-                  style={{ backgroundColor: 'hsl(var(--brand-500))' }}
+                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-[18px] flex-1 sm:flex-none transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                 >
-                  Get Started Today
+                  <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                    Get Started Today
+                  </span>
+                  <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                    <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
                 </button>
                 <button 
                   onClick={() => onNavigate('services')} 
@@ -539,10 +546,10 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
             <div className="relative">
               <div className="relative group">
                 <div 
-                  className="absolute inset-0 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500 opacity-20"
+                  className="absolute inset-0 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 opacity-20"
                   style={{ backgroundColor: currentConfig.color }}
                 ></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl transform group-hover:-translate-y-2 transition-all duration-500">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl transform group-hover:-translate-y-1 transition-all duration-300">
                   <ImageWithFallback
                     src={service.image}
                     alt={service.title}
@@ -577,9 +584,9 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
         <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-20">
           
           {/* Enhanced Tab Navigation with Radio Button Style */}
-          <div className="flex justify-center mb-6 md:mb-8 lg:mb-10">
-            <div className="bg-gray-50 rounded-2xl p-2 shadow-inner border border-gray-200">
-              <div className="flex gap-1 md:gap-2 lg:gap-4">
+          <div className="flex justify-center mb-4 md:mb-6 lg:mb-8">
+            <div className="bg-gray-50 rounded-2xl p-1 shadow-inner border border-gray-200">
+              <div className="flex gap-1 md:gap-2 lg:gap-3">
                 {[
                   { id: 'overview', label: 'Overview', fullLabel: 'Service Overview', icon: <FileText className="w-4 h-4 md:w-5 md:h-5" /> },
                   { id: 'benefits', label: 'Benefits', fullLabel: 'Business Benefits', icon: <TrendingUp className="w-4 h-4 md:w-5 md:h-5" /> },
@@ -596,7 +603,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                       className="sr-only"
                     />
                     <div
-                      className={`flex items-center gap-2 md:gap-3 px-2 md:px-4 lg:px-6 py-2 md:py-3 lg:py-4 rounded-xl font-semibold transition-all duration-300 transform relative overflow-hidden ${
+                      className={`flex items-center gap-2 md:gap-3 px-2 md:px-4 lg:px-5 py-2 md:py-2.5 lg:py-3 rounded-xl font-semibold transition-all duration-300 transform relative overflow-hidden ${
                         activeTab === tab.id
                           ? 'text-white shadow-lg scale-105'
                           : 'text-gray-900 hover:text-black hover:bg-gray-200 hover:scale-102'
@@ -660,11 +667,11 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
           </div>
 
           {/* Tab Content */}
-          <div className="min-h-[400px] md:min-h-[500px]">
+          <div className="min-h-[350px] md:min-h-[400px]">
             {activeTab === 'overview' && (
                 <div>
-                <div className="text-center mb-6 md:mb-8">
-                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
+                <div className="text-center mb-4 md:mb-6">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-2 md:mb-3">
                     Key Features
                   </h2>
                   <p className="text-sm md:text-base text-gray-700 leading-relaxed max-w-2xl mx-auto">
@@ -689,8 +696,8 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                 
             {activeTab === 'benefits' && (
                 <div>
-                <div className="text-center mb-6 md:mb-8 lg:mb-10">
-                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
+                <div className="text-center mb-4 md:mb-6 lg:mb-8">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-2 md:mb-3">
                     Business Benefits
                   </h2>
                   <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
@@ -698,7 +705,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4 lg:gap-6">
                     {service.benefits && service.benefits.length > 0 ? (
                     (() => {
                       const benefitUsedIcons = new Set();
@@ -772,14 +779,14 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                         
                         return (
                           <div key={index} className="group relative h-full">
-                            <div className="bg-gray-50 rounded-xl p-4 md:p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300 h-full flex flex-col text-center">
+                            <div className="bg-gray-50 rounded-xl p-3 md:p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-gray-300 h-full flex flex-col text-center">
                               <div 
-                                className="w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform"
+                                className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mx-auto mb-2 md:mb-3 group-hover:scale-110 transition-transform"
                                 style={{ backgroundColor: '#2D993D' }}
                               >
-                                <IconComponent size={24} className="text-white md:w-8 md:h-8" />
+                                <IconComponent size={20} className="text-white md:w-6 md:h-6" />
                             </div>
-                              <h4 className="text-sm md:text-lg font-bold text-gray-900 leading-tight mb-2 md:mb-3 group-hover:text-black transition-colors">
+                              <h4 className="text-sm md:text-base font-bold text-gray-900 leading-tight mb-1 md:mb-2 group-hover:text-black transition-colors">
                                 {benefit}
                               </h4>
                               <p className="text-xs md:text-sm text-gray-700 leading-relaxed flex-1 group-hover:text-gray-800 transition-colors">
@@ -799,8 +806,8 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
 
             {activeTab === 'process' && (
               <div>
-                <div className="text-center mb-6 md:mb-8 lg:mb-10">
-                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
+                <div className="text-center mb-4 md:mb-6 lg:mb-8">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-2 md:mb-3">
                     Implementation Process
                   </h2>
                   <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
@@ -823,8 +830,8 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
 
             {activeTab === 'investment' && (
               <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-6 md:mb-8 lg:mb-10">
-                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 md:mb-4">
+                <div className="text-center mb-4 md:mb-6 lg:mb-8">
+                  <h2 className="text-xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-2 md:mb-3">
                     Investment & ROI
                   </h2>
                   <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed max-w-2xl mx-auto">
@@ -832,44 +839,50 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
                   </p>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
-                  <div className="bg-gray-50 rounded-2xl p-4 md:p-6 shadow-lg border border-gray-300 text-center">
-                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">💰</div>
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Setup Investment</h3>
-                    <div className="text-2xl font-bold mb-2 text-gray-900">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
+                  <div className="bg-gray-50 rounded-2xl p-3 md:p-4 shadow-lg border border-gray-300 text-center">
+                    <div className="text-2xl md:text-3xl mb-2 md:mb-3">💰</div>
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Setup Investment</h3>
+                    <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2 text-gray-900">
                       {currentConfig.investment.setup}
                     </div>
-                    <p className="text-gray-800">One-time implementation cost</p>
+                    <p className="text-xs md:text-sm text-gray-800">One-time implementation cost</p>
                   </div>
                   
-                  <div className="bg-gray-50 rounded-2xl p-4 md:p-6 shadow-lg border border-gray-300 text-center">
-                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">📊</div>
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Monthly Support</h3>
-                    <div className="text-2xl font-bold mb-2 text-gray-900">
+                  <div className="bg-gray-50 rounded-2xl p-3 md:p-4 shadow-lg border border-gray-300 text-center">
+                    <div className="text-2xl md:text-3xl mb-2 md:mb-3">📊</div>
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Monthly Support</h3>
+                    <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2 text-gray-900">
                       {currentConfig.investment.monthly}
                     </div>
-                    <p className="text-gray-800">Ongoing maintenance & support</p>
+                    <p className="text-xs md:text-sm text-gray-800">Ongoing maintenance & support</p>
                   </div>
                   
-                  <div className="bg-gray-50 rounded-2xl p-4 md:p-6 shadow-lg border border-gray-300 text-center">
-                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">📈</div>
-                    <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">Expected ROI</h3>
-                    <div className="text-2xl font-bold mb-2 text-gray-900">
+                  <div className="bg-gray-50 rounded-2xl p-3 md:p-4 shadow-lg border border-gray-300 text-center">
+                    <div className="text-2xl md:text-3xl mb-2 md:mb-3">📈</div>
+                    <h3 className="text-base md:text-lg font-bold text-gray-900 mb-2 md:mb-3">Expected ROI</h3>
+                    <div className="text-xl md:text-2xl font-bold mb-1 md:mb-2 text-gray-900">
                       {currentConfig.investment.roi}
                     </div>
-                    <p className="text-gray-600">Within 12-18 months</p>
+                    <p className="text-xs md:text-sm text-gray-600">Within 12-18 months</p>
                   </div>
                 </div>
                 
-                <div className="bg-gray-50 rounded-2xl p-4 md:p-6 text-center">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Ready to Calculate Your ROI?</h3>
-                  <p className="text-gray-600 mb-6">Get a personalized assessment based on your specific requirements</p>
+                <div className="bg-gray-50 rounded-2xl p-3 md:p-4 text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 md:mb-3">Ready to Calculate Your ROI?</h3>
+                  <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4">Get a personalized assessment based on your specific requirements</p>
                   <button 
                     onClick={() => onNavigate('contact')}
-                    className="text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all transform hover:scale-105"
-                    style={{ backgroundColor: currentConfig.color }}
+                    className="group relative bg-[#2D993D] text-white flex items-center justify-center px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                   >
-                    Request ROI Analysis
+                    <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                      Request ROI Analysis
+                    </span>
+                    <div className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1">
+                      <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                        <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
                   </button>
                 </div>
               </div>
@@ -909,12 +922,12 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
             <NavigationButton 
               direction="previous"
               targetService={previousService}
-              onClick={() => onNavigateToService(previousService.id)}
+              onClick={() => onNavigateToService?.(previousService.id)}
             />
             <NavigationButton 
               direction="next"
               targetService={nextService}
-              onClick={() => onNavigateToService(nextService.id)}
+              onClick={() => onNavigateToService?.(nextService.id)}
             />
           </div>
         </div>
@@ -932,10 +945,16 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => onNavigate('contact')}
-              className="bg-white text-[#2D993D] px-10 py-4 rounded-xl font-bold hover:shadow-xl transition-all transform hover:scale-105 text-[18px] btn-hover-primary"
-              style={{ color: 'hsl(var(--brand-500))' }}
+              className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-[18px] transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
             >
-              Start Your Project
+              <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                Start Your Project
+              </span>
+              <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                  <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
             </button>
             <button 
               onClick={() => onNavigate('services')}
@@ -947,7 +966,7 @@ export default function ServiceDetail({ service, onNavigate, servicesData, onNav
         </div>
       </section>
 
-      <Footer onNavigate={onNavigate} theme="dark" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="dark" />
     </div>
   );
 }

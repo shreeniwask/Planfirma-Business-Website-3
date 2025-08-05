@@ -10,40 +10,44 @@ import { useParallaxScroll } from './planfirma-ai/hooks';
 import type { Page } from '../App';
 
 interface PlanfirmaAiProps {
-  onNavigate: (page: Page, id?: string) => void;
+  onNavigate: (page: Page) => void;
+  onNavigateToService?: (serviceId: string) => void;
   onBack: () => void;
 }
 
-export default function PlanfirmaAi({ onNavigate }: PlanfirmaAiProps) {
+export default function PlanfirmaAi({ onNavigate, onNavigateToService, onBack }: PlanfirmaAiProps) {
   const { transforms, opacities, gradientBackground, videoBlur } = useParallaxScroll();
 
   return (
-    <div className="bg-[#000000] min-h-screen w-full overflow-x-hidden">
+    <div className="bg-black flex flex-col items-center justify-start relative min-h-screen w-full">
       <Header onNavigate={onNavigate} currentPage="planfirma-ai" />
       
       {/* Navigation Bar with Back Button and Breadcrumbs */}
       <NavigationBar 
         onNavigate={onNavigate} 
+        onBack={onBack}
         currentPage="planfirma-ai" 
       />
       
-      <HeroSection 
-        onNavigate={onNavigate}
-        transforms={transforms}
-        opacities={opacities}
-        gradientBackground={gradientBackground}
-        videoBlur={videoBlur}
-      />
+      <div className="w-full max-w-full">
+        <HeroSection 
+          onNavigate={onNavigate}
+          transforms={transforms}
+          opacities={opacities}
+          gradientBackground={gradientBackground}
+          videoBlur={videoBlur}
+        />
 
-      <StatsSection />
+        <StatsSection />
 
-      <SmartAutomationSection />
+        <SmartAutomationSection />
 
-      <FeaturesSection />
+        <FeaturesSection />
 
-      <ValueAddedSection />
+        <ValueAddedSection />
+      </div>
       
-      <Footer onNavigate={onNavigate} theme="dark" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="dark" />
     </div>
   );
 }

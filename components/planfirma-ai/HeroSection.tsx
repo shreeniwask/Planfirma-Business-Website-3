@@ -26,7 +26,7 @@ export default function HeroSection({
   videoBlur 
 }: HeroSectionProps) {
   return (
-    <section className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
+    <section className="relative w-full min-h-screen sm:min-h-screen md:py-16 lg:py-20 overflow-hidden">
       {/* Parallax Video Background */}
       <div 
         className="absolute inset-0 w-full h-full"
@@ -80,13 +80,13 @@ export default function HeroSection({
 
       {/* Hero Content Container with Parallax */}
       <div 
-        className="relative z-20 flex flex-col items-center justify-center px-2 sm:px-4 lg:px-6 xl:px-8 py-8 sm:py-12 md:py-16 lg:py-20"
+        className="relative z-20 flex flex-col items-center justify-center px-2 sm:px-4 lg:px-6 xl:px-8 py-12 sm:py-16 md:py-16 lg:py-20 min-h-screen sm:min-h-screen"
         style={{
           transform: transforms.content,
           willChange: 'transform'
         }}
       >
-        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-2 sm:space-y-3 lg:space-y-6">
+        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-4 sm:space-y-6 lg:space-y-8">
           
           {/* Badge */}
           <ScrollAnimatedCard animation="scale-in" delay={200} className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white/15 backdrop-blur-md rounded-full border border-white/25 shadow-lg" hover={false}>
@@ -101,8 +101,8 @@ export default function HeroSection({
           </ScrollAnimatedCard>
 
           {/* Main Heading */}
-          <ScrollAnimatedCard animation="fade-up" delay={400} className="space-y-3 sm:space-y-4 lg:space-y-6 max-w-5xl mx-auto" hover={false}>
-            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[64px] 2xl:text-[72px] font-bold text-white leading-[1.1] tracking-tight">
+          <ScrollAnimatedCard animation="fade-up" delay={400} className="space-y-4 sm:space-y-6 lg:space-y-8 max-w-5xl mx-auto" hover={false}>
+            <h1 className="text-[32px] sm:text-[40px] md:text-[52px] lg:text-[60px] xl:text-[68px] 2xl:text-[76px] font-bold text-white leading-[1.1] tracking-tight">
               <span style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                 Transform Your Business<br />
                 with <span className="text-[#30b6d0]">Smart AI Solutions</span>
@@ -110,7 +110,7 @@ export default function HeroSection({
             </h1>
             
             {/* Subtitle */}
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto px-2">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 leading-relaxed max-w-4xl mx-auto px-2">
               <span style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
                 Planfirma helps businesses of all sizes streamline operations, make
                 better decisions, and grow faster with custom AI solutions that

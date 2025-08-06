@@ -29,15 +29,15 @@ function NavigationBar({ onNavigate, onBack, currentPage, blogTitle, serviceName
   const getBackDestination = (): { page: Page; label: string } => {
     switch (currentPage) {
       case 'blog-detail':
-        return { page: 'blogs', label: 'Back to Blogs' };
+        return { page: 'blogs', label: 'Back' };
       case 'service-detail':
-        return { page: 'services', label: 'Back to Services' };
+        return { page: 'services', label: 'Back' };
       case 'privacy-policy':
       case 'terms-of-service':
       case 'cookie-policy':
-        return { page: 'landing', label: 'Back to Home' };
+        return { page: 'landing', label: 'Back' };
       default:
-        return { page: 'landing', label: 'Back to Home' };
+        return { page: 'landing', label: 'Back' };
     }
   };
 
@@ -83,8 +83,8 @@ function NavigationBar({ onNavigate, onBack, currentPage, blogTitle, serviceName
     : "flex-1 ml-6";
 
   const breadcrumbLinkClasses = isDarkTheme
-    ? "cursor-pointer text-white/70 hover:text-[#30b6d0] transition-colors"
-    : "cursor-pointer text-gray-600 hover:text-[#1f7a8c] transition-colors";
+    ? "cursor-pointer text-white/70 hover:text-green-400 hover:underline transition-colors"
+    : "cursor-pointer text-gray-600 hover:text-green-600 hover:underline transition-colors";
 
   const breadcrumbCurrentClasses = isDarkTheme
     ? "text-[#30b6d0] font-medium"

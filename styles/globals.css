@@ -540,7 +540,8 @@
   }
   
   .breadcrumb-hover:hover {
-    color: #2D993D;
+    color: #16a34a;
+    text-decoration: underline;
   }
 
   /* Accessibility - Reduced Motion */

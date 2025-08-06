@@ -89,9 +89,9 @@ export default function BlogDetail({ blog, onNavigate, onNavigateToService }: Bl
       {/* Breadcrumb */}
       <div className="px-4 md:px-8 lg:px-16 py-4 bg-gray-50">
         <div className="flex items-center gap-2 text-sm text-gray-600 max-w-4xl mx-auto">
-          <button onClick={() => onNavigate('landing')} className="hover:text-[#1f7a8c]">Home</button>
+          <button onClick={() => onNavigate('landing')} className="hover:text-green-600 hover:underline transition-colors">Home</button>
           <span>•</span>
-          <button onClick={() => onNavigate('blogs')} className="hover:text-[#1f7a8c]">Blogs</button>
+          <button onClick={() => onNavigate('blogs')} className="hover:text-green-600 hover:underline transition-colors">Blogs</button>
           <span>•</span>
           <span className="text-[#1f7a8c] font-medium truncate">{blog.title}</span>
         </div>

@@ -482,8 +482,8 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
       />
       
       {/* Enhanced Hero Section - Responsive */}
-      <section className="relative w-full bg-gray-50 min-h-[calc(100vh-4rem)] flex items-center">
-        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
+      <section className="relative w-full bg-gray-50 min-h-screen sm:min-h-screen md:py-16 lg:py-20">
+        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20 min-h-screen sm:min-h-screen md:min-h-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-20 items-center">
             
             {/* Service Content */}

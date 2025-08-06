@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Analytics } from '@vercel/analytics/react';
 import Landing from './components/Landing';
 import Services from './components/Services';
 import AboutUs from './components/AboutUs';
@@ -12,23 +11,16 @@ import PlanfirmaCloud from './components/PlanfirmaCloud';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import CookiePolicy from './components/CookiePolicy';
-
+import { Analytics } from '@vercel/analytics/react';
 import { servicesData } from './data/servicesData';
 import { blogsData } from './data/blogsData';
 
 export type Page = 'landing' | 'services' | 'about' | 'contact' | 'service-detail' | 'blogs' | 'blog-detail' | 'planfirma-ai' | 'planfirma-cloud' | 'privacy-policy' | 'terms-of-service' | 'cookie-policy';
 
-interface NavigationHistoryItem {
-  page: Page;
-  serviceId?: string;
-  blogId?: string;
-}
-
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>('landing');
   const [selectedServiceId, setSelectedServiceId] = useState<string>('');
   const [selectedBlogId, setSelectedBlogId] = useState<string>('');
-  const [navigationHistory, setNavigationHistory] = useState<NavigationHistoryItem[]>([]);
 
   // Scroll to top when navigating to any page
   useEffect(() => {
@@ -36,16 +28,6 @@ function App() {
   }, [currentPage, selectedServiceId, selectedBlogId]);
 
   const navigateToPage = (page: Page, id?: string) => {
-    // Add current page to history if it's not the landing page
-    if (currentPage !== 'landing') {
-      const currentHistoryItem: NavigationHistoryItem = {
-        page: currentPage,
-        serviceId: selectedServiceId || undefined,
-        blogId: selectedBlogId || undefined
-      };
-      setNavigationHistory(prev => [...prev, currentHistoryItem]);
-    }
-
     setCurrentPage(page);
     if (page === 'service-detail' && id) {
       setSelectedServiceId(id);
@@ -57,28 +39,45 @@ function App() {
     }
   };
 
+  // Hierarchical navigation - follows proper navigation flow
   const goBack = () => {
-    if (navigationHistory.length > 0) {
-      const previousPage = navigationHistory[navigationHistory.length - 1];
-      setNavigationHistory(prev => prev.slice(0, -1));
-      setCurrentPage(previousPage.page);
-      setSelectedServiceId(previousPage.serviceId || '');
-      setSelectedBlogId(previousPage.blogId || '');
-    } else {
-      // If no history, go to landing page
-      setCurrentPage('landing');
-      setSelectedServiceId('');
-      setSelectedBlogId('');
+    switch (currentPage) {
+      case 'service-detail':
+        // Service detail → Services listing
+        setCurrentPage('services');
+        setSelectedServiceId('');
+        break;
+      case 'blog-detail':
+        // Blog detail → Blogs listing
+        setCurrentPage('blogs');
+        setSelectedBlogId('');
+        break;
+      case 'services':
+      case 'blogs':
+      case 'about':
+      case 'contact':
+      case 'planfirma-ai':
+      case 'planfirma-cloud':
+      case 'privacy-policy':
+      case 'terms-of-service':
+      case 'cookie-policy':
+        // All other pages → Landing
+        setCurrentPage('landing');
+        setSelectedServiceId('');
+        setSelectedBlogId('');
+        break;
+      case 'landing':
+        // Already on landing, do nothing
+        break;
+      default:
+        // Fallback to landing
+        setCurrentPage('landing');
+        setSelectedServiceId('');
+        setSelectedBlogId('');
     }
   };
 
   const navigateToService = (serviceId: string) => {
-    const currentHistoryItem: NavigationHistoryItem = {
-      page: currentPage,
-      serviceId: selectedServiceId || undefined,
-      blogId: selectedBlogId || undefined
-    };
-    setNavigationHistory(prev => [...prev, currentHistoryItem]);
     setCurrentPage('service-detail');
     setSelectedServiceId(serviceId);
   };

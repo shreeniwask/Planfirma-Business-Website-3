@@ -26,12 +26,19 @@ const pageNames = {
 };
 
 function NavigationBar({ onNavigate, onBack, currentPage, blogTitle, serviceName }: BackButtonProps) {
+  // Hierarchical navigation - follows proper navigation flow
   const getBackDestination = (): { page: Page; label: string } => {
     switch (currentPage) {
-      case 'blog-detail':
-        return { page: 'blogs', label: 'Back' };
       case 'service-detail':
         return { page: 'services', label: 'Back' };
+      case 'blog-detail':
+        return { page: 'blogs', label: 'Back' };
+      case 'services':
+      case 'blogs':
+      case 'about':
+      case 'contact':
+      case 'planfirma-ai':
+      case 'planfirma-cloud':
       case 'privacy-policy':
       case 'terms-of-service':
       case 'cookie-policy':

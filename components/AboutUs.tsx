@@ -292,11 +292,11 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                 ))}
                 
                 {/* Mobile Timeline Line */}
-                <div className="absolute left-4 top-0 w-1 bg-gradient-to-b from-[#2D993D] via-[#3fab4a] to-[#2D993D] h-full"></div>
+                <div className="absolute left-8 top-0 w-1 bg-gradient-to-b from-[#2D993D] via-[#3fab4a] to-[#2D993D] h-full"></div>
                 
                 {/* Mobile Timeline Dots */}
                 {timelineData.map((_, index) => (
-                  <div key={index} className="absolute left-2 w-6 h-6 bg-gradient-to-r from-[#2D993D] to-[#3fab4a] rounded-full border-4 border-white shadow-lg" 
+                  <div key={index} className="absolute left-6 w-6 h-6 bg-gradient-to-r from-[#2D993D] to-[#3fab4a] rounded-full border-4 border-white shadow-lg" 
                        style={{ 
                          top: `${index * 120 + 60}px` 
                        }}>

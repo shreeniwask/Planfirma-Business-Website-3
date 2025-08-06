@@ -79,8 +79,8 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       />
       
       {/* Hero Section */}
-      <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full min-h-screen sm:min-h-screen md:min-h-0">
-        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full min-h-screen sm:min-h-screen md:min-h-0">
+      <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full">
+        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
           
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center justify-between w-full max-w-8xl mx-auto">
@@ -111,7 +111,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
             
             {/* Hero Image Placeholder */}
             <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto order-2" hover={false}>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 h-48 sm:h-64 md:h-[240px] lg:h-[300px] lg:w-[300px] xl:w-[360px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 h-64 sm:h-80 md:h-[240px] lg:h-[300px] lg:w-[300px] xl:w-[360px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
                 <div className="text-center p-3 sm:p-4 md:p-6">
                   <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-[#2D993D] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
                     <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

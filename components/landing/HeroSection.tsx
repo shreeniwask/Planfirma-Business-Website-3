@@ -7,9 +7,9 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-white min-h-screen sm:min-h-screen md:py-16 lg:py-20">
+    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="relative w-full">
-        <div className="box-border content-stretch flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 lg:px-12 relative w-full min-h-screen sm:min-h-screen md:min-h-0">
+        <div className="box-border content-stretch flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 lg:px-12 relative w-full">
           
           {/* Wider Hero Content Container */}
           <div className="max-w-8xl mx-auto w-full">
@@ -64,7 +64,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               
               {/* Hero Image */}
               <ScrollAnimatedCard animation="fade-left" className="flex-1 max-w-2xl lg:max-w-none order-2" hover={false}>
-                <div className="relative w-full h-28 sm:h-36 md:h-48 lg:h-[300px] xl:h-[380px]">
+                <div className="relative w-full h-48 sm:h-64 md:h-80 lg:h-[300px] xl:h-[380px]">
                   <img
                     src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
                     alt="Business team collaborating with technology solutions"

@@ -138,10 +138,10 @@ export default function Blogs({ onNavigate, onNavigateToService, blogsData, onBa
       
       {/* Main Content */}
       <div className="relative w-full">
-        <div className="box-border content-stretch flex flex-col items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full min-h-screen sm:min-h-screen md:min-h-0">
+        <div className="box-border content-stretch flex flex-col items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
           
           {/* Hero Section */}
-          <ScrollAnimatedSection animation="fade-up" className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center justify-between mb-8 md:mb-12 lg:mb-16 w-full max-w-7xl mx-auto min-h-screen sm:min-h-screen md:min-h-0">
+          <ScrollAnimatedSection animation="fade-up" className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center justify-between mb-8 md:mb-12 lg:mb-16 w-full max-w-7xl mx-auto">
             <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left order-1" hover={false}>
               <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block mb-3 sm:mb-4">
                 Our Blog
@@ -154,7 +154,7 @@ export default function Blogs({ onNavigate, onNavigateToService, blogsData, onBa
               </p>
             </ScrollAnimatedCard>
             <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto order-2" hover={false}>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 h-56 sm:h-64 md:h-72 lg:h-80 lg:w-80 rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 h-64 sm:h-80 md:h-72 lg:h-80 lg:w-80 rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
                 <div className="text-center p-4 sm:p-6 md:p-8">
                   <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-[#2D993D] rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
                     <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

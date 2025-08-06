@@ -80,21 +80,21 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       
       {/* Hero Section */}
       <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full">
-        <div className="box-border content-stretch flex flex-col gap-6 md:gap-12 lg:gap-16 items-start justify-start px-3 md:px-8 lg:px-16 py-4 md:py-8 lg:py-12 relative w-full">
+        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-2 md:py-4 lg:py-6 relative w-full">
           
           {/* Main Content */}
-          <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-between w-full max-w-8xl mx-auto">
+          <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center justify-between w-full max-w-8xl mx-auto">
             
             {/* Content */}
             <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left" hover={false}>
-              <div className="bg-green-100 px-4 py-2 rounded-full text-[#2D993D] text-sm font-semibold inline-block mb-6 md:mb-10">
+              <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block mb-3 md:mb-6">
                 About Us
               </div>
-              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[32px] md:text-[60px] lg:text-[72px] tracking-[-0.5px] leading-tight mb-6 md:mb-8">
+              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[20px] sm:text-[24px] md:text-[36px] lg:text-[44px] xl:text-[52px] tracking-[-0.5px] leading-tight mb-2 md:mb-4">
                 Expert Business Consulting Solutions
               </h1>
-              <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[16px] md:text-[20px] lg:text-[22px] text-[#1c1c1c] tracking-[0.5px] leading-relaxed mb-8 md:mb-10">
-                <p className="mb-4 md:mb-6">
+              <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] text-[#1c1c1c] tracking-[0.5px] leading-relaxed mb-3 md:mb-4">
+                <p className="mb-1 md:mb-3">
                   We help businesses innovate, grow, and optimise operations with tailored solutions. Our expertise spans multiple industries, ensuring impactful results.
                 </p>
                 <p>
@@ -103,7 +103,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
               </div>
               <button 
                 onClick={() => onNavigate('services')} 
-                className="bg-[#2D993D] text-white px-10 md:px-12 py-5 md:py-6 rounded-lg font-['Roboto:SemiBold',_sans-serif] font-semibold text-[18px] md:text-[20px] btn-hover-primary"
+                className="bg-[#2D993D] text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg font-['Roboto:SemiBold',_sans-serif] font-semibold text-[14px] sm:text-[16px] md:text-[18px] btn-hover-primary"
               >
                 Check our services
               </button>
@@ -111,15 +111,15 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
             
             {/* Hero Image Placeholder */}
             <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto" hover={false}>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 h-96 md:h-[420px] lg:h-[520px] lg:w-[520px] xl:w-[560px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
-                <div className="text-center p-8 md:p-10">
-                  <div className="w-24 h-24 md:w-28 md:h-28 bg-[#2D993D] rounded-full mx-auto mb-8 flex items-center justify-center">
-                    <svg className="w-12 h-12 md:w-14 md:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 h-56 sm:h-72 md:h-[280px] lg:h-[350px] lg:w-[350px] xl:w-[420px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
+                <div className="text-center p-3 sm:p-4 md:p-6">
+                  <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-[#2D993D] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-6 md:mb-8">Transform Your Business</h3>
-                  <p className="text-base md:text-lg text-gray-600">With our comprehensive suite of professional services</p>
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-6">Transform Your Business</h3>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600">With our comprehensive suite of professional services</p>
                 </div>
               </div>
             </ScrollAnimatedCard>

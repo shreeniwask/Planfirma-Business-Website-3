@@ -26,7 +26,7 @@ export default function HeroSection({
   videoBlur 
 }: HeroSectionProps) {
   return (
-    <section className="relative w-full min-h-screen h-auto py-8 sm:py-12 lg:h-screen lg:py-0 overflow-hidden">
+    <section className="relative w-full min-h-screen h-auto py-4 sm:py-8 lg:h-screen lg:py-0 overflow-hidden">
       {/* Parallax Video Background */}
       <div 
         className="absolute inset-0 w-full h-full"
@@ -80,13 +80,13 @@ export default function HeroSection({
 
       {/* Hero Content Container with Parallax */}
       <div 
-        className="relative z-20 flex flex-col items-center justify-center min-h-screen lg:h-full px-3 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-0"
+        className="relative z-20 flex flex-col items-center justify-center min-h-screen lg:h-full px-2 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-8 lg:py-0"
         style={{
           transform: transforms.content,
           willChange: 'transform'
         }}
       >
-        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-3 sm:space-y-4 lg:space-y-8">
+        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-2 sm:space-y-3 lg:space-y-6">
           
           {/* Badge */}
           <ScrollAnimatedCard animation="scale-in" delay={200} className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white/15 backdrop-blur-md rounded-full border border-white/25 shadow-lg" hover={false}>

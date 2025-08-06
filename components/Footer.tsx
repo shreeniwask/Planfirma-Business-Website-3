@@ -34,7 +34,7 @@ export default function Footer({ onNavigate, onNavigateToService, theme = 'dark'
   return (
     <ScrollAnimatedSection 
       animation="fade-up" 
-      className={`${isDark ? 'bg-[#000000]' : 'bg-gray-50'} box-border content-stretch flex flex-col gap-6 sm:gap-8 md:gap-12 items-start justify-start pb-6 sm:pb-8 md:pb-12 pt-12 sm:pt-16 md:pt-24 px-3 sm:px-4 md:px-8 lg:px-16 xl:px-20 relative w-full`}
+      className={`${isDark ? 'bg-[#000000]' : 'bg-gray-50'} box-border content-stretch flex flex-col gap-4 sm:gap-6 md:gap-8 items-start justify-start pb-4 sm:pb-6 md:pb-8 pt-6 sm:pt-8 md:pt-12 px-3 sm:px-4 md:px-8 lg:px-16 xl:px-20 relative w-full`}
     >
       {/* Divider Line */}
       <div className="h-0 relative w-full">
@@ -54,14 +54,14 @@ export default function Footer({ onNavigate, onNavigateToService, theme = 'dark'
       </div>
       
       {/* Main Footer Content */}
-      <div className="box-border content-stretch flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-20 items-start justify-between w-full max-w-8xl mx-auto">
+      <div className="box-border content-stretch flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 lg:gap-16 items-start justify-between w-full max-w-8xl mx-auto">
         
         {/* Left Column - Company Info */}
-        <ScrollAnimatedCard animation="fade-right" delay={200} className="flex flex-col items-start justify-start space-y-8 lg:max-w-md" hover={false}>
+        <ScrollAnimatedCard animation="fade-right" delay={200} className="flex flex-col items-start justify-start space-y-4 sm:space-y-6 lg:max-w-md" hover={false}>
           {/* Logo */}
           <div>
             <img
-              src="/images/logos/planfirma-logo.svg"
+              src={isDark ? "/images/logos/planfirma-logo-light.svg" : "/images/logos/planfirma-logo.svg"}
               alt="Planfirma Logo"
               className="h-10 md:h-12 w-auto cursor-pointer"
               onClick={() => onNavigate('landing')}
@@ -69,17 +69,17 @@ export default function Footer({ onNavigate, onNavigateToService, theme = 'dark'
           </div>
           
           {/* Company Description */}
-          <div className="space-y-4">
-            <p className={`text-base md:text-lg leading-relaxed ${isDark ? 'text-[#bfdbf7]' : 'text-gray-600'}`}>
+          <div className="space-y-2 sm:space-y-3">
+            <p className={`text-sm sm:text-base md:text-lg leading-relaxed ${isDark ? 'text-[#bfdbf7]' : 'text-gray-600'}`}>
               Building software that empowers businesses. We bring 14+ years of deep IT expertise to help businesses streamline infrastructure, lock down security, and drive real digital transformation.
             </p>
-            <p className={`text-sm ${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'}`}>
+            <p className={`text-xs sm:text-sm ${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'}`}>
               Serving clients worldwide with innovative technology solutions.
             </p>
           </div>
           
           {/* Social Media Icons */}
-          <div className="flex flex-row gap-4 items-start justify-start">
+          <div className="flex flex-row gap-3 sm:gap-4 items-start justify-start">
             <div 
               className="relative shrink-0 size-8 social-hover cursor-pointer"
               onClick={() => openSocialLink(socialLinks.website)}
@@ -144,71 +144,71 @@ export default function Footer({ onNavigate, onNavigateToService, theme = 'dark'
         </ScrollAnimatedCard>
         
         {/* Right Columns - Navigation Links */}
-        <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 md:gap-16 lg:gap-20 flex-1 lg:justify-end">
+        <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 md:gap-12 lg:gap-16 flex-1 lg:justify-end">
           
           {/* Company Links */}
-          <ScrollAnimatedCard animation="fade-left" delay={300} className="flex flex-col font-['Plus_Jakarta_Sans:Medium',_sans-serif] font-medium gap-4 items-start justify-start text-base text-left min-w-[160px]" hover={false}>
-            <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-2`}>
-              <h4 className="text-lg font-bold leading-[24px]">Company</h4>
+          <ScrollAnimatedCard animation="fade-left" delay={300} className="flex flex-col font-['Plus_Jakarta_Sans:Medium',_sans-serif] font-medium gap-2 sm:gap-3 md:gap-4 items-start justify-start text-sm sm:text-base text-left min-w-[140px] sm:min-w-[160px]" hover={false}>
+            <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-1 sm:mb-2`}>
+              <h4 className="text-base sm:text-lg font-bold leading-[20px] sm:leading-[24px]">Company</h4>
             </div>
             <button onClick={() => onNavigate('about')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">About Us</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">About Us</p>
             </button>
             <button onClick={() => onNavigate('services')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">Services</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">Services</p>
             </button>
             <button onClick={() => onNavigate('planfirma-ai')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">Planfirma.ai</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">Planfirma.ai</p>
             </button>
             <button onClick={() => onNavigate('blogs')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">Blogs</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">Blogs</p>
             </button>
           </ScrollAnimatedCard>
           
           {/* Services Links */}
-          <ScrollAnimatedCard animation="fade-left" delay={400} className="flex flex-col font-['Plus_Jakarta_Sans:Medium',_sans-serif] font-medium gap-4 items-start justify-start text-base text-left min-w-[160px]" hover={false}>
-            <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-2`}>
-              <h4 className="text-lg font-bold leading-[24px]">Services</h4>
+          <ScrollAnimatedCard animation="fade-left" delay={400} className="flex flex-col font-['Plus_Jakarta_Sans:Medium',_sans-serif] font-medium gap-2 sm:gap-3 md:gap-4 items-start justify-start text-sm sm:text-base text-left min-w-[140px] sm:min-w-[160px]" hover={false}>
+            <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-1 sm:mb-2`}>
+              <h4 className="text-base sm:text-lg font-bold leading-[20px] sm:leading-[24px]">Services</h4>
             </div>
             <button onClick={() => navigateToService('ai-machine-learning')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">AI & Machine Learning</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">AI & Machine Learning</p>
             </button>
             <button onClick={() => navigateToService('cybersecurity')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">Cybersecurity</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">Cybersecurity</p>
             </button>
             <button onClick={() => navigateToService('cloud-computing')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">Cloud Computing</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">Cloud Computing</p>
             </button>
             <button onClick={() => navigateToService('devsecops')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">DevSecOps</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">DevSecOps</p>
             </button>
           </ScrollAnimatedCard>
           
           {/* Contact Links */}
-          <ScrollAnimatedCard animation="fade-left" delay={500} className="flex flex-col font-['Plus_Jakarta_Sans:Medium',_sans-serif] font-medium gap-4 items-start justify-start text-base text-left min-w-[160px]" hover={false}>
-            <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-2`}>
-              <h4 className="text-lg font-bold leading-[24px]">Contact</h4>
+          <ScrollAnimatedCard animation="fade-left" delay={500} className="flex flex-col font-['Plus_Jakarta_Sans:Medium',_sans-serif] font-medium gap-2 sm:gap-3 md:gap-4 items-start justify-start text-sm sm:text-base text-left min-w-[140px] sm:min-w-[160px]" hover={false}>
+            <div className={`${isDark ? 'text-[#d7e4dc]' : 'text-gray-800'} mb-1 sm:mb-2`}>
+              <h4 className="text-base sm:text-lg font-bold leading-[20px] sm:leading-[24px]">Contact</h4>
             </div>
             <button onClick={() => onNavigate('contact')} className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} nav-hover text-left`}>
-              <p className="leading-[24px]">Contact Us</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">Contact Us</p>
             </button>
             <div className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} text-left`}>
-              <p className="leading-[24px]">sales@planfirma.com</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">sales@planfirma.com</p>
             </div>
             <div className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-600'} text-left`}>
-              <p className="leading-[24px]">+91 84510 53268</p>
+              <p className="leading-[18px] sm:leading-[20px] md:leading-[24px]">+91 84510 53268</p>
             </div>
           </ScrollAnimatedCard>
         </div>
       </div>
       
       {/* Bottom Copyright Section */}
-      <div className="w-full max-w-8xl mx-auto pt-8 border-t border-gray-200/20">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-          <div className={`text-sm ${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'}`}>
+      <div className="w-full max-w-8xl mx-auto pt-4 sm:pt-6 md:pt-8 border-t border-gray-200/20">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
+          <div className={`text-xs sm:text-sm ${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'}`}>
             © 2025 Planfirma. All rights reserved.
           </div>
-          <div className="flex gap-6 text-sm">
+          <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm">
             <button 
               onClick={() => onNavigate('privacy-policy')} 
               className={`${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'} nav-hover`}

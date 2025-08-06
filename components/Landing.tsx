@@ -41,7 +41,7 @@ interface LandingProps {
 
 export default function Landing({ onNavigate, onNavigateToService, servicesData }: LandingProps) {
   return (
-    <div className="bg-[#ffffff] flex flex-col items-center justify-start relative min-h-screen w-full">
+    <div className="bg-[#ffffff] flex flex-col items-center justify-start relative w-full">
       <Header onNavigate={onNavigate} currentPage="landing" />
       
       <div className="w-full max-w-full">

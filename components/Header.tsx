@@ -48,11 +48,11 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isDark 
             ? isScrolled 
-              ? 'bg-black/95 backdrop-blur-md shadow-xl border-b border-white/10' 
-              : 'bg-transparent'
+              ? 'bg-black/98 backdrop-blur-md shadow-xl border-b border-white/10' 
+              : 'bg-black/90 backdrop-blur-sm'
             : isScrolled 
-              ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200' 
-              : 'bg-white shadow-sm'
+              ? 'bg-white/98 backdrop-blur-md shadow-lg border-b border-gray-200' 
+              : 'bg-white/95 backdrop-blur-sm shadow-sm'
         }`}
       >
         <div className="max-w-8xl mx-auto px-3 sm:px-4 md:px-8 lg:px-16">

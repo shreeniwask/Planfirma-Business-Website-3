@@ -24,16 +24,16 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
       onClick={() => onNavigate('service-detail', service.id)}
     >
       {/* Main card container */}
-      <div className="relative service-card-height bg-white rounded-xl border border-gray-200 group-hover:border-[#2D993D] transition-refined ease-out group-hover:shadow-2xl group-hover:z-50 group-hover:transform group-hover:-translate-y-4 group-hover:scale-105 overflow-hidden">
+      <div className="relative service-card-height bg-white rounded-xl border border-gray-200 group-hover:border-[#2D993D] transition-refined ease-out group-hover:shadow-2xl group-hover:z-10 group-hover:transform group-hover:-translate-y-4 group-hover:scale-105 overflow-hidden">
         
         {/* Floating decorative elements */}
         <div className="absolute top-3 right-3 w-8 h-8 bg-[#2D993D] opacity-10 rounded-full group-hover:scale-150 transition-refined"></div>
         <div className="absolute top-7 right-7 w-4 h-4 bg-[#2D993D] opacity-20 rounded-full group-hover:scale-125 transition-refined delay-100"></div>
         
         {/* Content container */}
-        <div className="relative z-10 p-4 md:p-6 h-full flex flex-col">
+        <div className="relative z-10 p-3 sm:p-4 md:p-5 h-full flex flex-col">
           {/* Icon and Title */}
-          <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4 flex-shrink-0">
             <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-lg flex items-center justify-center text-xl md:text-2xl transform group-hover:scale-110 transition-refined">
               {(() => {
                 const Icon = getServiceIcon(service.id);
@@ -48,10 +48,10 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
           </div>
           
           {/* Content that changes on hover */}
-          <div className="flex-grow mb-4 relative">
+          <div className="flex-grow mb-2 sm:mb-3 md:mb-4 relative">
             {/* Default state - Description visible, features hidden */}
             <div className="group-hover:opacity-0 group-hover:transform group-hover:-translate-y-2 transition-refined ease-in-out">
-              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[12px] md:text-[14px] lg:text-[16px] text-gray-600 leading-relaxed mb-3 md:mb-4">
+              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[12px] md:text-[14px] lg:text-[16px] text-gray-600 leading-relaxed mb-2 sm:mb-3 md:mb-4">
                 {service.description}
               </p>
             </div>

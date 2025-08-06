@@ -83,8 +83,8 @@ export default function Services({ onNavigate, onNavigateToService, servicesData
       />
       
       {/* Services Grid Section */}
-      <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-white to-gray-50 relative w-full">
-        <div className="flex flex-col justify-center relative w-full">
+      <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-white to-gray-50 relative w-full min-h-screen sm:min-h-screen md:min-h-0">
+        <div className="flex flex-col justify-center relative w-full min-h-screen sm:min-h-screen md:min-h-0">
           <div className="px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
             
             {/* Header */}

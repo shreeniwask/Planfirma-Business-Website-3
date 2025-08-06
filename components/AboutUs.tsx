@@ -79,14 +79,14 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       />
       
       {/* Hero Section */}
-      <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full">
-        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
+      <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full min-h-screen sm:min-h-screen md:min-h-0">
+        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full min-h-screen sm:min-h-screen md:min-h-0">
           
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center justify-between w-full max-w-8xl mx-auto">
             
             {/* Content */}
-            <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left order-2 lg:order-1" hover={false}>
+            <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left order-1" hover={false}>
               <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block mb-3 md:mb-6">
                 About Us
               </div>
@@ -110,7 +110,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
             </ScrollAnimatedCard>
             
             {/* Hero Image Placeholder */}
-            <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto order-1 lg:order-2" hover={false}>
+            <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto order-2" hover={false}>
               <div className="bg-gradient-to-br from-green-50 to-green-100 h-48 sm:h-64 md:h-[240px] lg:h-[300px] lg:w-[300px] xl:w-[360px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
                 <div className="text-center p-3 sm:p-4 md:p-6">
                   <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-[#2D993D] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">

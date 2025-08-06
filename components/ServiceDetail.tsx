@@ -241,14 +241,14 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
     }, [value, delay]);
 
     return (
-            <div className="bg-gray-50 rounded-2xl p-6 border border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-gray-50 rounded-xl p-2 sm:p-3 border border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 group">
         <div className="text-center">
-          <div className="text-3xl lg:text-4xl font-bold mb-2 text-gray-900">
+          <div className="text-lg sm:text-xl lg:text-2xl font-bold mb-0.5 text-gray-900">
             {Math.round(currentValue)}{suffix}
           </div>
-          <div className="text-sm lg:text-base text-gray-800 font-medium">{label}</div>
+          <div className="text-xs sm:text-sm lg:text-base text-gray-800 font-medium">{label}</div>
         </div>
-        <div className="mt-4 bg-gray-300 rounded-full h-2 overflow-hidden">
+        <div className="mt-1 sm:mt-2 bg-gray-300 rounded-full h-2 overflow-hidden">
           <div 
             className="h-2 rounded-full transition-all duration-1000 ease-out"
             style={{ 
@@ -482,12 +482,12 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
       />
       
       {/* Enhanced Hero Section - Responsive */}
-      <section className="relative w-full bg-gray-50 min-h-screen sm:min-h-screen md:py-16 lg:py-20">
-        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 py-4 sm:py-6 md:py-8 lg:py-12 min-h-screen sm:min-h-screen md:min-h-0">
+      <section className="relative w-full bg-gray-50 py-4 sm:py-6 md:py-8 lg:py-12">
+        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-20 items-center">
             
             {/* Service Content */}
-            <div className="space-y-2 sm:space-y-3 md:space-y-4">
+            <div className="space-y-1 sm:space-y-2">
               <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
                 <div 
                   className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl shadow-2xl transform hover:scale-105 transition-transform"
@@ -507,18 +507,18 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
               </div>
               
               <div className="text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] xl:text-[19px] text-gray-900 leading-relaxed">
-                <p className="mb-2">{service.fullDescription}</p>
+                <p>{service.fullDescription}</p>
               </div>
               
               {/* Key Metrics Preview */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 sm:gap-2">
                 <StatCard label="Efficiency Gain" value={animatedStats.efficiency} delay={200} />
                 <StatCard label="Cost Reduction" value={animatedStats.cost} delay={400} />
                 <StatCard label="Time Savings" value={animatedStats.time} delay={600} />
                 <StatCard label="Client Satisfaction" value={animatedStats.satisfaction} delay={800} />
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6 pt-1 sm:pt-2">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
                 <button 
                   onClick={() => onNavigate('contact')} 
                   className="group relative bg-[#2D993D] text-white flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-sm sm:text-base md:text-[18px] flex-1 sm:flex-none transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"

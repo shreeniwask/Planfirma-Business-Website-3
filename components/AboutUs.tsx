@@ -26,43 +26,43 @@ const teamMembers = [
     name: "Arun Srivastav", 
     position: "CEO", 
     avatar: "/images/team/arun-srivastav.webp",
-    linkedin: "https://www.linkedin.com/in/arun-srivastav-planfirma"
+    linkedin: "https://www.linkedin.com/in/arun-srivastav/"
   },
   { 
     name: "Anuradha Srivastava", 
     position: "CTO", 
     avatar: "/images/team/anuradha-srivastava.webp",
-    linkedin: "https://www.linkedin.com/in/anuradha-srivastava-planfirma"
+    linkedin: "https://www.linkedin.com/in/anuradha-srivastava-330b116/"
   },
   { 
     name: "Swati Rao", 
     position: "Finance Manager", 
     avatar: "/images/team/swati-rao.webp",
-    linkedin: "https://www.linkedin.com/in/swati-rao-planfirma"
+    linkedin: "https://www.linkedin.com/in/swati-rao-44089855/"
   },
   { 
     name: "Kinjal Gandhi", 
     position: "Product Manager", 
     avatar: "/images/team/kinjal-gandhi.webp",
-    linkedin: "https://www.linkedin.com/in/kinjal-gandhi-planfirma"
+    linkedin: "https://www.linkedin.com/in/gandhi-kinjal/"
   },
   { 
     name: "Ravinder Singh", 
     position: "Delivery Manager", 
     avatar: "/images/team/ravinder-singh.webp",
-    linkedin: "https://www.linkedin.com/in/ravinder-singh-planfirma"
+    linkedin: "https://www.linkedin.com/in/ravindersingh03/"
   },
   { 
     name: "Vinod Shirke", 
     position: "Delivery Manager", 
     avatar: "/images/team/vinod-shirke.webp",
-    linkedin: "https://www.linkedin.com/in/vinod-shirke-planfirma"
+    linkedin: "https://www.linkedin.com/in/vinodvshirke/"
   },
   { 
     name: "Joji Varghese", 
     position: "Project Manager", 
     avatar: "/images/team/joji-varghese.webp",
-    linkedin: "https://www.linkedin.com/in/joji-varghese-planfirma"
+    linkedin: "https://www.linkedin.com/in/joji-george-varghese-2b062412/"
   }
 ];
 
@@ -80,7 +80,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       
       {/* Hero Section */}
       <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full">
-        <div className="box-border content-stretch flex flex-col gap-8 md:gap-16 lg:gap-20 items-start justify-start px-3 md:px-8 lg:px-16 py-8 md:py-16 lg:py-20 relative w-full">
+        <div className="box-border content-stretch flex flex-col gap-6 md:gap-12 lg:gap-16 items-start justify-start px-3 md:px-8 lg:px-16 py-4 md:py-8 lg:py-12 relative w-full">
           
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-between w-full max-w-8xl mx-auto">
@@ -168,14 +168,14 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
               </div>
             </ScrollAnimatedCard>
 
-            {/* Countries Served Card */}
+            {/* Team Members Card */}
             <ScrollAnimatedCard animation="fade-up" delay={300} className="stats-card-height bg-white rounded-xl border border-gray-200 hover:border-[#2D993D] transition-refined stats-card-hover" hover={false}>
               <div className="h-full flex flex-col items-center justify-center text-center p-6">
                 <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#2D993D] text-[36px] md:text-[42px] lg:text-[48px] leading-tight mb-2">
                   25+
                 </div>
                 <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[#1c1c1c] text-[14px] md:text-[16px] lg:text-[18px]">
-                  Countries served
+                  Team members
                 </div>
               </div>
             </ScrollAnimatedCard>
@@ -185,28 +185,32 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       </ScrollAnimatedSection>
 
       {/* Timeline Section */}
-      <ScrollAnimatedSection animation="fade-up" className="bg-green-50/30 relative w-full">
-        <div className="flex flex-col justify-center relative size-full">
-          <div className="box-border content-stretch flex flex-col gap-16 md:gap-20 items-center justify-center px-4 md:px-8 lg:px-16 py-16 md:py-20 lg:py-24 relative w-full">
+      <ScrollAnimatedSection animation="fade-up" className="relative w-full">
+        <div className="px-4 md:px-8 lg:px-16 py-16 md:py-20 lg:py-24">
+          <div className="w-full max-w-8xl mx-auto">
             
-            <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto" hover={false}>
-              <h2 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-[40px] md:text-[52px] lg:text-[60px] leading-tight mb-10">
-                Smart and effective business solutions since 2011
+            {/* Timeline Header */}
+            <ScrollAnimatedCard animation="fade-up" delay={400} className="text-center mb-16 md:mb-20" hover={false}>
+              <h2 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[40px] md:text-[52px] lg:text-[60px] leading-tight">
+                Our Journey
               </h2>
+              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[16px] md:text-[18px] lg:text-[20px] text-[rgba(28,28,28,0.7)] mt-6 md:mt-8">
+                From startup to industry leader - our path to success
+              </p>
             </ScrollAnimatedCard>
             
-            {/* Vertical Alternating Timeline */}
-            <ScrollAnimatedSection animation="fade-up" delay={200} className="w-full max-w-6xl mx-auto relative">
-              {/* Central Timeline Line */}
-              <div className="absolute left-1/2 transform -translate-x-0.5 w-1 bg-gradient-to-b from-[#2D993D] via-[#3fab4a] to-[#2D993D] h-full hidden md:block"></div>
-              
-              {/* Timeline Items */}
-              <div className="space-y-8 md:space-y-16">
+            {/* Timeline Content */}
+            <div className="relative">
+              {/* Desktop Timeline */}
+              <div className="hidden md:block relative">
+                {/* Desktop Timeline Line */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#2D993D] via-[#3fab4a] to-[#2D993D] h-full"></div>
+                
                 {timelineData.map((item, index) => (
                   <ScrollAnimatedCard 
                     key={index} 
                     animation="card-slide-in" 
-                    delay={300 + (index * 150)} 
+                    delay={500 + (index * 150)} 
                     className={`flex items-center w-full ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                     hover={false}
                   >
@@ -254,115 +258,147 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                 ))}
               </div>
               
-              {/* Mobile Timeline Line */}
-              <div className="absolute left-8 top-0 w-1 bg-gradient-to-b from-[#2D993D] via-[#3fab4a] to-[#2D993D] h-full md:hidden"></div>
-              
-              {/* Mobile Timeline Dots */}
-              <div className="md:hidden">
+              {/* Mobile Timeline */}
+              <div className="md:hidden relative">
+                {timelineData.map((item, index) => (
+                  <ScrollAnimatedCard 
+                    key={index} 
+                    animation="card-slide-in" 
+                    delay={500 + (index * 150)} 
+                    className="mb-8"
+                    hover={false}
+                  >
+                    <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 relative ml-8">
+                      <div className="space-y-4">
+                        {/* Year Badge */}
+                        <div className="inline-block bg-gradient-to-r from-[#2D993D] to-[#3fab4a] text-white px-4 py-2 rounded-full">
+                          <span className="text-[18px] font-['Roboto:Bold',_sans-serif] font-bold">
+                            {item.year}
+                          </span>
+                        </div>
+                        
+                        {/* Title */}
+                        <h3 className="text-[#022b3a] text-[20px] font-['Roboto:Bold',_sans-serif] font-bold leading-tight">
+                          {item.title}
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="text-[14px] text-[rgba(28,28,28,0.7)] leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </ScrollAnimatedCard>
+                ))}
+                
+                {/* Mobile Timeline Line */}
+                <div className="absolute left-4 top-0 w-1 bg-gradient-to-b from-[#2D993D] via-[#3fab4a] to-[#2D993D] h-full"></div>
+                
+                {/* Mobile Timeline Dots */}
                 {timelineData.map((_, index) => (
-                  <div key={index} className="absolute left-6 w-6 h-6 bg-gradient-to-r from-[#2D993D] to-[#3fab4a] rounded-full border-4 border-white shadow-lg" 
+                  <div key={index} className="absolute left-2 w-6 h-6 bg-gradient-to-r from-[#2D993D] to-[#3fab4a] rounded-full border-4 border-white shadow-lg" 
                        style={{ 
-                         top: `${index * 160 + 80}px` 
+                         top: `${index * 120 + 60}px` 
                        }}>
                   </div>
                 ))}
               </div>
-            </ScrollAnimatedSection>
-            
-            {/* Team Section */}
-            <ScrollAnimatedSection animation="fade-up" delay={800} className="w-full max-w-8xl mx-auto mt-20 md:mt-24 lg:mt-28">
-              <ScrollAnimatedCard animation="fade-up" delay={900} className="text-center mb-16 md:mb-20" hover={false}>
-                <h2 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[40px] md:text-[52px] lg:text-[60px] leading-tight">
-                  Committed staff are ready to help you
-                </h2>
-              </ScrollAnimatedCard>
-              
-              {/* First Row of Team Members */}
-              <ScrollAnimatedGrid
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-14 mb-12 md:mb-16"
-                animation="card-scale-fade"
-                staggerDelay={100}
-                hover={false}
-              >
-                {teamMembers.slice(0, 4).map((member, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
-                    <a 
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group cursor-pointer"
-                      aria-label={`View ${member.name}'s LinkedIn profile`}
-                    >
-                      <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
-                          <ImageWithFallback
-                            src={member.avatar}
-                            alt={`${member.name} - ${member.position}`}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            category="team"
-                          />
-                        </div>
-                        {/* LinkedIn icon overlay */}
-                        <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </div>
-                      </div>
-                    </a>
-                    <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
-                      <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
-                      <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
-                    </div>
-                  </div>
-                ))}
-              </ScrollAnimatedGrid>
-              
-              {/* Second Row of Team Members */}
-              <ScrollAnimatedGrid
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-14 justify-center"
-                animation="card-scale-fade"
-                staggerDelay={120}
-                hover={false}
-              >
-                {teamMembers.slice(4, 7).map((member, index) => (
-                  <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
-                    <a 
-                      href={member.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group cursor-pointer"
-                      aria-label={`View ${member.name}'s LinkedIn profile`}
-                    >
-                      <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
-                          <ImageWithFallback
-                            src={member.avatar}
-                            alt={`${member.name} - ${member.position}`}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                            category="team"
-                          />
-                        </div>
-                        {/* LinkedIn icon overlay */}
-                        <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                          <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                          </svg>
-                        </div>
-                      </div>
-                    </a>
-                    <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
-                      <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
-                      <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
-                    </div>
-                  </div>
-                ))}
-              </ScrollAnimatedGrid>
-            </ScrollAnimatedSection>
+            </div>
           </div>
         </div>
+      </ScrollAnimatedSection>
+      
+      {/* Team Section */}
+      <ScrollAnimatedSection animation="fade-up" delay={800} className="w-full max-w-8xl mx-auto mt-20 md:mt-24 lg:mt-28">
+        <ScrollAnimatedCard animation="fade-up" delay={900} className="text-center mb-16 md:mb-20" hover={false}>
+          <h2 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[40px] md:text-[52px] lg:text-[60px] leading-tight">
+            Committed staff are ready to help you
+          </h2>
+        </ScrollAnimatedCard>
+        
+        {/* First Row of Team Members */}
+        <ScrollAnimatedGrid
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-14 mb-12 md:mb-16"
+          animation="card-scale-fade"
+          staggerDelay={100}
+          hover={false}
+        >
+          {teamMembers.slice(0, 4).map((member, index) => (
+            <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
+              <a 
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer"
+                aria-label={`View ${member.name}'s LinkedIn profile`}
+              >
+                <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
+                    <ImageWithFallback
+                      src={member.avatar}
+                      alt={`${member.name} - ${member.position}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      category="team"
+                    />
+                  </div>
+                  {/* LinkedIn icon overlay */}
+                  <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+              <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
+                <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
+                <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
+              </div>
+            </div>
+          ))}
+        </ScrollAnimatedGrid>
+        
+        {/* Second Row of Team Members */}
+        <ScrollAnimatedGrid
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-14 justify-center"
+          animation="card-scale-fade"
+          staggerDelay={120}
+          hover={false}
+        >
+          {teamMembers.slice(4, 7).map((member, index) => (
+            <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
+              <a 
+                href={member.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group cursor-pointer"
+                aria-label={`View ${member.name}'s LinkedIn profile`}
+              >
+                <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
+                  <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
+                    <ImageWithFallback
+                      src={member.avatar}
+                      alt={`${member.name} - ${member.position}`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      category="team"
+                    />
+                  </div>
+                  {/* LinkedIn icon overlay */}
+                  <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                  </div>
+                </div>
+              </a>
+              <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
+                <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
+                <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
+              </div>
+            </div>
+          ))}
+        </ScrollAnimatedGrid>
       </ScrollAnimatedSection>
 
       <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="light" />

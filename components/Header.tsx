@@ -11,8 +11,8 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Determine if we should use dark theme (only for AI page)
-  const isDark = currentPage === 'planfirma-ai';
+  // Determine if we should use dark theme (only for AI and Cloud pages)
+  const isDark = currentPage === 'planfirma-ai' || currentPage === 'planfirma-cloud';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,7 +60,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             
             {/* Logo */}
             <img
-              src="/images/logos/planfirma-logo.svg"
+              src={`${isDark ? "/images/logos/planfirma-logo-light.svg" : "/images/logos/planfirma-logo.svg"}?v=4`}
               alt="Planfirma Logo"
               className="h-8 md:h-12 w-auto cursor-pointer transition-transform hover:scale-105"
               onClick={() => handleNavigation('landing')}

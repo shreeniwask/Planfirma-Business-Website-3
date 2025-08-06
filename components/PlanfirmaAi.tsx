@@ -44,7 +44,7 @@ export default function PlanfirmaAi({ onNavigate, onNavigateToService, onBack }:
 
         <FeaturesSection />
 
-        <ValueAddedSection />
+        <ValueAddedSection onNavigate={onNavigate} />
       </div>
       
       <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="dark" />

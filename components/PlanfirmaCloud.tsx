@@ -7,7 +7,7 @@ interface PlanfirmaCloudProps {
 
 export default function PlanfirmaCloud({ onNavigate, onBack }: PlanfirmaCloudProps) {
   return (
-    <div className="bg-black flex flex-col items-start justify-start relative min-h-screen w-full">
+    <div className="bg-black flex flex-col items-center justify-center relative min-h-screen w-full">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
@@ -54,44 +54,11 @@ export default function PlanfirmaCloud({ onNavigate, onBack }: PlanfirmaCloudPro
           </p>
         </div>
 
-        {/* Features Preview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Cloud Infrastructure</h3>
-            <p className="text-gray-400 text-sm">Next-generation cloud solutions</p>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-            <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">Enterprise Security</h3>
-            <p className="text-gray-400 text-sm">Bank-grade security protocols</p>
-          </div>
-
-          <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
-            <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-lg flex items-center justify-center mb-4 mx-auto">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <h3 className="text-lg font-semibold text-white mb-2">High Performance</h3>
-            <p className="text-gray-400 text-sm">Lightning-fast processing</p>
-          </div>
-        </div>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* CTA Button */}
+        <div className="flex justify-center">
           <button 
             onClick={() => onNavigate('contact')}
-            className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
+            className="group relative bg-[#30b6d0] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#30b6d0]/40 transition-all duration-300 hover:bg-[#2a9bb8] hover:-translate-y-1 active:translate-y-0"
           >
             <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
               Get Early Access
@@ -102,33 +69,8 @@ export default function PlanfirmaCloud({ onNavigate, onBack }: PlanfirmaCloudPro
               </svg>
             </div>
           </button>
-          
-          <button 
-            onClick={() => onNavigate('planfirma-ai')}
-            className="border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm"
-          >
-            Explore Planfirma.ai
-          </button>
-        </div>
-
-        {/* Footer Note */}
-        <div className="mt-16 text-gray-400">
-          <p className="text-sm">
-            Follow us for updates • 
-            <button 
-              onClick={() => onNavigate('contact')} 
-              className="text-cyan-400 hover:text-cyan-300 ml-1 transition-colors"
-            >
-              Contact Us
-            </button>
-          </p>
         </div>
       </div>
-
-      {/* Floating Elements */}
-      <div className="absolute top-20 right-20 w-4 h-4 bg-cyan-400 rounded-full hidden lg:block"></div>
-      <div className="absolute bottom-32 left-16 w-3 h-3 bg-purple-400 rounded-full hidden lg:block"></div>
-      <div className="absolute top-1/2 right-16 w-2 h-2 bg-blue-400 rounded-full hidden lg:block"></div>
     </div>
   );
 }

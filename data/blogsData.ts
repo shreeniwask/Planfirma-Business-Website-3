@@ -1,3 +1,35 @@
+/*
+ * BLOG MANAGEMENT GUIDE
+ * 
+ * To add new blogs:
+ * 1. Add a new blog object to the blogsData array below
+ * 2. Follow the BlogData interface structure
+ * 3. Use unique IDs for each blog
+ * 4. Add appropriate tags for categorization
+ * 5. Include high-quality images (800x600 recommended)
+ * 
+ * Example new blog:
+ * {
+ *   id: 'your-blog-id',
+ *   title: 'Your Blog Title',
+ *   excerpt: 'Brief description of the blog content...',
+ *   content: `Your full blog content in markdown format...
+ * 
+ * ## Section 1
+ * Content here...
+ * 
+ * ## Section 2
+ * More content...`,
+ *   author: 'Author Name',
+ *   authorExperience: 'Author credentials and experience',
+ *   date: 'YYYY-MM-DD',
+ *   readTime: 'X min read',
+ *   category: 'Category Name',
+ *   image: 'https://images.unsplash.com/photo-...?w=800&h=600&fit=crop',
+ *   tags: ['Tag1', 'Tag2', 'Tag3']
+ * }
+ */
+
 export interface BlogData {
   id: string;
   title: string;

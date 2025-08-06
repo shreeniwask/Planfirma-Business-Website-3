@@ -1,7 +1,8 @@
 import { ScrollAnimatedCard, ScrollAnimatedSection, ScrollAnimatedGrid } from '../ScrollAnimatedCard';
 import { VALUE_ADDED_FEATURES } from './constants';
+import type { Page } from '../../App';
 
-export default function ValueAddedSection() {
+export default function ValueAddedSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
     <ScrollAnimatedSection animation="fade-up" delay={900} className="relative w-full py-16 lg:py-24">
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
@@ -95,18 +96,11 @@ export default function ValueAddedSection() {
             <p className="text-lg text-[#bfdbf7] mb-8 max-w-2xl mx-auto">
               Join leading companies who have transformed their operations with our AI solutions
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-lg transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0">
-                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
-                  Start Your AI Journey
-                </span>
-                <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
-                  <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
-                    <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                </div>
-              </button>
-              <button className="border-2 border-[#30b6d0] text-[#30b6d0] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#30b6d0] hover:text-white transition-all duration-300">
+            <div className="flex justify-center">
+              <button 
+                onClick={() => onNavigate('contact')}
+                className="border-2 border-[#30b6d0] text-[#30b6d0] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#30b6d0] hover:text-white transition-all duration-300"
+              >
                 Schedule Demo
               </button>
             </div>

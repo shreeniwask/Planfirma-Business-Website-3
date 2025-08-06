@@ -85,14 +85,14 @@ export default function Services({ onNavigate, onNavigateToService, servicesData
       {/* Services Grid Section */}
       <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-white to-gray-50 relative w-full">
         <div className="flex flex-col justify-center relative size-full">
-          <div className="px-3 md:px-8 lg:px-16 py-4 md:py-8 lg:py-12 relative w-full">
+          <div className="px-3 md:px-8 lg:px-16 py-6 sm:py-8 md:py-12 relative w-full">
             
             {/* Header */}
-            <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto mb-4 md:mb-6 lg:mb-8" hover={false}>
-              <h2 className="text-[26px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-2 md:mb-4 lg:mb-6">
+            <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto mb-6 sm:mb-8 md:mb-10 lg:mb-12" hover={false}>
+              <h2 className="text-[24px] sm:text-[26px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-3 sm:mb-4 lg:mb-6">
                 <p className="leading-tight">All Our Services</p>
               </h2>
-              <div className="text-[13px] md:text-[16px] text-gray-700 tracking-[0.5px]">
+              <div className="text-[12px] sm:text-[13px] md:text-[16px] text-gray-700 tracking-[0.5px] px-2 sm:px-0">
                 <p className="leading-relaxed">
                   Comprehensive technology solutions to accelerate your digital transformation
                 </p>
@@ -123,15 +123,15 @@ export default function Services({ onNavigate, onNavigateToService, servicesData
             
             {/* Call to Action */}
             <ScrollAnimatedCard animation="scale-in" delay={500} className="text-center max-w-lg mx-auto" hover={false}>
-              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <button 
                   onClick={() => onNavigate('contact')}
-                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-10 py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
+                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                 >
-                  <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+                  <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-sm sm:text-base">
                     Get Started
                   </span>
-                  <div className="ml-2 w-5 h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                  <div className="ml-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                     <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                       <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

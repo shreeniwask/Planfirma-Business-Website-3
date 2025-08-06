@@ -26,7 +26,7 @@ export default function HeroSection({
   videoBlur 
 }: HeroSectionProps) {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full min-h-screen h-auto py-8 sm:py-12 lg:h-screen lg:py-0 overflow-hidden">
       {/* Parallax Video Background */}
       <div 
         className="absolute inset-0 w-full h-full"
@@ -80,13 +80,13 @@ export default function HeroSection({
 
       {/* Hero Content Container with Parallax */}
       <div 
-        className="relative z-20 flex flex-col items-center justify-center h-full px-3 sm:px-6 lg:px-8 xl:px-12"
+        className="relative z-20 flex flex-col items-center justify-center min-h-screen lg:h-full px-3 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 lg:py-0"
         style={{
           transform: transforms.content,
           willChange: 'transform'
         }}
       >
-        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-4 lg:space-y-8">
+        <ScrollAnimatedSection animation="fade-up" className="w-full max-w-8xl mx-auto text-center space-y-3 sm:space-y-4 lg:space-y-8">
           
           {/* Badge */}
           <ScrollAnimatedCard animation="scale-in" delay={200} className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 md:py-3 bg-white/15 backdrop-blur-md rounded-full border border-white/25 shadow-lg" hover={false}>
@@ -101,8 +101,8 @@ export default function HeroSection({
           </ScrollAnimatedCard>
 
           {/* Main Heading */}
-          <ScrollAnimatedCard animation="fade-up" delay={400} className="space-y-4 lg:space-y-6 max-w-5xl mx-auto" hover={false}>
-            <h1 className="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] xl:text-[72px] font-bold text-white leading-[1.1] tracking-tight">
+          <ScrollAnimatedCard animation="fade-up" delay={400} className="space-y-3 sm:space-y-4 lg:space-y-6 max-w-5xl mx-auto" hover={false}>
+            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[64px] 2xl:text-[72px] font-bold text-white leading-[1.1] tracking-tight">
               <span style={{ textShadow: '0 4px 20px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)' }}>
                 Transform Your Business<br />
                 with <span className="text-[#30b6d0]">Smart AI Solutions</span>
@@ -110,7 +110,7 @@ export default function HeroSection({
             </h1>
             
             {/* Subtitle */}
-            <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-4xl mx-auto px-2">
               <span style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
                 Planfirma helps businesses of all sizes streamline operations, make
                 better decisions, and grow faster with custom AI solutions that
@@ -120,12 +120,12 @@ export default function HeroSection({
           </ScrollAnimatedCard>
 
           {/* CTA Buttons */}
-          <ScrollAnimatedCard animation="fade-up" delay={600} className="flex justify-center w-full max-w-lg mx-auto mt-2" hover={false}>
+          <ScrollAnimatedCard animation="fade-up" delay={600} className="flex justify-center w-full max-w-lg mx-auto mt-2 sm:mt-4 lg:mt-6" hover={false}>
             <button
               onClick={() => onNavigate('contact')}
-              className="group relative bg-[#30b6d0] text-white flex items-center justify-center px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#30b6d0]/40 min-w-[200px] max-w-[250px] transition-all duration-300 hover:bg-[#2a9bb8] hover:-translate-y-1 active:translate-y-0"
+              className="group relative bg-[#30b6d0] text-white flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#30b6d0]/40 min-w-[180px] sm:min-w-[200px] max-w-[250px] transition-all duration-300 hover:bg-[#2a9bb8] hover:-translate-y-1 active:translate-y-0"
             >
-              <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
+              <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-sm sm:text-base">
                 Get Started
               </span>
               <div className="ml-2 w-4 h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-1">
@@ -137,16 +137,16 @@ export default function HeroSection({
           </ScrollAnimatedCard>
 
           {/* Feature Icons */}
-          <ScrollAnimatedCard animation="scale-in" delay={800} className="mt-8 lg:mt-12" hover={false}>
-            <div className="inline-flex flex-wrap justify-center gap-6 lg:gap-8 p-6 lg:p-8 bg-black/40 backdrop-blur-md rounded-2xl border border-white/15 shadow-xl">
+          <ScrollAnimatedCard animation="scale-in" delay={800} className="mt-6 sm:mt-8 lg:mt-12" hover={false}>
+            <div className="inline-flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 p-4 sm:p-6 lg:p-8 bg-black/40 backdrop-blur-md rounded-2xl border border-white/15 shadow-xl">
               {HERO_FEATURES.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3 px-4 py-2">
-                  <div className="w-5 h-5 lg:w-6 lg:h-6 flex-shrink-0">
+                <div key={index} className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2">
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 flex-shrink-0">
                     <svg className="w-full h-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
                       <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#BFDBF7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
                     </svg>
                   </div>
-                  <span className="text-white font-semibold text-sm lg:text-base tracking-wide drop-shadow-lg whitespace-nowrap">
+                  <span className="text-white font-semibold text-xs sm:text-sm lg:text-base tracking-wide drop-shadow-lg whitespace-nowrap">
                     {feature.text}
                   </span>
                 </div>

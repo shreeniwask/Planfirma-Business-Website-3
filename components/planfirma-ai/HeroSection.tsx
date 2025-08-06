@@ -26,7 +26,7 @@ export default function HeroSection({
   videoBlur 
 }: HeroSectionProps) {
   return (
-    <section className="relative w-full min-h-screen h-auto py-4 sm:py-8 lg:h-screen lg:py-0 overflow-hidden">
+    <section className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20 overflow-hidden">
       {/* Parallax Video Background */}
       <div 
         className="absolute inset-0 w-full h-full"
@@ -80,7 +80,7 @@ export default function HeroSection({
 
       {/* Hero Content Container with Parallax */}
       <div 
-        className="relative z-20 flex flex-col items-center justify-center min-h-screen lg:h-full px-2 sm:px-4 lg:px-6 xl:px-8 py-4 sm:py-8 lg:py-0"
+        className="relative z-20 flex flex-col items-center justify-center px-2 sm:px-4 lg:px-6 xl:px-8 py-8 sm:py-12 md:py-16 lg:py-20"
         style={{
           transform: transforms.content,
           willChange: 'transform'

@@ -7,9 +7,9 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-white min-h-[calc(100vh-4rem)] flex items-center">
+    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20">
       <div className="relative w-full">
-        <div className="box-border content-stretch flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-8 md:py-12 lg:py-16 relative w-full">
+        <div className="box-border content-stretch flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 lg:px-12 relative w-full">
           
           {/* Wider Hero Content Container */}
           <div className="max-w-8xl mx-auto w-full">
@@ -19,11 +19,11 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               <ScrollAnimatedCard animation="fade-right" className="flex-1 max-w-3xl text-center lg:text-left" hover={false}>
                 <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 lg:gap-6 items-center lg:items-start justify-start w-full">
                   <div className="relative w-full">
-                    <h1 className="text-[20px] sm:text-[28px] md:text-[36px] lg:text-[48px] xl:text-[56px] font-bold tracking-[-0.5px] leading-[1.1] mb-3 sm:mb-4">
+                    <h1 className="text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-[-0.5px] leading-[1.1] mb-2 sm:mb-3">
                       <span className="text-gray-900">Building software that empowers </span>
                       <span className="text-[#2D993D]">businesses</span>
                     </h1>
-                    <p className="text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] text-gray-700 tracking-[0.5px] leading-[1.6] max-w-2xl mb-3 sm:mb-4 px-2 sm:px-0">
+                    <p className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-gray-700 tracking-[0.5px] leading-[1.6] max-w-2xl mb-2 sm:mb-3 px-2 sm:px-0">
                       We bring 14+ years of deep IT expertise to help businesses streamline infrastructure, 
                       lock down security, and drive real digital transformation—with no fluff, just results.
                     </p>
@@ -64,7 +64,7 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
               
               {/* Hero Image */}
               <ScrollAnimatedCard animation="fade-left" className="flex-1 max-w-2xl lg:max-w-none" hover={false}>
-                <div className="relative w-full h-32 sm:h-40 md:h-56 lg:h-[350px] xl:h-[450px]">
+                <div className="relative w-full h-28 sm:h-36 md:h-48 lg:h-[300px] xl:h-[380px]">
                   <img
                     src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
                     alt="Business team collaborating with technology solutions"

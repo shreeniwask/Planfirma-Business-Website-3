@@ -84,15 +84,15 @@ export default function Services({ onNavigate, onNavigateToService, servicesData
       
       {/* Services Grid Section */}
       <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-white to-gray-50 relative w-full">
-        <div className="flex flex-col justify-center relative size-full">
-          <div className="px-2 sm:px-4 md:px-6 lg:px-12 py-4 sm:py-6 md:py-8 relative w-full">
+        <div className="flex flex-col justify-center relative w-full">
+          <div className="px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
             
             {/* Header */}
             <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto mb-4 sm:mb-6 md:mb-8 lg:mb-10" hover={false}>
-              <h2 className="text-[20px] sm:text-[24px] md:text-[32px] lg:text-[38px] font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">
+              <h2 className="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[34px] font-bold text-gray-900 mb-2 sm:mb-3 lg:mb-4">
                 <p className="leading-tight">All Our Services</p>
               </h2>
-              <div className="text-[11px] sm:text-[12px] md:text-[15px] text-gray-700 tracking-[0.5px] px-2 sm:px-0">
+              <div className="text-[10px] sm:text-[11px] md:text-[14px] text-gray-700 tracking-[0.5px] px-2 sm:px-0">
                 <p className="leading-relaxed">
                   Comprehensive technology solutions to accelerate your digital transformation
                 </p>

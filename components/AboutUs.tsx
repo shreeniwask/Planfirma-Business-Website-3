@@ -68,7 +68,7 @@ const teamMembers = [
 
 export default function AboutUs({ onNavigate, onNavigateToService, onBack }: AboutUsProps) {
   return (
-    <div className="bg-[#ffffff] flex flex-col items-center justify-start relative min-h-screen w-full">
+    <div className="bg-[#ffffff] flex flex-col items-center justify-start relative w-full">
       <Header onNavigate={onNavigate} currentPage="about" />
       
       {/* Navigation Bar with Back Button and Breadcrumbs */}
@@ -80,7 +80,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       
       {/* Hero Section */}
       <ScrollAnimatedSection animation="fade-up" className="relative w-full max-w-full">
-        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-2 md:py-4 lg:py-6 relative w-full">
+        <div className="box-border content-stretch flex flex-col gap-3 md:gap-6 lg:gap-8 items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
           
           {/* Main Content */}
           <div className="flex flex-col lg:flex-row gap-4 lg:gap-12 items-center justify-between w-full max-w-8xl mx-auto">
@@ -90,10 +90,10 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
               <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block mb-3 md:mb-6">
                 About Us
               </div>
-              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[20px] sm:text-[24px] md:text-[36px] lg:text-[44px] xl:text-[52px] tracking-[-0.5px] leading-tight mb-2 md:mb-4">
+              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[18px] sm:text-[22px] md:text-[32px] lg:text-[40px] xl:text-[48px] tracking-[-0.5px] leading-tight mb-2 md:mb-3">
                 Expert Business Consulting Solutions
               </h1>
-              <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[13px] sm:text-[15px] md:text-[17px] lg:text-[19px] text-[#1c1c1c] tracking-[0.5px] leading-relaxed mb-3 md:mb-4">
+              <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] text-[#1c1c1c] tracking-[0.5px] leading-relaxed mb-2 md:mb-3">
                 <p className="mb-1 md:mb-3">
                   We help businesses innovate, grow, and optimise operations with tailored solutions. Our expertise spans multiple industries, ensuring impactful results.
                 </p>
@@ -111,7 +111,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
             
             {/* Hero Image Placeholder */}
             <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto" hover={false}>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 h-56 sm:h-72 md:h-[280px] lg:h-[350px] lg:w-[350px] xl:w-[420px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 h-48 sm:h-64 md:h-[240px] lg:h-[300px] lg:w-[300px] xl:w-[360px] rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
                 <div className="text-center p-3 sm:p-4 md:p-6">
                   <div className="w-14 h-14 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-[#2D993D] rounded-full mx-auto mb-3 sm:mb-4 flex items-center justify-center">
                     <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">

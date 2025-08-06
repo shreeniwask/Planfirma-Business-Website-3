@@ -126,7 +126,7 @@ export default function Blogs({ onNavigate, onNavigateToService, blogsData, onBa
   };
 
   return (
-    <div className="bg-[#ffffff] flex flex-col items-start justify-start relative min-h-screen w-full">
+    <div className="bg-[#ffffff] flex flex-col items-start justify-start relative w-full">
       <Header onNavigate={onNavigate} currentPage="blogs" />
       
       {/* Navigation Bar with Back Button and Breadcrumbs */}
@@ -138,31 +138,31 @@ export default function Blogs({ onNavigate, onNavigateToService, blogsData, onBa
       
       {/* Main Content */}
       <div className="relative w-full">
-        <div className="box-border content-stretch flex flex-col items-start justify-start px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 relative w-full">
+        <div className="box-border content-stretch flex flex-col items-start justify-start px-2 sm:px-4 md:px-6 lg:px-12 py-6 sm:py-8 md:py-12 lg:py-16 relative w-full">
           
           {/* Hero Section */}
-          <ScrollAnimatedSection animation="fade-up" className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between mb-12 md:mb-16 lg:mb-20 w-full max-w-7xl mx-auto">
+          <ScrollAnimatedSection animation="fade-up" className="flex flex-col lg:flex-row gap-4 lg:gap-8 items-center justify-between mb-8 md:mb-12 lg:mb-16 w-full max-w-7xl mx-auto">
             <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left" hover={false}>
-              <div className="bg-green-100 px-4 py-2 rounded-full text-[#2D993D] text-sm font-semibold inline-block mb-6">
+              <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block mb-3 sm:mb-4">
                 Our Blog
               </div>
-              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[36px] md:text-[48px] lg:text-[56px] tracking-[-0.5px] leading-tight mb-6">
+              <h1 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[24px] sm:text-[28px] md:text-[36px] lg:text-[44px] xl:text-[52px] tracking-[-0.5px] leading-tight mb-3 sm:mb-4">
                 Insights & Expertise
               </h1>
-              <p className="text-[16px] md:text-[18px] lg:text-[20px] text-[rgba(0,0,0,0.8)] tracking-[0.5px] leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              <p className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-[20px] text-[rgba(0,0,0,0.8)] tracking-[0.5px] leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Stay updated with the latest trends, insights, and best practices in technology, business transformation, and digital innovation.
               </p>
             </ScrollAnimatedCard>
             <ScrollAnimatedCard animation="fade-left" delay={200} className="flex-shrink-0 w-full lg:w-auto" hover={false}>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 h-72 md:h-80 lg:h-96 lg:w-96 rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
-                <div className="text-center p-8 md:p-10">
-                  <div className="w-24 h-24 md:w-28 md:h-28 bg-[#2D993D] rounded-full mx-auto mb-8 md:mb-10 flex items-center justify-center">
-                    <svg className="w-12 h-12 md:w-14 md:h-14 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-gradient-to-br from-green-50 to-green-100 h-56 sm:h-64 md:h-72 lg:h-80 lg:w-80 rounded-2xl flex items-center justify-center shadow-2xl mx-auto">
+                <div className="text-center p-4 sm:p-6 md:p-8">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-[#2D993D] rounded-full mx-auto mb-4 sm:mb-6 flex items-center justify-center">
+                    <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-6 md:mb-8">Knowledge Hub</h3>
-                  <p className="text-base md:text-lg text-gray-600">Expert insights and industry best practices</p>
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 md:mb-6">Knowledge Hub</h3>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600">Expert insights and industry best practices</p>
                 </div>
               </div>
             </ScrollAnimatedCard>

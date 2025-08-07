@@ -24,16 +24,16 @@ export default function StatsSection() {
         <div className="absolute top-1/6 right-1/3 w-1 h-1" style={{ backgroundColor: 'hsl(var(--brand-500) / 0.3)' }} />
       </div>
 
-      <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-32">
+      <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24">
         
         {/* Results Section Header */}
-        <ScrollAnimatedCard animation="fade-up" className="text-center mb-12 lg:mb-16" hover={false}>
-          <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px] font-bold text-white leading-tight mb-4 lg:mb-6">
+        <ScrollAnimatedCard animation="fade-up" className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16" hover={false}>
+          <h2 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] font-bold text-white leading-tight mb-3 sm:mb-4 lg:mb-6">
             <span style={{ textShadow: '0 4px 20px rgba(48, 182, 208, 0.3), 0 2px 10px rgba(0,0,0,0.8)' }}>
               Real Results for Real Businesses
             </span>
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-[#bfdbf7] leading-relaxed max-w-4xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#bfdbf7] leading-relaxed max-w-4xl mx-auto">
             Our clients see meaningful improvements in their operations within
             weeks, not months.
           </p>
@@ -41,12 +41,12 @@ export default function StatsSection() {
 
         {/* Enhanced Stats Cards with Floating Bubbles */}
         <ScrollAnimatedGrid
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 lg:mb-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16 lg:mb-20"
           animation="card-slide-in"
           staggerDelay={150}
         >
           {STATS_DATA.map((stat, index) => (
-            <div key={index} className="relative min-h-[320px] h-full overflow-hidden">
+            <div key={index} className="relative min-h-[200px] sm:min-h-[240px] md:min-h-[280px] lg:min-h-[320px] h-full overflow-hidden">
               
               {/* Floating Bubbles for Each Stats Card */}
               <div className="absolute inset-0 overflow-hidden opacity-50 pointer-events-none">
@@ -80,16 +80,16 @@ export default function StatsSection() {
                 <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[hsl(var(--brand-500)/0.3)] to-transparent"></div>
                 
                 {/* Content */}
-                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-6 lg:p-8">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-4 sm:p-5 md:p-6 lg:p-8">
                   {/* Icon */}
-                  <div className="text-3xl lg:text-4xl mb-4 lg:mb-6">
+                  <div className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl mb-2 sm:mb-3 md:mb-4 lg:mb-6">
                     {stat.icon}
                   </div>
                   
                   {/* Value */}
-                  <div className="mb-4 lg:mb-6">
+                  <div className="mb-2 sm:mb-3 md:mb-4 lg:mb-6">
                     <span 
-                      className="text-[36px] sm:text-[42px] lg:text-[52px] font-bold block"
+                      className="text-[28px] sm:text-[32px] md:text-[36px] lg:text-[42px] xl:text-[52px] font-bold block"
                       style={{ 
                         color: '#30b6d0',
                         textShadow: '0 4px 20px #30b6d0, 0 2px 10px rgba(0,0,0,0.5)'
@@ -100,13 +100,13 @@ export default function StatsSection() {
                   </div>
                   
                   {/* Title and Subtitle */}
-                  <div className="space-y-2">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-white">
+                  <div className="space-y-1 sm:space-y-2">
+                    <h3 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-white">
                       <span style={{ textShadow: '0 2px 8px rgba(0,0,0,0.6)' }}>
                         {stat.title}
                       </span>
                     </h3>
-                    <p className="text-sm sm:text-base lg:text-lg text-[#bfdbf7]">
+                    <p className="text-xs sm:text-sm md:text-base lg:text-lg text-[#bfdbf7]">
                       {stat.subtitle}
                     </p>
                   </div>

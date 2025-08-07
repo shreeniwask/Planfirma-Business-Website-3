@@ -3,7 +3,7 @@ import type { Page } from '../App';
 import Header from './Header';
 import Footer from './Footer';
 import NavigationBar from './BackButton';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+
 import { FileText, Repeat, Shield, Zap, Users, Settings, Database, Cloud, Lock, Smartphone, Globe, TrendingUp, DollarSign, Clock, Award, Target, Lightbulb, BarChart3, CheckCircle, Cpu, Wrench, Palette } from 'lucide-react';
 
 interface ServiceData {
@@ -28,6 +28,10 @@ interface ServiceDetailProps {
 export default function ServiceDetail({ service, onNavigate, onNavigateToService, servicesData, onBack }: ServiceDetailProps) {
   const [activeTab, setActiveTab] = useState<'overview' | 'benefits' | 'process' | 'investment'>('overview');
   const [animatedStats, setAnimatedStats] = useState({ efficiency: 0, cost: 0, time: 0, satisfaction: 0 });
+  
+  // Debug: Log service data to console
+  console.log('Service Detail - Service Data:', service);
+  console.log('Service Detail - Image URL:', service.image);
 
   // Wrapper for Header/NavBar to match their expected signature
   const handleNavigateSimple = (page: Page) => onNavigate(page);
@@ -482,46 +486,46 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
       />
       
       {/* Enhanced Hero Section - Responsive */}
-      <section className="relative w-full bg-gray-50 py-4 sm:py-6 md:py-8 lg:py-10">
-        <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
+      <section className="relative w-full bg-gray-50 py-4 sm:py-6 md:py-8 lg:py-12">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center gap-4 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16">
             
             {/* Service Content */}
-            <div className="space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
-                                              <div className="flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
-                  <div 
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-2xl flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl shadow-2xl transform hover:scale-105 transition-transform"
+            <div className="flex-1 space-y-2 sm:space-y-3 md:space-y-4 lg:space-y-5 xl:space-y-6">
+              <div className="flex items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 xl:gap-8">
+                <div 
+                  className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 2xl:w-24 2xl:h-24 rounded-2xl flex items-center justify-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl shadow-2xl transform hover:scale-105 transition-transform"
                   style={{ backgroundColor: currentConfig.color }}
                 >
                   {currentConfig.icon}
                 </div>
                 <div>
-                  <h1 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[36px] xl:text-[44px] 2xl:text-[48px] font-bold text-gray-900 leading-tight">
+                  <h1 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[36px] 2xl:text-[44px] font-bold text-gray-900 leading-tight">
                     {service.title}
                   </h1>
                   <div 
-                    className="h-1 w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 rounded-full mt-2 sm:mt-3 md:mt-4"
+                    className="h-1 w-12 sm:w-14 md:w-16 lg:w-20 xl:w-24 2xl:w-28 rounded-full mt-1 sm:mt-2 md:mt-3"
                     style={{ backgroundColor: currentConfig.color }}
                   ></div>
                 </div>
               </div>
               
-              <div className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-gray-700 leading-relaxed">
-                <p className="mb-3 sm:mb-4 md:mb-6">{service.fullDescription}</p>
+              <div className="text-[13px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-gray-700 leading-relaxed">
+                <p className="mb-2 sm:mb-3 md:mb-4 lg:mb-6">{service.fullDescription}</p>
               </div>
               
               {/* Key Metrics Preview */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                 <StatCard label="Efficiency Gain" value={animatedStats.efficiency} delay={200} />
                 <StatCard label="Cost Reduction" value={animatedStats.cost} delay={400} />
                 <StatCard label="Time Savings" value={animatedStats.time} delay={600} />
                 <StatCard label="Client Satisfaction" value={animatedStats.satisfaction} delay={800} />
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 lg:gap-6">
                 <button 
                   onClick={() => onNavigate('contact')} 
-                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-xs sm:text-sm md:text-base lg:text-lg flex-1 sm:flex-none transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
+                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-xs sm:text-sm md:text-base lg:text-lg flex-1 sm:flex-none transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                 >
                   <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
                     Get Started Today
@@ -534,7 +538,7 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
                 </button>
                 <button 
                   onClick={() => onNavigate('services')} 
-                  className="bg-gray-100 border-2 border-gray-400 text-gray-900 px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold hover:bg-gray-200 hover:border-gray-500 hover:shadow-lg transition-all transform hover:scale-105 text-xs sm:text-sm md:text-base lg:text-lg flex-1 sm:flex-none"
+                  className="bg-gray-100 border-2 border-gray-400 text-gray-900 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold hover:bg-gray-200 hover:border-gray-500 hover:shadow-lg transition-all transform hover:scale-105 text-xs sm:text-sm md:text-base lg:text-lg flex-1 sm:flex-none"
                 >
                   Explore All Services
                 </button>
@@ -542,32 +546,43 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
             </div>
             
             {/* Enhanced Service Visual */}
-            <div className="relative">
-              <div className="relative group">
-                <div 
-                  className="absolute inset-0 rounded-3xl transform rotate-3 group-hover:rotate-6 transition-transform duration-300 opacity-20"
-                  style={{ backgroundColor: currentConfig.color }}
-                ></div>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl transform group-hover:-translate-y-1 transition-all duration-300">
-                  <ImageWithFallback
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
-                    <div className="bg-gray-100/95 backdrop-blur-sm rounded-xl p-3 sm:p-4">
-                      <div className="flex items-center gap-2 sm:gap-3">
-                        <div 
-                          className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-white text-xs sm:text-sm"
-                          style={{ backgroundColor: '#2D993D' }}
-                        >
-                          ✓
-                        </div>
-                        <div>
-                          <div className="font-bold text-gray-900 text-sm sm:text-base">Enterprise Ready</div>
-                          <div className="text-xs sm:text-sm text-gray-800">Trusted by 100+ companies worldwide</div>
-                        </div>
+            <div className="flex-1 w-full lg:w-auto">
+              <div className="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[400px] 2xl:h-[450px] min-h-[250px] rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover"
+                  onLoad={() => console.log('Image loaded successfully:', service.image)}
+                  onError={(e) => {
+                    console.log('Image failed to load:', service.image);
+                    // Fallback to a better placeholder image based on service type
+                    const fallbackImages = {
+                      'ai-machine-learning': 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop',
+                      'cybersecurity': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+                      'cloud-computing': 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop',
+                      'devsecops': 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&h=600&fit=crop',
+                      'business-intelligence': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+                      'mobile-app-development': 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',
+                      'product-customization': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+                      'web-custom-app-development': 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=600&fit=crop',
+                      'new-product-development': 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop'
+                    };
+                    e.currentTarget.src = fallbackImages[service.id as keyof typeof fallbackImages] || 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop';
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                  <div className="bg-gray-100/95 backdrop-blur-sm rounded-xl p-3 sm:p-4">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <div 
+                        className="w-6 h-6 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center text-white text-xs sm:text-sm"
+                        style={{ backgroundColor: '#2D993D' }}
+                      >
+                        ✓
+                      </div>
+                      <div>
+                        <div className="font-bold text-gray-900 text-sm sm:text-base">Enterprise Ready</div>
+                        <div className="text-xs sm:text-sm text-gray-800">Trusted by 100+ companies worldwide</div>
                       </div>
                     </div>
                   </div>

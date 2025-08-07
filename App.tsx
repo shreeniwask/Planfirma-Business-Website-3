@@ -202,7 +202,7 @@ function App() {
       case 'blogs':
         return <Blogs onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} onBack={goBack} />;
       case 'planfirma-ai':
-        return <PlanfirmaAi onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
+        return <PlanfirmaAi onNavigate={navigateToPage} onNavigateToService={navigateToService} />;
       case 'planfirma-cloud':
         return <PlanfirmaCloud onNavigate={navigateToPage} onBack={goBack} />;
       case 'service-detail':

@@ -962,3 +962,47 @@ html {
 .animate-float-alt {
   animation: float-alt 10s ease-in-out infinite;
 }
+
+/* Hero section height adjustments for taller screens */
+@media (min-height: 800px) {
+  .hero-tall-screen {
+    min-height: 85vh;
+  }
+}
+
+@media (min-height: 900px) {
+  .hero-tall-screen {
+    min-height: 90vh;
+  }
+}
+
+@media (min-height: 1000px) {
+  .hero-tall-screen {
+    min-height: 95vh;
+  }
+}
+
+@media (min-height: 1100px) {
+  .hero-tall-screen {
+    min-height: 100vh;
+  }
+}
+
+/* Ensure hero images are always visible on thin displays */
+@media (max-width: 640px) {
+  .hero-image-container {
+    min-height: 200px !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .hero-image-container {
+    min-height: 240px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-image-container {
+    min-height: 280px !important;
+  }
+}

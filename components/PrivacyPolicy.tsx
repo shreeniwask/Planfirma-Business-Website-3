@@ -141,18 +141,12 @@ export default function PrivacyPolicy({ onNavigate, onNavigateToService, onBack 
               <p className="text-gray-600 leading-relaxed">
                 If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
               </p>
-              <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                <p className="text-gray-700">
-                  <strong>Email:</strong> info@planfirma.com<br />
-                  <strong>Phone:</strong> +91 84510 53268<br />
-                  <strong>Address:</strong> Planfirma Technologies Private Limited<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Rainbow Chambers, Swami Vivekananda Rd<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Kandivali, Kandivali Police Line<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Jai Bhim Sanjay Nagar, Kandivali West<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;Mumbai, Maharashtra 400067<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;India
-                </p>
-              </div>
+                              <div className="mt-4 p-4 bg-gray-50 rounded-lg">
+                  <p className="text-gray-700">
+                    <strong>Email:</strong> info@planfirma.com<br />
+                    <strong>Phone:</strong> +91 84510 53268
+                  </p>
+                </div>
             </section>
 
             <div className="mt-12 p-4 bg-blue-50 rounded-lg">

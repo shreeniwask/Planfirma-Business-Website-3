@@ -63,6 +63,12 @@ const teamMembers = [
     position: "Project Manager", 
     avatar: "/images/team/joji-varghese.webp",
     linkedin: "https://www.linkedin.com/in/joji-george-varghese-2b062412/"
+  },
+  { 
+    name: "Sapna Srivastava", 
+    position: "Manager Operations", 
+    avatar: "/images/team/sapna-srivastava.jpeg",
+    linkedin: "https://www.linkedin.com/in/sapna-srivastava-a75a5620a/"
   }
 ];
 
@@ -360,12 +366,12 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
         
         {/* Second Row of Team Members */}
         <ScrollAnimatedGrid
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-center"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 justify-center"
           animation="card-scale-fade"
           staggerDelay={120}
           hover={false}
         >
-          {teamMembers.slice(4, 7).map((member, index) => (
+          {teamMembers.slice(4, 8).map((member, index) => (
             <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
               <a 
                 href={member.linkedin}

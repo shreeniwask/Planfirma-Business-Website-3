@@ -26,18 +26,18 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const countries = [
-    { name: 'United States', flag: 'US' },
-    { name: 'Canada', flag: 'CA' },
-    { name: 'United Kingdom', flag: 'GB' },
-    { name: 'Australia', flag: 'AU' },
-    { name: 'Germany', flag: 'DE' },
-    { name: 'France', flag: 'FR' },
-    { name: 'India', flag: 'IN' },
-    { name: 'Japan', flag: 'JP' },
-    { name: 'Singapore', flag: 'SG' },
-    { name: 'Netherlands', flag: 'NL' },
-    { name: 'Sweden', flag: 'SE' },
-    { name: 'Switzerland', flag: 'CH' }
+    'United States',
+    'Canada',
+    'United Kingdom',
+    'Australia',
+    'Germany',
+    'France',
+    'India',
+    'Japan',
+    'Singapore',
+    'Netherlands',
+    'Sweden',
+    'Switzerland'
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -185,13 +185,13 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
             </div>
             
                           {/* Right Column - Contact Form */}
-            <div className="bg-gray-50 rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6">
+            <div className="bg-gray-50 rounded-2xl p-2.5 sm:p-3 md:p-4 lg:p-5">
               <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold text-[#1c1c1c] mb-2 sm:mb-3 md:mb-4">
                 Send us a message
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3 md:space-y-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+              <form onSubmit={handleSubmit} className="space-y-1.5 sm:space-y-2 md:space-y-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 sm:gap-2 md:gap-3">
                   <div>
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       First Name*
@@ -222,7 +222,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 sm:gap-2 md:gap-3">
                   <div>
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       Email*
@@ -252,7 +252,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 sm:gap-2 md:gap-3">
                   <div>
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       Company
@@ -270,30 +270,18 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       Country
                     </label>
-                    <div className="relative">
-                      <select
-                        name="country"
-                        value={formData.country}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D993D] focus:border-transparent outline-none transition-colors bg-white cursor-pointer text-sm sm:text-base"
-                      >
-                        {countries.map((country) => (
-                          <option key={country.name} value={country.name}>
-                            {country.name}
-                          </option>
-                        ))}
-                      </select>
-                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                        {(() => {
-                          const selectedCountry = countries.find(c => c.name === formData.country);
-                          return selectedCountry ? (
-                            <div className="w-4 h-3">
-                              <Flag country={selectedCountry.flag} size={16} />
-                            </div>
-                          ) : null;
-                        })()}
-                      </div>
-                    </div>
+                    <select
+                      name="country"
+                      value={formData.country}
+                      onChange={handleInputChange}
+                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D993D] focus:border-transparent outline-none transition-colors bg-white cursor-pointer text-sm sm:text-base"
+                    >
+                      {countries.map((country) => (
+                        <option key={country} value={country}>
+                          {country}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
                 

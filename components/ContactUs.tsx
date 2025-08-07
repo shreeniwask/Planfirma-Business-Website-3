@@ -276,6 +276,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                       onChange={handleInputChange}
                       className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D993D] focus:border-transparent outline-none transition-colors bg-white cursor-pointer text-sm sm:text-base"
                     >
+                      {/* Clean country selector without flags */}
                       {countries.map((country) => (
                         <option key={country} value={country}>
                           {country}

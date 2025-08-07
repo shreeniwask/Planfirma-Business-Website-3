@@ -3,7 +3,7 @@ import { STATS_DATA } from './constants';
 
 export default function StatsSection() {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="relative w-full overflow-hidden">
+    <ScrollAnimatedSection animation="fade-up" className="relative w-full overflow-hidden bg-black">
       {/* Enhanced Background with Gradients and Textures */}
       <div 
         className="absolute inset-0"
@@ -24,7 +24,7 @@ export default function StatsSection() {
         <div className="absolute top-1/6 right-1/3 w-1 h-1" style={{ backgroundColor: 'hsl(var(--brand-500) / 0.3)' }} />
       </div>
 
-      <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-16 lg:py-24">
+      <div className="relative z-10 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-20 lg:py-32">
         
         {/* Results Section Header */}
         <ScrollAnimatedCard animation="fade-up" className="text-center mb-12 lg:mb-16" hover={false}>

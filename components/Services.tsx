@@ -102,7 +102,7 @@ export default function Services({ onNavigate, onNavigateToService, servicesData
             {/* Services Grid - Using wider container */}
             <ScrollAnimatedSection animation="fade-up" delay={200} className="max-w-8xl mx-auto mb-8 md:mb-10 lg:mb-12">
               <ScrollAnimatedGrid
-                className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 lg:gap-10"
+                className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10"
                 animation="card-slide-in"
                 staggerDelay={150}
                 hover={false}
@@ -126,12 +126,12 @@ export default function Services({ onNavigate, onNavigateToService, servicesData
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
                 <button 
                   onClick={() => onNavigate('contact')}
-                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
+                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                 >
-                  <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-sm sm:text-base">
+                  <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-xs sm:text-sm md:text-base lg:text-lg">
                     Get Started
                   </span>
-                  <div className="ml-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                  <div className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                     <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                       <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

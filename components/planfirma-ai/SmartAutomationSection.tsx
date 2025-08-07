@@ -2,7 +2,7 @@ import { ScrollAnimatedCard, ScrollAnimatedSection } from '../ScrollAnimatedCard
 
 export default function SmartAutomationSection() {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="py-16 lg:py-24">
+    <ScrollAnimatedSection animation="fade-up" className="py-20 lg:py-32 bg-gray-900">
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16 xl:px-20">
         
         {/* Asymmetric Grid Layout */}

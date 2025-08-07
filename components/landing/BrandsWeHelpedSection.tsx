@@ -6,7 +6,7 @@ export default function BrandsWeHelpedSection() {
   return (
     <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-[#f8f9fa] to-[#ffffff] relative w-full">
       <div className="flex flex-col justify-center relative size-full">
-        <div className="box-border content-stretch flex flex-col gap-10 md:gap-12 lg:gap-14 items-center justify-center px-4 md:px-8 lg:px-16 py-12 md:py-16 lg:py-20 relative w-full">
+        <div className="box-border content-stretch flex flex-col gap-10 md:gap-12 lg:gap-14 items-center justify-center px-4 md:px-8 lg:px-16 py-6 sm:py-8 md:py-10 lg:py-12 relative w-full">
           
           <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto" hover={false}>
             <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-4 md:mb-6">

@@ -20,7 +20,7 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ onNavigate, servicesData }: ServicesSectionProps) {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-gray-50 py-6 sm:py-8 md:py-12 lg:py-16">
+    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-gray-50 py-6 sm:py-8 md:py-10 lg:py-12">
       <div className="relative w-full">
         <div className="box-border content-stretch flex flex-col items-center justify-center px-2 sm:px-4 md:px-6 lg:px-12 relative w-full">
           
@@ -29,15 +29,10 @@ export default function ServicesSection({ onNavigate, servicesData }: ServicesSe
             <div className="flex flex-col items-center justify-center gap-4 sm:gap-6 lg:gap-8">
               
               {/* Header */}
-              <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto" hover={false}>
-                <div className="space-y-2 sm:space-y-4">
-                  <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block">
-                    Our Services
-                  </div>
-                  <h2 className="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[36px] xl:text-[42px] font-bold text-gray-900 leading-tight">
-                    Our Services
-                  </h2>
-                </div>
+              <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto mb-3 sm:mb-4 md:mb-6" hover={false}>
+                <h2 className="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[36px] xl:text-[42px] font-bold text-gray-900 leading-tight">
+                  Our Services
+                </h2>
               </ScrollAnimatedCard>
               
               {/* Services Grid */}

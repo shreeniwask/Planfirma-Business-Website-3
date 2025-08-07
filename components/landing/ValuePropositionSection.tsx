@@ -23,32 +23,32 @@ function getValuePropIcon(emojiIcon: string) {
 
 export default function ValuePropositionSection() {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-white to-gray-50 relative w-full py-12 sm:py-16 md:py-20 lg:py-24">
+    <ScrollAnimatedSection animation="fade-up" className="bg-gradient-to-b from-white to-gray-50 relative w-full py-6 sm:py-8 md:py-10 lg:py-12 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
       <div className="relative w-full">
-        <div className="box-border content-stretch flex flex-col gap-6 sm:gap-8 md:gap-12 items-center justify-center px-4 md:px-8 lg:px-16 relative w-full">
+        <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 items-center justify-center relative w-full">
           
           {/* Value Proposition Heading */}
-          <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto" hover={false}>
-            <h2 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] font-bold text-gray-900 mb-4 sm:mb-6">
+          <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto mb-3 sm:mb-4 md:mb-6" hover={false}>
+            <h2 className="text-[18px] sm:text-[22px] md:text-[26px] lg:text-[30px] xl:text-[34px] font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
               <p className="leading-tight">Cutting edge development</p>
             </h2>
           </ScrollAnimatedCard>
           
           <ScrollAnimatedGrid
-            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 w-full max-w-6xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6 w-full max-w-6xl mx-auto"
             animation="card-fade-up"
             staggerDelay={120}
           >
             {valueProps.map((item, index) => (
-              <div key={index} className="bg-white relative rounded-2xl border border-gray-100 card-hover-subtle p-4 sm:p-6 md:p-8">
-                <div className="flex flex-col gap-3 sm:gap-4 md:gap-6 h-full">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">{getValuePropIcon(item.icon)}</div>
-                  <div className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[14px] sm:text-[16px] md:text-[20px] lg:text-[24px]">
-                    <p className="leading-tight">{item.title}</p>
-                  </div>
-                  <p className="text-gray-600 text-[10px] sm:text-[12px] md:text-[14px] lg:text-[16px] leading-relaxed">{item.description}</p>
+                          <div key={index} className="bg-white relative rounded-2xl border border-gray-100 card-hover-subtle p-2 sm:p-3 md:p-4 lg:p-5">
+              <div className="flex flex-col gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 h-full">
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">{getValuePropIcon(item.icon)}</div>
+                <div className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] xl:text-[19px]">
+                  <p className="leading-tight">{item.title}</p>
                 </div>
+                <p className="text-gray-600 text-[9px] sm:text-[10px] md:text-[11px] lg:text-[13px] xl:text-[15px] leading-relaxed">{item.description}</p>
               </div>
+            </div>
             ))}
           </ScrollAnimatedGrid>
         </div>

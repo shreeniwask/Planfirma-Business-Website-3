@@ -19,9 +19,10 @@ interface BlogDetailProps {
   blog: BlogData;
   onNavigate: (page: Page) => void;
   onNavigateToService?: (serviceId: string) => void;
+  onBack?: () => void;
 }
 
-export default function BlogDetail({ blog, onNavigate, onNavigateToService }: BlogDetailProps) {
+export default function BlogDetail({ blog, onNavigate, onNavigateToService, onBack }: BlogDetailProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { 
@@ -91,7 +92,7 @@ export default function BlogDetail({ blog, onNavigate, onNavigateToService }: Bl
         <div className="flex items-center gap-2 text-sm text-gray-600 max-w-4xl mx-auto">
           <button onClick={() => onNavigate('landing')} className="hover:text-green-600 hover:underline transition-colors">Home</button>
           <span>•</span>
-          <button onClick={() => onNavigate('blogs')} className="hover:text-green-600 hover:underline transition-colors">Blogs</button>
+          <button onClick={onBack || (() => onNavigate('blogs'))} className="hover:text-green-600 hover:underline transition-colors">Blogs</button>
           <span>•</span>
           <span className="text-[#1f7a8c] font-medium truncate">{blog.title}</span>
         </div>

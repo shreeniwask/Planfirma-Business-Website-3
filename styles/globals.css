@@ -150,35 +150,35 @@
   
   /* Service cards consistent height */
   .service-card-height {
-    min-height: 200px;
-    height: 200px;
+    min-height: 140px;
+    height: 140px;
   }
   
   @media (min-width: 640px) {
     .service-card-height {
-      min-height: 220px;
-      height: 220px;
+      min-height: 160px;
+      height: 160px;
     }
   }
   
   @media (min-width: 768px) {
     .service-card-height {
-      min-height: 240px;
-      height: 240px;
+      min-height: 180px;
+      height: 180px;
     }
   }
   
   @media (min-width: 1024px) {
     .service-card-height {
-      min-height: 260px;
-      height: 260px;
+      min-height: 200px;
+      height: 200px;
     }
   }
   
   @media (min-width: 1280px) {
     .service-card-height {
-      min-height: 280px;
-      height: 280px;
+      min-height: 220px;
+      height: 220px;
     }
   }
   

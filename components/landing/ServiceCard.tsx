@@ -41,7 +41,7 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
               })()}
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[14px] md:text-[18px] lg:text-[20px] group-hover:text-[#2D993D] transition-refined leading-tight">
+              <h3 className="font-['Roboto:Bold',_sans-serif] font-bold text-gray-900 text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] group-hover:text-[#2D993D] transition-refined leading-tight">
                 {service.title}
               </h3>
             </div>
@@ -51,7 +51,7 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
           <div className="flex-grow mb-2 sm:mb-3 md:mb-4 relative">
             {/* Default state - Description visible, features hidden */}
             <div className="group-hover:opacity-0 group-hover:transform group-hover:-translate-y-2 transition-refined ease-in-out">
-              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[12px] md:text-[14px] lg:text-[16px] text-gray-600 leading-relaxed mb-2 sm:mb-3 md:mb-4">
+              <p className="font-['Roboto:Regular',_sans-serif] font-normal text-[12px] md:text-[13px] lg:text-[15px] xl:text-[16px] text-gray-600 leading-relaxed">
                 {service.description}
               </p>
             </div>
@@ -59,55 +59,32 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
             {/* Hover state - Features visible, description hidden */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-refined ease-in-out">
               {/* Key Features */}
-              <div className="mb-3">
-                <h4 className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-gray-900 text-[13px] mb-2">
+              <div>
+                <h4 className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-gray-900 text-[12px] md:text-[13px] mb-2">
                   Key Features:
                 </h4>
                 <div className="space-y-1.5">
                   {service.features.slice(0, 4).map((feature, index) => (
                     <div key={index} className="flex items-start gap-2">
                       <div className="w-1.5 h-1.5 bg-[#2D993D] rounded-full flex-shrink-0 mt-1.5"></div>
-                      <span className="text-[11px] md:text-[12px] text-gray-700 font-medium leading-tight">{feature}</span>
+                      <span className="text-[10px] md:text-[11px] lg:text-[12px] text-gray-700 font-medium leading-tight">{feature}</span>
                     </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Technologies */}
-              <div className="mb-2">
-                <div className="flex flex-wrap gap-1">
-                  {service.technologies.slice(0, 3).map((tech, index) => (
-                    <span key={index} className="px-2 py-1 bg-green-50 text-[#2D993D] text-[9px] rounded-full font-medium border border-[#2D993D]/20">
-                      {tech}
-                    </span>
                   ))}
                 </div>
               </div>
             </div>
           </div>
           
-          {/* Bottom CTA section */}
-          <div className="flex-shrink-0">
-            {/* Default CTA - visible by default, hidden on hover */}
-            <div className="flex items-center justify-between group-hover:opacity-0 group-hover:transform group-hover:-translate-y-2 transition-refined">
-              <span className="text-[#2D993D] text-[14px] font-medium">
+          {/* Sticky Bottom CTA section */}
+          <div className="flex-shrink-0 mt-auto group-hover:opacity-0 group-hover:transform group-hover:-translate-y-2 transition-refined">
+            <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+              <span className="text-[#2D993D] text-[12px] md:text-[13px] lg:text-[14px] font-medium">
                 Learn More →
               </span>
               <div className="w-6 h-6 bg-[#2D993D] rounded-full flex items-center justify-center">
                 <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </div>
-            </div>
-            
-            {/* Enhanced CTA - visible on hover */}
-            <div className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-refined ease-in-out">
-              <div className="flex items-center justify-end pt-2 border-t border-gray-100">
-                <div className="w-7 h-7 bg-gradient-to-r from-[#2D993D] to-[#3fab4a] rounded-full flex items-center justify-center icon-hover">
-                  <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
               </div>
             </div>
           </div>

@@ -56,13 +56,13 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
         }`}
       >
         <div className="max-w-8xl mx-auto px-3 sm:px-4 md:px-8 lg:px-16">
-          <div className="flex items-center justify-between h-14 sm:h-16 md:h-20">
+          <div className="flex items-center justify-between h-12 sm:h-14 md:h-16">
             
             {/* Logo */}
             <img
               src={`${isDark ? "/images/logos/planfirma-logo-light.svg" : "/images/logos/planfirma-logo.svg"}?v=4`}
               alt="Planfirma Logo"
-              className="h-8 md:h-12 w-auto cursor-pointer transition-transform hover:scale-105"
+              className="h-9 w-auto cursor-pointer transition-transform hover:scale-105"
               onClick={() => handleNavigation('landing')}
             />
 
@@ -72,7 +72,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
                 <button
                   key={item.page}
                   onClick={() => handleNavigation(item.page)}
-                  className={`px-2 md:px-3 lg:px-4 py-2 rounded-md text-xs md:text-sm lg:text-base font-medium transition-colors ${
+                  className={`px-2 md:px-3 lg:px-4 py-1.5 rounded-md text-xs md:text-sm lg:text-base font-medium transition-colors ${
                     currentPage === item.page
                       ? isDark ? 'text-[#30b6d0]' : 'text-[#2D993D]'
                       : isDark ? 'text-white hover:text-[#30b6d0]' : 'text-gray-600 hover:text-[#2D993D]'
@@ -88,12 +88,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               {/* Desktop CTA Button */}
               <button 
                 onClick={() => handleNavigation('contact')}
-                className="hidden md:flex group relative bg-[#2D993D] text-white items-center justify-center px-3 sm:px-4 md:px-6 lg:px-8 py-2 sm:py-2.5 md:py-3 rounded-lg md:rounded-xl font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-0.5 active:translate-y-0"
+                className="hidden md:flex group relative bg-[#2D993D] text-white items-center justify-center px-2.5 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 md:py-2.5 lg:py-3 rounded-lg md:rounded-xl font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-0.5 active:translate-y-0"
               >
-                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-xs sm:text-sm md:text-base">
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-xs sm:text-xs md:text-sm lg:text-base">
                   Get Started
                 </span>
-                <div className="ml-1 sm:ml-1.5 md:ml-2 w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4 lg:w-5 lg:h-5 transition-transform duration-300 group-hover:translate-x-0.5">
+                <div className="ml-1 sm:ml-1.5 md:ml-2 w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-3.5 md:h-3.5 lg:w-4 lg:h-4 transition-transform duration-300 group-hover:translate-x-0.5">
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                     <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -140,12 +140,12 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
               {/* Mobile CTA Button */}
               <button 
                 onClick={() => handleNavigation('contact')}
-                className="group relative bg-[#2D993D] text-white flex items-center justify-center px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-0.5 active:translate-y-0 w-full"
+                className="group relative bg-[#2D993D] text-white flex items-center justify-center px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2D993D]/40 transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-0.5 active:translate-y-0 w-full"
               >
-                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-sm">
+                <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight text-xs sm:text-sm">
                   Get Started
                 </span>
-                <div className="ml-1.5 w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5">
+                <div className="ml-1 sm:ml-1.5 w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-0.5">
                   <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                     <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -157,7 +157,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
       </header>
 
       {/* Spacer to prevent content from hiding behind fixed header */}
-      <div className="h-14 sm:h-16 md:h-20" />
+      <div className="h-12 sm:h-14 md:h-16" />
     </>
   );
 }

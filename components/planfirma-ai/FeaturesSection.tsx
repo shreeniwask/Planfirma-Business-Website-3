@@ -3,7 +3,7 @@ import { FEATURES_DATA } from './constants';
 
 export default function FeaturesSection() {
   return (
-    <ScrollAnimatedSection animation="fade-up" delay={600} className="space-y-12 lg:space-y-16">
+    <ScrollAnimatedSection animation="fade-up" delay={600} className="py-20 lg:py-32 space-y-12 lg:space-y-16 bg-black">
       <ScrollAnimatedCard animation="fade-up" delay={700} className="text-center" hover={false}>
         <h2 className="text-[28px] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px] font-bold text-white leading-tight mb-4 lg:mb-6">
           <span style={{ textShadow: '0 4px 20px rgba(48, 182, 208, 0.3), 0 2px 10px rgba(0,0,0,0.8)' }}>

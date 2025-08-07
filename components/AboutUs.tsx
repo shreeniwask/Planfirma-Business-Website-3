@@ -309,16 +309,16 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
       </ScrollAnimatedSection>
       
       {/* Team Section */}
-      <ScrollAnimatedSection animation="fade-up" delay={800} className="w-full max-w-8xl mx-auto mt-20 md:mt-24 lg:mt-28">
-        <ScrollAnimatedCard animation="fade-up" delay={900} className="text-center mb-16 md:mb-20" hover={false}>
-          <h2 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[40px] md:text-[52px] lg:text-[60px] leading-tight">
+      <ScrollAnimatedSection animation="fade-up" delay={800} className="w-full max-w-8xl mx-auto mt-12 md:mt-16 lg:mt-20 pb-12 md:pb-16 lg:pb-20">
+        <ScrollAnimatedCard animation="fade-up" delay={900} className="text-center mb-3 sm:mb-4 md:mb-6" hover={false}>
+          <h2 className="font-['Roboto:Bold',_sans-serif] font-bold text-[#1c1c1c] text-[32px] md:text-[40px] lg:text-[48px] leading-tight">
             Committed staff are ready to help you
           </h2>
         </ScrollAnimatedCard>
         
         {/* First Row of Team Members */}
         <ScrollAnimatedGrid
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 lg:gap-14 mb-12 md:mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:gap-10 mb-8 md:mb-12"
           animation="card-scale-fade"
           staggerDelay={100}
           hover={false}
@@ -332,7 +332,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                 className="group cursor-pointer"
                 aria-label={`View ${member.name}'s LinkedIn profile`}
               >
-                <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
+                <div className="relative w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 mb-4 md:mb-6 team-avatar-hover">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
                     <ImageWithFallback
@@ -343,16 +343,16 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                     />
                   </div>
                   {/* LinkedIn icon overlay */}
-                  <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-1 right-1 w-6 h-6 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                   </div>
                 </div>
               </a>
               <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
-                <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
-                <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
+                <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-tight mb-1">{member.name}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px] text-gray-600">{member.position}</p>
               </div>
             </div>
           ))}
@@ -360,7 +360,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
         
         {/* Second Row of Team Members */}
         <ScrollAnimatedGrid
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-12 lg:gap-14 justify-center"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 justify-center"
           animation="card-scale-fade"
           staggerDelay={120}
           hover={false}
@@ -374,7 +374,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                 className="group cursor-pointer"
                 aria-label={`View ${member.name}'s LinkedIn profile`}
               >
-                <div className="relative w-36 h-36 md:w-44 md:h-44 lg:w-52 lg:h-52 mb-6 md:mb-8 team-avatar-hover">
+                <div className="relative w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 mb-4 md:mb-6 team-avatar-hover">
                   <div className="absolute inset-0 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-full"></div>
                   <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-lg group-hover:shadow-xl group-hover:border-[#2D993D] transition-all duration-300">
                     <ImageWithFallback
@@ -385,16 +385,16 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                     />
                   </div>
                   {/* LinkedIn icon overlay */}
-                  <div className="absolute top-2 right-2 w-8 h-8 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute top-1 right-1 w-6 h-6 bg-[#0077B5] rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-lg">
+                    <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
                   </div>
                 </div>
               </a>
               <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#000000] text-center">
-                <p className="text-[20px] md:text-[24px] lg:text-[28px] leading-tight mb-2">{member.name}</p>
-                <p className="text-[14px] md:text-[16px] lg:text-[18px] text-gray-600">{member.position}</p>
+                <p className="text-[16px] md:text-[18px] lg:text-[20px] leading-tight mb-1">{member.name}</p>
+                <p className="text-[12px] md:text-[14px] lg:text-[16px] text-gray-600">{member.position}</p>
               </div>
             </div>
           ))}

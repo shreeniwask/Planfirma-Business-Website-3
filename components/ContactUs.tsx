@@ -5,6 +5,7 @@ import NavigationBar from './BackButton';
 import { toast } from '../utils/toast';
 import { projectId, publicAnonKey } from '../utils/supabase/info';
 import type { Page } from '../App';
+import Flag from 'react-flagkit';
 
 interface ContactUsProps {
   onNavigate: (page: Page) => void;
@@ -25,18 +26,18 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const countries = [
-    { name: 'United States', flag: '🇺🇸' },
-    { name: 'Canada', flag: '🇨🇦' },
-    { name: 'United Kingdom', flag: '🇬🇧' },
-    { name: 'Australia', flag: '🇦🇺' },
-    { name: 'Germany', flag: '🇩🇪' },
-    { name: 'France', flag: '🇫🇷' },
-    { name: 'India', flag: '🇮🇳' },
-    { name: 'Japan', flag: '🇯🇵' },
-    { name: 'Singapore', flag: '🇸🇬' },
-    { name: 'Netherlands', flag: '🇳🇱' },
-    { name: 'Sweden', flag: '🇸🇪' },
-    { name: 'Switzerland', flag: '🇨🇭' }
+    { name: 'United States', flag: 'US' },
+    { name: 'Canada', flag: 'CA' },
+    { name: 'United Kingdom', flag: 'GB' },
+    { name: 'Australia', flag: 'AU' },
+    { name: 'Germany', flag: 'DE' },
+    { name: 'France', flag: 'FR' },
+    { name: 'India', flag: 'IN' },
+    { name: 'Japan', flag: 'JP' },
+    { name: 'Singapore', flag: 'SG' },
+    { name: 'Netherlands', flag: 'NL' },
+    { name: 'Sweden', flag: 'SE' },
+    { name: 'Switzerland', flag: 'CH' }
   ];
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -118,12 +119,12 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
       />
       
       {/* Main Content - Single screen without scroll */}
-      <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:px-16 py-2 sm:py-4">
+      <div className="flex-1 flex items-center justify-center px-4 md:px-6 lg:px-8 py-2 sm:py-4">
         <div className="w-full max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 xl:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
             
             {/* Left Column - Contact Information */}
-            <div className="space-y-3 sm:space-y-4">
+            <div className="space-y-2 sm:space-y-3 md:space-y-4">
               <div>
                 <div className="bg-green-100 px-3 py-1.5 rounded-full text-[#2D993D] text-xs sm:text-sm font-semibold inline-block mb-3">
                   Contact Us
@@ -137,7 +138,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
               </div>
               
               {/* Contact Details */}
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#2D993D] rounded-lg flex items-center justify-center">
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -171,20 +172,26 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                   </div>
                   <div>
                     <p className="font-semibold text-[#1c1c1c] text-sm sm:text-base">Global Presence</p>
-                    <p className="text-[rgba(0,0,0,0.7)] text-sm sm:text-base">🇺🇸 🇨🇦 🇬🇧 🇦🇺 🇩🇪 🇫🇷 🇮🇳 🇯🇵 🇸🇬 🇳🇱 🇸🇪 🇨🇭</p>
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {['US', 'CA', 'GB', 'AU', 'DE', 'FR', 'IN', 'JP', 'SG', 'NL', 'SE', 'CH'].map((countryCode, index) => (
+                        <div key={index} className="w-4 h-3 sm:w-5 sm:h-4">
+                          <Flag country={countryCode} size={16} />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
             
                           {/* Right Column - Contact Form */}
-            <div className="bg-gray-50 rounded-2xl p-3 sm:p-4 md:p-6">
-              <h2 className="text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] font-bold text-[#1c1c1c] mb-3 sm:mb-4">
+            <div className="bg-gray-50 rounded-2xl p-3 sm:p-4 md:p-5 lg:p-6">
+              <h2 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] font-bold text-[#1c1c1c] mb-2 sm:mb-3 md:mb-4">
                 Send us a message
               </h2>
               
-              <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+              <form onSubmit={handleSubmit} className="space-y-2 sm:space-y-3 md:space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <div>
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       First Name*
@@ -215,7 +222,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <div>
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       Email*
@@ -245,7 +252,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                   </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
                   <div>
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       Company
@@ -263,18 +270,30 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                     <label className="block text-[12px] sm:text-[13px] font-medium text-[#1c1c1c] mb-1 sm:mb-2">
                       Country
                     </label>
-                    <select
-                      name="country"
-                      value={formData.country}
-                      onChange={handleInputChange}
-                      className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D993D] focus:border-transparent outline-none transition-colors bg-white cursor-pointer text-sm sm:text-base"
-                    >
-                      {countries.map((country) => (
-                        <option key={country.name} value={country.name}>
-                          {country.flag} {country.name}
-                        </option>
-                      ))}
-                    </select>
+                    <div className="relative">
+                      <select
+                        name="country"
+                        value={formData.country}
+                        onChange={handleInputChange}
+                        className="w-full px-3 py-2.5 sm:px-4 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2D993D] focus:border-transparent outline-none transition-colors bg-white cursor-pointer text-sm sm:text-base"
+                      >
+                        {countries.map((country) => (
+                          <option key={country.name} value={country.name}>
+                            {country.name}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute left-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                        {(() => {
+                          const selectedCountry = countries.find(c => c.name === formData.country);
+                          return selectedCountry ? (
+                            <div className="w-4 h-3">
+                              <Flag country={selectedCountry.flag} size={16} />
+                            </div>
+                          ) : null;
+                        })()}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
@@ -296,7 +315,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#2D993D] text-white py-3 sm:py-4 rounded-lg font-semibold hover:bg-[#247e31] transition-colors transform hover:scale-[1.02] duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm sm:text-base"
+                  className="w-full bg-[#2D993D] text-white py-2 sm:py-3 md:py-4 lg:py-5 rounded-lg font-semibold hover:bg-[#247e31] transition-colors transform hover:scale-[1.02] duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-xs sm:text-sm md:text-base lg:text-lg"
                 >
                   {isSubmitting ? 'Preparing Message...' : 'Send Message'}
                 </button>

@@ -4,7 +4,7 @@ import type { Page } from '../../App';
 
 export default function ValueAddedSection({ onNavigate }: { onNavigate: (page: Page) => void }) {
   return (
-    <ScrollAnimatedSection animation="fade-up" delay={900} className="relative w-full py-16 lg:py-24">
+    <ScrollAnimatedSection animation="fade-up" delay={900} className="relative w-full py-20 lg:py-32 bg-gray-900">
       <div className="max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
         
         {/* Section Header */}

@@ -241,16 +241,16 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
     }, [value, delay]);
 
     return (
-            <div className="bg-gray-50 rounded-xl p-2 sm:p-3 border border-gray-300 shadow-lg hover:shadow-xl transition-all duration-300 group">
+            <div className="bg-white rounded-lg p-2 sm:p-3 md:p-4 lg:p-5 xl:p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 group">
         <div className="text-center">
-          <div className="text-lg sm:text-xl lg:text-2xl font-bold mb-0.5 text-gray-900">
+          <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold mb-1 text-gray-900">
             {Math.round(currentValue)}{suffix}
           </div>
-          <div className="text-xs sm:text-sm lg:text-base text-gray-800 font-medium">{label}</div>
+          <div className="text-xs sm:text-xs md:text-xs lg:text-sm xl:text-sm text-gray-600 font-medium leading-tight">{label}</div>
         </div>
-        <div className="mt-1 sm:mt-2 bg-gray-300 rounded-full h-2 overflow-hidden">
-          <div 
-            className="h-2 rounded-full transition-all duration-1000 ease-out"
+        <div className="mt-1 sm:mt-2 md:mt-3 bg-gray-200 rounded-full h-1.5 overflow-hidden">
+                      <div 
+              className="h-1.5 rounded-full transition-all duration-1000 ease-out"
             style={{ 
               width: `${(currentValue / (suffix === '%' ? 100 : value)) * 100}%`,
               backgroundColor: '#2D993D' 
@@ -482,51 +482,51 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
       />
       
       {/* Enhanced Hero Section - Responsive */}
-      <section className="relative w-full bg-gray-50 py-4 sm:py-6 md:py-8 lg:py-12">
-        <div className="relative w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-20 items-center">
+      <section className="relative w-full bg-gray-50 py-4 sm:py-6 md:py-8 lg:py-10">
+        <div className="relative w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20 items-center">
             
             {/* Service Content */}
-            <div className="space-y-1 sm:space-y-2">
-              <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-                <div 
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl shadow-2xl transform hover:scale-105 transition-transform"
+            <div className="space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8 xl:space-y-10">
+                                              <div className="flex items-center gap-3 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-10">
+                  <div 
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-2xl flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl shadow-2xl transform hover:scale-105 transition-transform"
                   style={{ backgroundColor: currentConfig.color }}
                 >
                   {currentConfig.icon}
                 </div>
                 <div>
-                  <h1 className="text-[18px] sm:text-[22px] md:text-[28px] lg:text-[36px] xl:text-[42px] font-bold text-gray-900 leading-tight">
+                  <h1 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[36px] xl:text-[44px] 2xl:text-[48px] font-bold text-gray-900 leading-tight">
                     {service.title}
                   </h1>
                   <div 
-                    className="h-1 w-16 sm:w-20 md:w-24 rounded-full mt-2 sm:mt-3"
+                    className="h-1 w-16 sm:w-20 md:w-24 lg:w-28 xl:w-32 rounded-full mt-2 sm:mt-3 md:mt-4"
                     style={{ backgroundColor: currentConfig.color }}
                   ></div>
                 </div>
               </div>
               
-              <div className="text-[11px] sm:text-[13px] md:text-[15px] lg:text-[17px] xl:text-[19px] text-gray-900 leading-relaxed">
-                <p>{service.fullDescription}</p>
+              <div className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px] 2xl:text-[22px] text-gray-700 leading-relaxed">
+                <p className="mb-3 sm:mb-4 md:mb-6">{service.fullDescription}</p>
               </div>
               
               {/* Key Metrics Preview */}
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 sm:gap-2">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
                 <StatCard label="Efficiency Gain" value={animatedStats.efficiency} delay={200} />
                 <StatCard label="Cost Reduction" value={animatedStats.cost} delay={400} />
                 <StatCard label="Time Savings" value={animatedStats.time} delay={600} />
                 <StatCard label="Client Satisfaction" value={animatedStats.satisfaction} delay={800} />
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 lg:gap-6">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 lg:gap-8">
                 <button 
                   onClick={() => onNavigate('contact')} 
-                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-sm sm:text-base md:text-[18px] flex-1 sm:flex-none transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
+                  className="group relative bg-[#2D993D] text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 text-xs sm:text-sm md:text-base lg:text-lg flex-1 sm:flex-none transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                 >
                   <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
                     Get Started Today
                   </span>
-                  <div className="ml-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                  <div className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                     <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                       <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
@@ -534,7 +534,7 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
                 </button>
                 <button 
                   onClick={() => onNavigate('services')} 
-                  className="bg-gray-100 border-2 border-gray-400 text-gray-900 px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-xl font-bold hover:bg-gray-200 hover:border-gray-500 hover:shadow-lg transition-all transform hover:scale-105 text-sm sm:text-base md:text-[18px] flex-1 sm:flex-none"
+                  className="bg-gray-100 border-2 border-gray-400 text-gray-900 px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold hover:bg-gray-200 hover:border-gray-500 hover:shadow-lg transition-all transform hover:scale-105 text-xs sm:text-sm md:text-base lg:text-lg flex-1 sm:flex-none"
                 >
                   Explore All Services
                 </button>
@@ -580,7 +580,7 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
 
       {/* Interactive Tabs Section - Responsive */}
       <section className="relative w-full py-8 sm:py-12 md:py-16 lg:py-20">
-        <div className="w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="w-full max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
           
           {/* Enhanced Tab Navigation with Radio Button Style */}
           <div className="flex justify-center mb-3 sm:mb-4 md:mb-6">
@@ -833,7 +833,7 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
 
       {/* Technology Stack */}
       <section className="bg-gray-50 py-16 md:py-24">
-        <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="w-full max-w-8xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-6">
               Technology Stack
@@ -857,7 +857,7 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
 
       {/* Service Navigation */}
       <section className="py-16 md:py-24">
-        <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="w-full max-w-8xl mx-auto px-4 md:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-4 md:gap-8">
             <NavigationButton 
               direction="previous"
@@ -875,7 +875,7 @@ export default function ServiceDetail({ service, onNavigate, onNavigateToService
 
       {/* CTA Section */}
       <section className="py-16 md:py-24 bg-[#2D993D]">
-        <div className="w-full max-w-8xl mx-auto px-4 md:px-8 lg:px-16 text-center">
+        <div className="w-full max-w-8xl mx-auto px-4 md:px-6 lg:px-8 text-center">
           <h2 className="text-[32px] md:text-[42px] lg:text-[52px] font-bold text-white mb-6">
             Ready to Transform Your Business?
           </h2>

@@ -7,17 +7,17 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onNavigate }: HeroSectionProps) {
   return (
-    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-white py-8 sm:py-12 md:py-16 lg:py-20">
+    <ScrollAnimatedSection animation="fade-up" className="relative w-full bg-white py-6 sm:py-8 md:py-10 lg:py-12">
       <div className="relative w-full">
         <div className="box-border content-stretch flex flex-col items-center justify-center px-3 sm:px-6 md:px-8 lg:px-12 relative w-full">
           
           {/* Wider Hero Content Container */}
           <div className="max-w-8xl mx-auto w-full">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-8 xl:gap-12">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16">
               
               {/* Hero Content */}
               <ScrollAnimatedCard animation="fade-right" className="flex-1 max-w-3xl text-center lg:text-left order-1" hover={false}>
-                <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 lg:gap-6 items-center lg:items-start justify-start w-full">
+                <div className="box-border content-stretch flex flex-col gap-3 sm:gap-4 md:gap-6 lg:gap-8 items-center lg:items-start justify-start w-full">
                   <div className="relative w-full">
                     <h1 className="text-[18px] sm:text-[24px] md:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-[-0.5px] leading-[1.1] mb-2 sm:mb-3">
                       <span className="text-gray-900">Building software that empowers </span>
@@ -30,15 +30,15 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                   </div>
                   
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 lg:gap-4 items-center lg:items-start justify-center lg:justify-start w-full">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 items-center lg:items-start justify-center lg:justify-start w-full">
                     <button 
                       onClick={() => onNavigate('contact')} 
-                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-full sm:w-[180px] lg:w-[200px] text-sm sm:text-base tracking-wide transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
+                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-full sm:w-auto lg:w-auto text-xs sm:text-sm md:text-base lg:text-lg tracking-wide transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1 active:translate-y-0"
                     >
                       <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-white text-center tracking-[0.1px] leading-tight">
                         Get Started
                       </span>
-                      <div className="ml-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                      <div className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                         <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                           <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
@@ -47,12 +47,12 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
                     
                     <button 
                       onClick={() => onNavigate('services')} 
-                      className="group relative bg-transparent border-2 border-[#2D993D] text-[#2D993D] flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold shadow-lg hover:bg-[#2D993D] hover:text-white hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-full sm:w-[180px] lg:w-[200px] text-sm sm:text-base tracking-wide transition-all duration-300 hover:-translate-y-1 active:translate-y-0"
+                      className="group relative bg-transparent border-2 border-[#2D993D] text-[#2D993D] flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-10 py-2 sm:py-3 md:py-4 lg:py-5 rounded-xl font-bold shadow-lg hover:bg-[#2D993D] hover:text-white hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-full sm:w-auto lg:w-auto text-xs sm:text-sm md:text-base lg:text-lg tracking-wide transition-all duration-300 hover:-translate-y-1 active:translate-y-0"
                     >
                       <span className="font-['Roboto:SemiBold',_sans-serif] font-semibold text-center tracking-[0.1px] leading-tight transition-colors duration-300">
                         Our Services
                       </span>
-                      <div className="ml-2 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
+                      <div className="ml-1 sm:ml-2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 transition-transform duration-300 group-hover:translate-x-1">
                         <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
                           <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>

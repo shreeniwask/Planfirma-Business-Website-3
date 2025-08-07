@@ -10,8 +10,11 @@ export default function BrandsWeHelpedSection() {
           
           <ScrollAnimatedCard animation="fade-up" className="text-center max-w-4xl mx-auto" hover={false}>
             <h2 className="text-[28px] md:text-[36px] lg:text-[42px] font-bold text-gray-900 mb-4 md:mb-6">
-              <p className="leading-tight">Brands we have helped</p>
+              <p className="leading-tight">Delivering Results That Matter</p>
             </h2>
+            <p className="text-[16px] md:text-[18px] lg:text-[20px] text-gray-600 max-w-2xl mx-auto mt-4">
+              Our track record speaks for itself - we make technology work for your business
+            </p>
           </ScrollAnimatedCard>
           
           {/* Stats Section */}

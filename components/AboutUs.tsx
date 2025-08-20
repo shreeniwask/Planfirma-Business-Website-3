@@ -67,7 +67,7 @@ const teamMembers = [
   { 
     name: "Sapna Srivastava", 
     position: "Manager Operations", 
-    avatar: "/images/team/sapna-srivastava.jpeg",
+    avatar: "/images/team/sapna-srivastava.webp",
     linkedin: "https://www.linkedin.com/in/sapna-srivastava-a75a5620a/"
   }
 ];

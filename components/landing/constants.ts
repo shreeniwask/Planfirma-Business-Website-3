@@ -97,7 +97,7 @@ export const testimonials: Testimonial[] = [
     id: "1",
     quote: "Planfirma's tablet-based platform streamlined training for thousands of agents, enhancing efficiency.",
     author: "Laazarus Dias",
-    position: "Technology Director",
+    position: "Founder Chairman",
     company: "LDEA",
     avatar: "/images/testimonials/laazarus-dias.webp",
     rating: 5
@@ -106,7 +106,7 @@ export const testimonials: Testimonial[] = [
     id: "2",
     quote: "Planfirma efficiently solves business challenges, delivering exceptional results with a tailored approach.",
     author: "Jaya Nagarmat",
-    position: "Operations Manager",
+    position: "Managing Director",
     company: "Investor Shoppe",
     avatar: "/images/testimonials/jaya-nagarmat.webp",
     rating: 5
@@ -115,7 +115,7 @@ export const testimonials: Testimonial[] = [
     id: "3",
     quote: "For almost a decade, Planfirma's agile team and portal have been key to our hiring success.",
     author: "Prasad Hariharan",
-    position: "HR Director",
+    position: "Managing Director",
     company: "Carnival",
     avatar: "/images/testimonials/prasad-hariharan.webp",
     rating: 5

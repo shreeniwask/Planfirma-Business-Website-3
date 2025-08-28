@@ -6,10 +6,11 @@ import type { Page } from '../App';
  
 interface ContactUsProps {
   onNavigate: (page: Page) => void;
+  onNavigateToService: (service: string) => void;
   onBack: () => void;
 }
  
-export default function ContactUs({ onNavigate }: ContactUsProps) {
+export default function ContactUs({ onNavigate, onNavigateToService, onBack }: ContactUsProps) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -33,7 +34,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
   return (
     <div className="min-h-screen bg-white flex flex-col">
       <Header onNavigate={onNavigate} currentPage="contact" />
-      <NavigationBar onNavigate={onNavigate} currentPage="contact" />
+      <NavigationBar onNavigate={onNavigate} onBack={onBack} currentPage="contact" />
  
       <div className="flex-1 flex items-center justify-center px-4 md:px-8 lg:px-16 py-6">
         <div className="w-full max-w-8xl mx-auto">
@@ -141,7 +142,7 @@ export default function ContactUs({ onNavigate }: ContactUsProps) {
         </div>
       </div>
  
-      <Footer onNavigate={onNavigate} theme="light" />
+      <Footer onNavigate={onNavigate} onNavigateToService={onNavigateToService} theme="light" />
     </div>
   );
 }

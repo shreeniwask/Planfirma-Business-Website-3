@@ -84,7 +84,7 @@ const teamMembers = [
   },
   { 
     name: "Sanjeev janjire", 
-    position: "Business consultant", 
+    position: "Business Consultant", 
     avatar: "/images/team/sanjeev-janjire.webp",
     linkedin: "#"
   }

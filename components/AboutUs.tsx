@@ -69,6 +69,24 @@ const teamMembers = [
     position: "Manager Operations", 
     avatar: "/images/team/sapna-srivastava.webp",
     linkedin: "https://www.linkedin.com/in/sapna-srivastava-a75a5620a/"
+  },
+  { 
+    name: "Ashok Parmar", 
+    position: "Associate Vice President", 
+    avatar: "/images/team/ashok-parmar.webp",
+    linkedin: "#"
+  },
+  { 
+    name: "Anand Gupta", 
+    position: "HR Consultant", 
+    avatar: "/images/team/anand-gupta.webp",
+    linkedin: "#"
+  },
+  { 
+    name: "Sanjeev janjire", 
+    position: "Business consultant", 
+    avatar: "/images/team/sanjeev-janjire.webp",
+    linkedin: "#"
   }
 ];
 
@@ -371,7 +389,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
           staggerDelay={120}
           hover={false}
         >
-          {teamMembers.slice(4, 8).map((member, index) => (
+          {teamMembers.slice(4, 11).map((member, index) => (
             <div key={index} className="flex flex-col items-center justify-center text-center team-member-hover">
               <a 
                 href={member.linkedin}

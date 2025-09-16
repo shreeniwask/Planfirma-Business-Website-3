@@ -410,7 +410,7 @@ function Frame50() {
           href="tel:8151053268"
           style={{ fontVariationSettings: "'wdth' 100" }}
         >
-          +91 815 105 3268
+          +91 84510 53268
         </a>
       </div>
       <div

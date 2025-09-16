@@ -77,7 +77,7 @@ export default function ContactUs({ onNavigate, onNavigateToService, onBack }: C
                   </div>
                   <div>
                     <p className="font-semibold text-[#1c1c1c]">Call us at:</p>
-                    <p className="text-[rgba(0,0,0,0.7)]">+91 815 105 3268</p>
+                    <p className="text-[rgba(0,0,0,0.7)]">+91 84510 53268</p>
                   </div>
                 </div>
  

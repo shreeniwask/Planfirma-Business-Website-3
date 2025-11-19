@@ -46,10 +46,10 @@ This directory contains professional headshots of Planfirma team members display
 - **Recommended size**: 500x500px minimum
 - **Format**: WebP (recommended) or JPG/PNG
 
-### 7. Joji Varghese - Project Manager
-- **Filename**: `joji-varghese.webp`
-- **Position**: Project Manager
-- **LinkedIn URL**: `https://www.linkedin.com/in/joji-varghese`
+### 7. Shishank Srivastava - Business Development
+- **Filename**: `shishank-srivastava.webp`
+- **Position**: Business Development
+- **LinkedIn URL**: `https://www.linkedin.com/in/shishanks/`
 - **Recommended size**: 500x500px minimum
 - **Format**: WebP (recommended) or JPG/PNG
 
@@ -148,7 +148,7 @@ public/images/team/
 ├── kinjal-gandhi.webp          # Product Manager
 ├── ravinder-singh.webp         # Delivery Manager
 ├── vinod-shirke.webp           # Delivery Manager
-└── joji-varghese.webp          # Project Manager
+└── shishank-srivastava.webp    # Business Development
 ```
 
 ## 🔧 **Technical Notes**

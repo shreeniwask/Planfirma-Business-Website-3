@@ -904,10 +904,10 @@ function Frame58() {
           className="adjustLetterSpacing block leading-[44px] mb-0 text-[36px]"
           style={{ fontVariationSettings: "'wdth' 100" }}
         >
-          Joji Varghese
+          Shishank Srivastava
         </p>
         <p className="adjustLetterSpacing block leading-[24px] text-[16px]">
-          Project Manager
+          Business Development
         </p>
       </div>
     </div>

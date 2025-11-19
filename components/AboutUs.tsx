@@ -59,12 +59,6 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/vinodvshirke/"
   },
   { 
-    name: "Joji Varghese", 
-    position: "Project Manager", 
-    avatar: "/images/team/joji-varghese.webp",
-    linkedin: "https://www.linkedin.com/in/joji-george-varghese-2b062412/"
-  },
-  { 
     name: "Sapna Srivastava", 
     position: "Manager Operations", 
     avatar: "/images/team/sapna-srivastava.webp",
@@ -87,7 +81,13 @@ const teamMembers = [
     position: "Business Consultant", 
     avatar: "/images/team/sanjeev-janjire.webp",
     linkedin: "#"
-  }
+  },
+  { 
+    name: "Shishank Srivastava", 
+    position: "Business Development", 
+    avatar: "/images/team/shishank-srivastava.webp",
+    linkedin: "https://www.linkedin.com/in/shishanks/"
+  },
 ];
 
 export default function AboutUs({ onNavigate, onNavigateToService, onBack }: AboutUsProps) {

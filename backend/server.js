@@ -62,3 +62,42 @@
 // app.listen(port, () => {
 //     console.log(`Server is running at http://localhost:${port}`);
 // });
+
+
+
+
+import express from "express";
+import nodemailer from "nodemailer";
+import cors from "cors";
+
+const app = express();
+app.use(express.json());
+app.use(cors());
+
+app.post("/sendMail", async (req, res) => {
+  const { name, email, mobile } = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: "shreeniwas.kandalgaonkar@planfirma.com",
+      pass: "YOUR_APP_PASSWORD", // Gmail App Password
+    },
+  });
+
+  await transporter.sendMail({
+    from: "Chatbot <YOUR_EMAIL@gmail.com>",
+    to: "shreeniwas.kandalgaonkar@planfirma.com",
+    subject: "New Chatbot Lead",
+    html: `
+      <h2>New Lead Information</h2>
+      <p><b>Name:</b> ${name}</p>
+      <p><b>Email:</b> ${email}</p>
+      <p><b>Mobile:</b> ${mobile}</p>
+    `,
+  });
+
+  res.send({ success: true });
+});
+
+app.listen(5000, () => console.log("Server running on port 5000"));

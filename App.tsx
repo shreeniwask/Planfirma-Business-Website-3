@@ -1,62 +1,82 @@
-import { useState, useEffect } from 'react';
-import Landing from './components/Landing';
-import Services from './components/Services';
-import AboutUs from './components/AboutUs';
-import ContactUs from './components/ContactUs';
-import ServiceDetail from './components/ServiceDetail';
-import Blogs from './components/Blogs';
-import BlogDetail from './components/BlogDetail';
-import PlanfirmaAi from './components/PlanfirmaAi';
-import PlanfirmaCloud from './components/PlanfirmaCloud';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import TermsOfService from './components/TermsOfService';
-import CookiePolicy from './components/CookiePolicy';
-import { Analytics } from '@vercel/analytics/react';
-import { servicesData } from './data/servicesData';
-import { blogsData } from './data/blogsData';
+import { useState, useEffect } from "react";
+import Landing from "./components/Landing";
+import Services from "./components/Services";
+import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
+import ServiceDetail from "./components/ServiceDetail";
+import Blogs from "./components/Blogs";
+import BlogDetail from "./components/BlogDetail";
+import PlanfirmaAi from "./components/PlanfirmaAi";
+import PlanfirmaCloud from "./components/PlanfirmaCloud";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
+import CookiePolicy from "./components/CookiePolicy";
+import { Analytics } from "@vercel/analytics/react";
+import { servicesData } from "./data/servicesData";
+import { blogsData } from "./data/blogsData";
 
-export type Page = 'landing' | 'services' | 'about' | 'contact' | 'service-detail' | 'blogs' | 'blog-detail' | 'planfirma-ai' | 'planfirma-cloud' | 'privacy-policy' | 'terms-of-service' | 'cookie-policy';
+// import 'react-chatbot-kit/build/main.css';
+// import ChatWidget from "./src/components/ChatWidget";
 
+// import Chatbot from "react-chatbot-kit";
+import "react-chatbot-kit/build/main.css";
+// import config from "./src/chatbot/config";
+// import MessageParser from "./src/chatbot/MessageParser";
+// import ActionProvider from "./src/chatbot/ActionProvider";
+import { GlobalTrustDock } from "./components/GlobalTrust/GlobalTrustDock";
 
+export type Page =
+  | "landing"
+  | "services"
+  | "about"
+  | "contact"
+  | "service-detail"
+  | "blogs"
+  | "blog-detail"
+  | "planfirma-ai"
+  | "planfirma-cloud"
+  | "privacy-policy"
+  | "terms-of-service"
+  | "cookie-policy";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('landing');
-  const [selectedServiceId, setSelectedServiceId] = useState<string>('');
-  const [selectedBlogId, setSelectedBlogId] = useState<string>('');
+  const [currentPage, setCurrentPage] = useState<Page>("landing");
+  const [selectedServiceId, setSelectedServiceId] = useState<string>("");
+  const [selectedBlogId, setSelectedBlogId] = useState<string>("");
 
   // Initialize from URL on component mount
   useEffect(() => {
     const path = window.location.pathname;
-    
-    let page: Page = 'landing';
-    let serviceId = '';
-    let blogId = '';
+
+    let page: Page = "landing";
+    let serviceId = "";
+    let blogId = "";
 
     // Parse URL to determine current page and parameters
-    if (path === '/services') {
-      page = 'services';
-    } else if (path === '/about') {
-      page = 'about';
-    } else if (path === '/contact') {
-      page = 'contact';
-    } else if (path === '/blogs') {
-      page = 'blogs';
-    } else if (path === '/planfirma-ai') {
-      page = 'planfirma-ai';
-    } else if (path === '/planfirma-cloud') {
-      page = 'planfirma-cloud';
-    } else if (path === '/privacy-policy') {
-      page = 'privacy-policy';
-    } else if (path === '/terms-of-service') {
-      page = 'terms-of-service';
-    } else if (path === '/cookie-policy') {
-      page = 'cookie-policy';
-    } else if (path.startsWith('/service/')) {
-      page = 'service-detail';
-      serviceId = path.replace('/service/', '');
-    } else if (path.startsWith('/blog/')) {
-      page = 'blog-detail';
-      blogId = path.replace('/blog/', '');
+    if (path === "/services") {
+      page = "services";
+    } else if (path === "/about") {
+      page = "about";
+    } else if (path === "/contact") {
+      page = "contact";
+    } else if (path === "/blogs") {
+      page = "blogs";
+    } else if (path === "/planfirma-ai") {
+      page = "planfirma-ai";
+    } else if (path === "/planfirma-cloud") {
+      page = "planfirma-cloud";
+    } else if (path === "/privacy-policy") {
+      page = "privacy-policy";
+    } else if (path === "/terms-of-service") {
+      page = "terms-of-service";
+    } else if (path === "/cookie-policy") {
+      page = "cookie-policy";
+    } else if (path.startsWith("/service/")) {
+      page = "service-detail";
+      serviceId = path.replace("/service/", "");
+    } else if (path.startsWith("/blog/")) {
+      page = "blog-detail";
+      blogId = path.replace("/blog/", "");
     }
 
     // Update state based on URL
@@ -69,36 +89,36 @@ function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
-      
-      let page: Page = 'landing';
-      let serviceId = '';
-      let blogId = '';
+
+      let page: Page = "landing";
+      let serviceId = "";
+      let blogId = "";
 
       // Parse URL to determine current page and parameters
-      if (path === '/services') {
-        page = 'services';
-      } else if (path === '/about') {
-        page = 'about';
-      } else if (path === '/contact') {
-        page = 'contact';
-      } else if (path === '/blogs') {
-        page = 'blogs';
-      } else if (path === '/planfirma-ai') {
-        page = 'planfirma-ai';
-      } else if (path === '/planfirma-cloud') {
-        page = 'planfirma-cloud';
-      } else if (path === '/privacy-policy') {
-        page = 'privacy-policy';
-      } else if (path === '/terms-of-service') {
-        page = 'terms-of-service';
-      } else if (path === '/cookie-policy') {
-        page = 'cookie-policy';
-      } else if (path.startsWith('/service/')) {
-        page = 'service-detail';
-        serviceId = path.replace('/service/', '');
-      } else if (path.startsWith('/blog/')) {
-        page = 'blog-detail';
-        blogId = path.replace('/blog/', '');
+      if (path === "/services") {
+        page = "services";
+      } else if (path === "/about") {
+        page = "about";
+      } else if (path === "/contact") {
+        page = "contact";
+      } else if (path === "/blogs") {
+        page = "blogs";
+      } else if (path === "/planfirma-ai") {
+        page = "planfirma-ai";
+      } else if (path === "/planfirma-cloud") {
+        page = "planfirma-cloud";
+      } else if (path === "/privacy-policy") {
+        page = "privacy-policy";
+      } else if (path === "/terms-of-service") {
+        page = "terms-of-service";
+      } else if (path === "/cookie-policy") {
+        page = "cookie-policy";
+      } else if (path.startsWith("/service/")) {
+        page = "service-detail";
+        serviceId = path.replace("/service/", "");
+      } else if (path.startsWith("/blog/")) {
+        page = "blog-detail";
+        blogId = path.replace("/blog/", "");
       }
 
       // Update state based on URL
@@ -107,55 +127,55 @@ function App() {
       setSelectedBlogId(blogId);
     };
 
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
   }, []);
 
   // Update URL when state changes
   useEffect(() => {
-    let url = '/';
-    
+    let url = "/";
+
     switch (currentPage) {
-      case 'services':
-        url = '/services';
+      case "services":
+        url = "/services";
         break;
-      case 'about':
-        url = '/about';
+      case "about":
+        url = "/about";
         break;
-      case 'contact':
-        url = '/contact';
+      case "contact":
+        url = "/contact";
         break;
-      case 'blogs':
-        url = '/blogs';
+      case "blogs":
+        url = "/blogs";
         break;
-      case 'planfirma-ai':
-        url = '/planfirma-ai';
+      case "planfirma-ai":
+        url = "/planfirma-ai";
         break;
-      case 'planfirma-cloud':
-        url = '/planfirma-cloud';
+      case "planfirma-cloud":
+        url = "/planfirma-cloud";
         break;
-      case 'privacy-policy':
-        url = '/privacy-policy';
+      case "privacy-policy":
+        url = "/privacy-policy";
         break;
-      case 'terms-of-service':
-        url = '/terms-of-service';
+      case "terms-of-service":
+        url = "/terms-of-service";
         break;
-      case 'cookie-policy':
-        url = '/cookie-policy';
+      case "cookie-policy":
+        url = "/cookie-policy";
         break;
-      case 'service-detail':
+      case "service-detail":
         url = `/service/${selectedServiceId}`;
         break;
-      case 'blog-detail':
+      case "blog-detail":
         url = `/blog/${selectedBlogId}`;
         break;
       default:
-        url = '/';
+        url = "/";
     }
 
     // Only update URL if it's different from current URL
     if (window.location.pathname + window.location.search !== url) {
-      window.history.pushState({}, '', url);
+      window.history.pushState({}, "", url);
     }
   }, [currentPage, selectedServiceId, selectedBlogId]);
 
@@ -166,13 +186,13 @@ function App() {
 
   const navigateToPage = (page: Page, id?: string) => {
     setCurrentPage(page);
-    if (page === 'service-detail' && id) {
+    if (page === "service-detail" && id) {
       setSelectedServiceId(id);
-    } else if (page === 'blog-detail' && id) {
+    } else if (page === "blog-detail" && id) {
       setSelectedBlogId(id);
     } else {
-      setSelectedServiceId('');
-      setSelectedBlogId('');
+      setSelectedServiceId("");
+      setSelectedBlogId("");
     }
   };
 
@@ -182,49 +202,198 @@ function App() {
   };
 
   const navigateToService = (serviceId: string) => {
-    setCurrentPage('service-detail');
+    setCurrentPage("service-detail");
     setSelectedServiceId(serviceId);
   };
 
-  const selectedService = servicesData.find(service => service.id === selectedServiceId);
-  const selectedBlog = blogsData.find(blog => blog.id === selectedBlogId);
+  const selectedService = servicesData.find(
+    (service) => service.id === selectedServiceId,
+  );
+  const selectedBlog = blogsData.find((blog) => blog.id === selectedBlogId);
 
   const renderPage = () => {
     switch (currentPage) {
-      case 'landing':
-        return <Landing onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} servicesData={servicesData} />;
-      case 'services':
-        return <Services onNavigate={navigateToPage} onNavigateToService={navigateToService} servicesData={servicesData} onBack={goBack} />;
-      case 'about':
-        return <AboutUs onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
-      case 'contact':
-        return <ContactUs onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
-      case 'blogs':
-        return <Blogs onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} onBack={goBack} />;
-      case 'planfirma-ai':
-        return <PlanfirmaAi onNavigate={navigateToPage} onNavigateToService={navigateToService} />;
-      case 'planfirma-cloud':
+      case "landing":
+        return (
+          <Landing
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            blogsData={blogsData}
+            servicesData={servicesData}
+          />
+        );
+      case "services":
+        return (
+          <Services
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            servicesData={servicesData}
+            onBack={goBack}
+          />
+        );
+      case "about":
+        return (
+          <AboutUs
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            onBack={goBack}
+          />
+        );
+      case "contact":
+        return (
+          <ContactUs
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            onBack={goBack}
+          />
+        );
+      case "blogs":
+        return (
+          <Blogs
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            blogsData={blogsData}
+            onBack={goBack}
+          />
+        );
+      case "planfirma-ai":
+        return (
+          <PlanfirmaAi
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+          />
+        );
+      case "planfirma-cloud":
         return <PlanfirmaCloud onNavigate={navigateToPage} onBack={goBack} />;
-      case 'service-detail':
-        return selectedService ? <ServiceDetail service={selectedService} onNavigate={navigateToPage} onNavigateToService={navigateToService} servicesData={servicesData} onBack={goBack} /> : <Landing onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} servicesData={servicesData} />;
-      case 'blog-detail':
-        return selectedBlog ? <BlogDetail blog={selectedBlog} onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} /> : <Blogs onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} onBack={goBack} />;
-      case 'privacy-policy':
-        return <PrivacyPolicy onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
-      case 'terms-of-service':
-        return <TermsOfService onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
-      case 'cookie-policy':
-        return <CookiePolicy onNavigate={navigateToPage} onNavigateToService={navigateToService} onBack={goBack} />;
+      case "service-detail":
+        return selectedService ? (
+          <ServiceDetail
+            service={selectedService}
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            servicesData={servicesData}
+            onBack={goBack}
+          />
+        ) : (
+          <Landing
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            blogsData={blogsData}
+            servicesData={servicesData}
+          />
+        );
+      case "blog-detail":
+        return selectedBlog ? (
+          <BlogDetail
+            blog={selectedBlog}
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            onBack={goBack}
+          />
+        ) : (
+          <Blogs
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            blogsData={blogsData}
+            onBack={goBack}
+          />
+        );
+      case "privacy-policy":
+        return (
+          <PrivacyPolicy
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            onBack={goBack}
+          />
+        );
+      case "terms-of-service":
+        return (
+          <TermsOfService
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            onBack={goBack}
+          />
+        );
+      case "cookie-policy":
+        return (
+          <CookiePolicy
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            onBack={goBack}
+          />
+        );
 
       default:
-        return <Landing onNavigate={navigateToPage} onNavigateToService={navigateToService} blogsData={blogsData} servicesData={servicesData} />;
+        return (
+          <Landing
+            onNavigate={navigateToPage}
+            onNavigateToService={navigateToService}
+            blogsData={blogsData}
+            servicesData={servicesData}
+          />
+        );
     }
   };
+
+  // const [showBot, setShowBot] = useState(false);
+
+  // const toggleChatbot = () => {
+  //   setShowBot((prev) => !prev);
+  // };
 
   return (
     <div className="min-h-screen bg-white">
       {renderPage()}
       <Analytics />
+
+      {/* <ChatWidget /> */}
+
+      {/* Floating Chat Button */}
+      {/* <button
+        onClick={toggleChatbot}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 999,
+          padding: "14px 18px",
+          borderRadius: "50%",
+          backgroundColor: "#007bff",
+          color: "#fff",
+          border: "none",
+          cursor: "pointer",
+          fontSize: "20px",
+        }}
+      >
+        💬
+      </button> */}
+
+      {/* Chatbot Container */}
+      {/* {showBot && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: "80px",
+            right: "20px",
+            width: "90vw",      
+            maxWidth: "400px",  
+            height: "70vh",     
+            maxHeight: "600px",
+            background: "white",
+            borderRadius: "12px",
+            boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
+            overflow: "hidden",
+            zIndex: 998,
+          }}
+        >
+          <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+          />
+        </div> 
+      )}*/}
+      <GlobalTrustDock />
     </div>
   );
 }

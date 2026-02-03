@@ -15,14 +15,13 @@ import { Analytics } from "@vercel/analytics/react";
 import { servicesData } from "./data/servicesData";
 import { blogsData } from "./data/blogsData";
 
-// import 'react-chatbot-kit/build/main.css';
-// import ChatWidget from "./src/components/ChatWidget";
+import 'react-chatbot-kit/build/main.css';
 
-// import Chatbot from "react-chatbot-kit";
+import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-// import config from "./src/chatbot/config";
-// import MessageParser from "./src/chatbot/MessageParser";
-// import ActionProvider from "./src/chatbot/ActionProvider";
+import config from "./src/chatbot/config";
+import MessageParser from "./src/chatbot/MessageParser";
+import ActionProvider from "./src/chatbot/ActionProvider";
 import { GlobalTrustDock } from "./components/GlobalTrust/GlobalTrustDock";
 
 export type Page =
@@ -335,18 +334,78 @@ function App() {
     }
   };
 
-  // const [showBot, setShowBot] = useState(false);
+  const [showBot, setShowBot] = useState(false);
 
-  // const toggleChatbot = () => {
-  //   setShowBot((prev) => !prev);
-  // };
+  const toggleChatbot = () => {
+    setShowBot((prev) => !prev);
+  };
 
   return (
     <div className="min-h-screen bg-white">
       {renderPage()}
       <Analytics />
 
-      {/* <ChatWidget /> */}
+      {/* 🟢 Modern Floating Chat Button */}
+      <button
+        onClick={toggleChatbot}
+        className="fixed bottom-6 right-6 z-[999] flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl transition-all duration-300 ease-in-out hover:scale-110"
+        style={{
+          backgroundColor: showBot ? "#1c1c1c" : "#2D993D", // Green when closed, Dark when open
+          boxShadow: showBot 
+            ? "0 10px 25px rgba(0,0,0,0.3)" 
+            : "0 10px 25px rgba(45, 153, 61, 0.4)", // Green glow shadow
+        }}
+      >
+        {/* Animated Icon Container */}
+        <div className="relative w-6 h-6 md:w-8 md:h-8 text-white">
+          {showBot ? (
+            // CLOSE ICON (X)
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              strokeWidth={2.5} 
+              stroke="currentColor" 
+              className="w-full h-full animate-in fade-in zoom-in duration-200"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            // CHAT ICON
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              strokeWidth={2} 
+              stroke="currentColor" 
+              className="w-full h-full"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" />
+            </svg>
+          )}
+        </div>
+      </button>
+
+      {/* 🟢 Modern Chatbot Container */}
+      {showBot && (
+        <div
+          className="fixed bottom-[90px] right-4 md:right-6 z-[998] bg-white rounded-2xl overflow-hidden animate-in slide-in-from-bottom-10 fade-in duration-300"
+          style={{
+            width: "calc(100vw - 32px)", 
+            maxWidth: "380px",
+            height: "calc(100vh - 225px)",
+            maxHeight: "calc(100vh - 120px)",
+            boxShadow: "0 12px 40px rgba(0,0,0,0.15)", // Smooth, deep shadow
+            border: "1px solid rgba(0,0,0,0.05)",
+          }}
+        >
+          <Chatbot
+            config={config}
+            messageParser={MessageParser}
+            actionProvider={ActionProvider}
+          />
+        </div>
+      )}
 
       {/* Floating Chat Button */}
       {/* <button
@@ -365,7 +424,7 @@ function App() {
           fontSize: "20px",
         }}
       >
-        💬
+        
       </button> */}
 
       {/* Chatbot Container */}
@@ -392,7 +451,7 @@ function App() {
             actionProvider={ActionProvider}
           />
         </div> 
-      )}*/}
+      )} */}
       <GlobalTrustDock />
     </div>
   );

@@ -43,7 +43,7 @@ const LeadFormWidget = ({
         required
         style={{ width: "100%", marginBottom: "6px", padding: "6px" }}
       />
-      <button type="submit" style={{ width: "100%", padding: "8px", borderRadius: "6px", backgroundColor: "#007bff", color: "#fff", cursor: "pointer" }}>
+      <button type="submit" style={{ width: "100%", padding: "8px", borderRadius: "6px", backgroundColor: "#2D993D", color: "#fff", cursor: "pointer" }}>
         Submit
       </button>
     </form>

@@ -1,7 +1,7 @@
 // src/chatbot/Widgets/ServicesWidget.tsx
 
 import { useState } from "react";
-import LeadFormWidget from "./LeadFormWidget";
+// import LeadFormWidget from "./LeadFormWidget";
 
 const services = [
   "AI & Machine Learning",
@@ -40,9 +40,9 @@ const ServicesWidget = ({ actionProvider }: any) => {
               padding: "8px",
               borderRadius: "6px",
               cursor: "pointer",
-              border: selectedService === s ? "2px solid #007bff" : "1px solid #ccc",
+              border: selectedService === s ? "2px solid #2D993D" : "1px solid #ccc",
               backgroundColor: selectedService === s ? "#e6f0ff" : "#fff",
-              color: selectedService === s ? "#007bff" : "#000",
+              color: selectedService === s ? "#2D993D" : "#000",
               transition: "0.3s",
             }}
           >
@@ -50,14 +50,14 @@ const ServicesWidget = ({ actionProvider }: any) => {
           </button>
 
           {/* Show LeadForm below selected button */}
-          {selectedService === s && (
+          {/* {selectedService === s && (
             <div style={{ marginTop: "8px" }}>
               <LeadFormWidget
                 serviceName={s}
                 handleSubmitLead={actionProvider.handleLeadSubmit}
               />
             </div>
-          )}
+          )} */}
         </div>
       ))}
     </div>

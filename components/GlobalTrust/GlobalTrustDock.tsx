@@ -24,7 +24,7 @@ export const GlobalTrustDock = () => {
         className="
                 flex fixed z-50
                 right-2 md:right-5
-                bottom-[5%]
+                bottom-[12%]
 
                 flex-col items-center gap-4 md:gap-5
                 px-2 py-4 md:px-4 md:py-6

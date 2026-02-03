@@ -65,7 +65,6 @@
 
 
 
-
 import express from "express";
 import nodemailer from "nodemailer";
 import cors from "cors";
@@ -74,30 +73,47 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.post("/sendMail", async (req, res) => {
+app.post("/api/send-lead", async (req, res) => {
   const { name, email, mobile } = req.body;
 
+  // 1. Setup for Office 365 / Outlook
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: "smtp.office365.com",
+    port: 587,
+    secure: false, // TLS requires secure to be false for port 587
     auth: {
       user: "shreeniwas.kandalgaonkar@planfirma.com",
-      pass: "YOUR_APP_PASSWORD", // Gmail App Password
+      // IMPORTANT: Use an App Password if you have Multi-Factor Authentication (MFA) enabled
+      pass: "YOUR_OUTLOOK_APP_PASSWORD", 
     },
+    tls: {
+      ciphers: 'SSLv3',
+      rejectUnauthorized: false // Helps avoid local certificate issues
+    }
   });
 
-  await transporter.sendMail({
-    from: "Chatbot <YOUR_EMAIL@gmail.com>",
-    to: "shreeniwas.kandalgaonkar@planfirma.com",
-    subject: "New Chatbot Lead",
+  const mailOptions = {
+    from: `"Planfirma Chatbot" <shreeniwas.kandalgaonkar@planfirma.com>`,
+    to: "hr@planfirma.com", 
+    subject: `New Lead: ${name}`,
     html: `
-      <h2>New Lead Information</h2>
-      <p><b>Name:</b> ${name}</p>
-      <p><b>Email:</b> ${email}</p>
-      <p><b>Mobile:</b> ${mobile}</p>
+      <div style="font-family: Arial, sans-serif;">
+        <h2>New Website Lead</h2>
+        <p><b>Name:</b> ${name}</p>
+        <p><b>Email:</b> ${email}</p>
+        <p><b>Mobile:</b> ${mobile}</p>
+      </div>
     `,
-  });
+  };
 
-  res.send({ success: true });
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log(" Lead sent successfully via Outlook");
+    res.status(200).send({ success: true });
+  } catch (error) {
+    console.error(" Outlook SMTP Error:", error);
+    res.status(500).send({ success: false, error: error.message });
+  }
 });
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+app.listen(5000, () => console.log("Outlook Server running on port 5000"));

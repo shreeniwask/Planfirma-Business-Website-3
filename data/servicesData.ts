@@ -32,9 +32,9 @@ export const servicesData: ServiceData[] = [
   },
   {
     id: 'cloud-computing',
-    title: 'Cloud Computing',
-    description: 'Build scalable, cost-efficient infrastructure on AWS, Azure, or GCP with seamless migration and management.',
-    fullDescription: 'Build scalable, cost-efficient infrastructure on AWS, Azure, or GCP with seamless migration and management.',
+    title: 'CRM & Cloud Services',
+    description: 'Custom Salesforce solutions (Sales, Service, Experience Cloud, integrations & support), Build scalable, cost-efficient AWS, Azure, or GCP',
+    fullDescription: 'Custom Salesforce solutions (Sales, Service, Experience Cloud, integrations & support), Build scalable, cost-efficient AWS, Azure, or GCP',
     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop',
     features: ['Scalable Infrastructure', 'High Availability', 'Cost Efficiency', 'Cloud Migration'],
     benefits: ['Reduced Infrastructure Costs', 'Improved Scalability', 'Enhanced Reliability', 'Global Accessibility', 'Faster Deployment', 'Better Performance'],

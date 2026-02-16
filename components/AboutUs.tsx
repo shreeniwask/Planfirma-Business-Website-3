@@ -163,7 +163,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
                   14+
                 </div>
                 <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[#1c1c1c] text-[14px] md:text-[16px] lg:text-[18px]">
-                  Years of work experience
+                  Years of corporate legacy
                 </div>
               </div>
             </ScrollAnimatedCard>
@@ -196,7 +196,7 @@ export default function AboutUs({ onNavigate, onNavigateToService, onBack }: Abo
             <ScrollAnimatedCard animation="fade-up" delay={300} className="stats-card-height bg-white rounded-xl border border-gray-200 hover:border-[#2D993D] transition-refined stats-card-hover" hover={false}>
               <div className="h-full flex flex-col items-center justify-center text-center p-6">
                 <div className="font-['Roboto:Bold',_sans-serif] font-bold text-[#2D993D] text-[36px] md:text-[42px] lg:text-[48px] leading-tight mb-2">
-                  25+
+                  100
                 </div>
                 <div className="font-['Roboto:Regular',_sans-serif] font-normal text-[#1c1c1c] text-[14px] md:text-[16px] lg:text-[18px]">
                   Team members

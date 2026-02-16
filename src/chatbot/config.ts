@@ -5,6 +5,7 @@ import React from "react";
 import IConfig from "react-chatbot-kit/build/src/interfaces/IConfig";
 
 const config: IConfig = {
+  botName: "Planfirma Assistant",
   initialMessages: [
     createChatBotMessage("👋 Welcome to Planfirma!", { widget: "services" }),
   ],

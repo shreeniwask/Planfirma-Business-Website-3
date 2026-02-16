@@ -88,7 +88,50 @@ export const technicalPartners: TechnicalPartner[] = [
   },
   {
     name: "Acronis",
-    logo: "/images/partners/Acronis-logo.png"
+    logo: "/images/partners/acronis-logo.png"
+  },
+  {
+    name: "Github",
+    logo: "/images/partners/github-logo.png"
+  },
+  {
+    name: "Gitlab",
+    logo: "/images/partners/gitlab-logo.png"
+  },
+  {
+    name: "Atlasian",
+    logo: "/images/partners/atlassian-logo.png"
+  },
+  {
+    name: "Microsoft",
+    logo: "/images/partners/microsoft-logo.png"
+  },
+  {
+    name: "IBM",
+    logo: "/images/partners/ibm-logo.png"
+  },
+  {
+    name: "Ibm Watson",
+    logo: "/images/partners/ibm-watson-logo.png"
+  },
+  {
+    name: "Power BI",
+    logo: "/images/partners/power-bi-logo.png"
+  }, 
+  {
+    name: "OpenAI",
+    logo: "/images/partners/openai-logo.png"
+  },
+  {
+    name: "Tally",
+    logo: "/images/partners/tally-logo.png"
+  },
+  {
+    name: "Zoho",
+    logo: "/images/partners/zoho-logo.png"
+  },{
+    name: "Quickbooks",
+    logo: "/images/partners/Quickbooks-Logo.png"
   }
 ];
 
@@ -161,7 +204,7 @@ export function getServiceIcon(key: string) {
       return Bot;
     case 'cybersecurity':
       return Shield;
-    case 'cloud-computing':
+    case 'CRM & Cloud Services':
       return Cloud;
     case 'devsecops':
       return Wrench;

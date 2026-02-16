@@ -26,7 +26,7 @@ function ServiceCard({ service, onNavigate }: { service: ServiceData; onNavigate
   const serviceImages: { [key: string]: string } = {
     'ai-machine-learning': 'https://images.unsplash.com/photo-1555255707-c07966088b7b?w=800&h=600&fit=crop',
     'cybersecurity': 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
-    'cloud-computing': 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop',
+    'CRM & Cloud Services': 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=600&fit=crop',
     'devsecops': 'https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?w=800&h=600&fit=crop',
     'business-intelligence': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
     'mobile-app-development': 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop',

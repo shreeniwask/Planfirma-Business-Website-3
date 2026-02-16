@@ -4,13 +4,13 @@ export const certificates = [
     id: 1,
     name: "CMMI Level 5",
     description: "Capability Maturity Model Integration",
-    src: "/images/certificates/cmmiCertificate.png",
+    src: "/images/certificates/cmmiCertificate.jpg",
   },
   {
     id: 2,
     name: "ISO 27001",
     description: "Information Security Management",
-    src: "/images/certificates/iso-certificate.webp",
+    src: "/images/certificates/iso-certificate.png",
   },
   {
     id: 3,

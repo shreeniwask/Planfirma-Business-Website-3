@@ -53,12 +53,6 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/ravindersingh03/"
   },
   { 
-    name: "Vinod Shirke", 
-    position: "Delivery Manager", 
-    avatar: "/images/team/vinod-shirke.webp",
-    linkedin: "https://www.linkedin.com/in/vinodvshirke/"
-  },
-  { 
     name: "Sapna Srivastava", 
     position: "Manager Operations", 
     avatar: "/images/team/sapna-srivastava.webp",

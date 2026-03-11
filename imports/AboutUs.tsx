@@ -868,23 +868,7 @@ function Frame55() {
 
 function Frame56() {
   return (
-    <div className="box-border content-stretch flex flex-col gap-2.5 items-center justify-center overflow-clip p-[10px] relative shrink-0">
-      <Frame55 />
-      <div
-        className="font-['Roboto:Medium',_sans-serif] font-medium leading-[0] relative shrink-0 text-[#000000] text-[0px] text-center text-nowrap tracking-[0.15px] whitespace-pre"
-        style={{ fontVariationSettings: "'wdth' 100" }}
-      >
-        <p
-          className="adjustLetterSpacing block leading-[44px] mb-0 text-[36px]"
-          style={{ fontVariationSettings: "'wdth' 100" }}
-        >
-          Vinod Shirke
-        </p>
-        <p className="adjustLetterSpacing block leading-[24px] text-[16px]">
-          Delivery Manager
-        </p>
-      </div>
-    </div>
+    
   );
 }
 

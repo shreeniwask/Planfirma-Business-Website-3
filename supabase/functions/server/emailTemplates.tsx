@@ -44,7 +44,7 @@ export function generateContactConfirmationHTML(contactData: any): string {
                 </p>
             </div>
             <div class="footer">
-                <p>© 2025 Planfirma - Building Business Solutions</p>
+                <p>© 2026 Planfirma - Building Business Solutions</p>
                 <p>This is an automated confirmation email.</p>
             </div>
         </div>
@@ -118,7 +118,7 @@ export function generateNewsletterWelcomeHTML(subscriptionData: any): string {
                 </p>
             </div>
             <div class="footer">
-                <p>© 2025 Planfirma - Building Business Solutions</p>
+                <p>© 2026 Planfirma - Building Business Solutions</p>
                 <p class="unsubscribe">
                     You can <a href="mailto:info@planfirma.com?subject=Unsubscribe">unsubscribe</a> at any time.
                 </p>
@@ -175,7 +175,7 @@ export function generateNewsletterHTML(content: string, email: string): string {
                 ${content}
             </div>
             <div class="footer">
-                <p>© 2025 Planfirma - Building Business Solutions</p>
+                <p>© 2026 Planfirma - Building Business Solutions</p>
                 <p>You can <a href="mailto:info@planfirma.com?subject=Unsubscribe%20${encodeURIComponent(email)}">unsubscribe</a> at any time.</p>
             </div>
         </div>

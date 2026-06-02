@@ -206,7 +206,7 @@ export default function Footer({ onNavigate, onNavigateToService, theme = 'dark'
       <div className="w-full max-w-8xl mx-auto pt-4 sm:pt-6 md:pt-8 border-t border-gray-200/20">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4">
           <div className={`text-xs sm:text-sm ${isDark ? 'text-[rgba(210,234,220,0.62)]' : 'text-gray-500'}`}>
-            © 2025 Planfirma. All rights reserved.
+            © 2026 Planfirma. All rights reserved.
           </div>
           <div className="flex gap-4 sm:gap-6 text-xs sm:text-sm">
             <button 

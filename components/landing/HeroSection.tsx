@@ -14,6 +14,47 @@ export default function HeroSection({ onNavigate }: HeroSectionProps) {
           {/* Hero Content */}
           <ScrollAnimatedCard animation="fade-right" className="flex-1 text-center lg:text-left" hover={false}>
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
+                {/* AI MVP Feature */}
+              <div className="mb-5 sm:mb-6">
+                <div className="inline-block rounded-2xl border border-[#2D993D]/15 bg-[#2D993D]/5 px-5 py-4">
+                  <div className="flex flex-col gap-3">
+                    
+                
+
+                    <h2 className="text-[20px] sm:text-[22px] md:text-[24px] font-bold text-gray-900 leading-tight">
+                      Launch AI Product (MVP) in Weeks
+                    </h2>
+
+                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-xl">
+                      From idea validation to secure, scalable SaaS platforms—built for startups and growing businesses.
+                    </p>
+
+                    <a
+                      href="https://planfirma.com/pf-mvp.html"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative bg-[#2D993D] text-white flex items-center justify-center px-6 sm:px-8 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[#2D993D]/40 w-fit text-base transition-all duration-300 hover:bg-[#24802f] hover:-translate-y-1"
+                    >
+                      <span className="font-semibold tracking-wide">
+                        Get Started
+                      </span>
+
+                      <div className="ml-2 w-5 h-5 transition-transform duration-300 group-hover:translate-x-1">
+                        <svg className="w-full h-full" fill="none" viewBox="0 0 24 24">
+                          <path
+                            d="M9 5l7 7-7 7"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+              </div>
               <div>
                 <h1 className="text-[24px] sm:text-[28px] md:text-[32px] lg:text-[40px] xl:text-[48px] font-bold tracking-tight leading-tight mb-4">
                   <span className="text-gray-900">Building software that empowers </span>

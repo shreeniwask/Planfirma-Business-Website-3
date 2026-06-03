@@ -4,6 +4,7 @@ import { useState } from "react";
 // import LeadFormWidget from "./LeadFormWidget";
 
 const services = [
+  "New Product Development (MVP)",
   "AI & Machine Learning",
   "Cybersecurity",
   "Cloud Computing",
@@ -12,7 +13,6 @@ const services = [
   "Mobile App Development",
   "Product Customization",
   "Web & Custom App Development",
-  "New Product Development",
   "UI/UX Design",
   "Robotic Process Automation",
   "Re-Engineering (Optimization)",

@@ -31,9 +31,9 @@ export default function ServiceCard({ service, onNavigate }: ServiceCardProps) {
         <div className="absolute top-7 right-7 w-4 h-4 bg-[#2D993D] opacity-20 rounded-full group-hover:scale-125 transition-refined delay-100"></div>
         
         {/* Content container */}
-        <div className="relative z-10 p-3 sm:p-4 md:p-5 h-full flex flex-col">
+        <div className="relative z-10 p-3 sm:p-3 md:p-3 h-full flex flex-col">
           {/* Icon and Title */}
-          <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3 md:mb-4 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2 md:gap-2 mb-1 sm:mb-2 md:mb-2 flex-shrink-0">
             <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#2D993D] to-[#3fab4a] rounded-lg flex items-center justify-center text-xl md:text-2xl transform group-hover:scale-110 transition-refined">
               {(() => {
                 const Icon = getServiceIcon(service.id);

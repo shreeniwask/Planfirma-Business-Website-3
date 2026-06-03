@@ -20,16 +20,17 @@ export const servicesData: ServiceData[] = [
     benefits: ['Enhanced Decision Making', 'Improved User Experiences', 'Process Automation', 'Predictive Insights', 'Competitive Advantage', 'Scalable Intelligence'],
     technologies: ['Python', 'TensorFlow', 'PyTorch', 'AWS SageMaker', 'Azure ML', 'OpenAI GPT']
   },
-  {
-    id: 'cybersecurity',
-    title: 'Cybersecurity',
-    description: 'Protect your digital infrastructure with end-to-end security audits, penetration testing, and threat mitigation strategies.',
-    fullDescription: 'Protect your digital infrastructure with end-to-end security audits, penetration testing, and threat mitigation strategies.',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
-    features: ['Threat Detection', 'Data Protection', 'Risk Mitigation', 'Secure Access'],
-    benefits: ['Enhanced Security Posture', 'Risk Mitigation', 'Regulatory Compliance', 'Business Continuity', 'Customer Trust', 'Data Protection'],
-    technologies: ['SIEM Tools', 'Firewalls', 'IDS/IPS', 'Multi-factor Authentication', 'Encryption', 'Security Frameworks']
+    {
+    id: 'new-product-development',
+    title: 'New Product Development (MVP)',
+    description: 'We help founders validate and launch AI-powered SaaS products in industries where security, compliance, and trust matter. One delivery team. Product strategy, AI expertise, and compliance-aware engineering — all in.',
+    fullDescription: 'We help founders validate and launch AI-powered SaaS products in industries where security, compliance, and trust matter. One delivery team. Product strategy, AI expertise, and compliance-aware engineering — all in.',
+    image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop',
+    features: ['Simple & founder-friendly', 'Easy to understand.', 'Founder-centric & benefit-focused.', 'Short, action-oriented'],
+    benefits: ['Faster Time to Market', 'Reduced Development Risk', 'Market-Validated Products', 'Competitive Positioning', 'Revenue Generation', 'Scalable Foundation'],
+    technologies: ['Agile Methodologies', 'Design Thinking', 'Lean Startup', 'Modern Tech Stacks', 'Cloud Platforms', 'Analytics Tools']
   },
+ 
   {
     id: 'cloud-computing',
     title: 'CRM & Cloud Services',
@@ -90,15 +91,15 @@ export const servicesData: ServiceData[] = [
     benefits: ['Business-Specific Solutions', 'Enhanced Performance', 'Improved Security', 'Better User Experience', 'Competitive Advantage', 'Future-Ready Technology'],
     technologies: ['React', 'Node.js', 'Python', 'PHP', 'PostgreSQL', 'MongoDB']
   },
-  {
-    id: 'new-product-development',
-    title: 'New Product Development',
-    description: 'From ideation to MVP and beyond, we help bring your SaaS or enterprise software vision to life.',
-    fullDescription: 'From ideation to MVP and beyond, we help bring your SaaS or enterprise software vision to life.',
-    image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?w=800&h=600&fit=crop',
-    features: ['Fast Prototyping', 'Market Fit', 'Scalable MVP', 'Agile Execution'],
-    benefits: ['Faster Time to Market', 'Reduced Development Risk', 'Market-Validated Products', 'Competitive Positioning', 'Revenue Generation', 'Scalable Foundation'],
-    technologies: ['Agile Methodologies', 'Design Thinking', 'Lean Startup', 'Modern Tech Stacks', 'Cloud Platforms', 'Analytics Tools']
+   {
+    id: 'cybersecurity',
+    title: 'Cybersecurity',
+    description: 'Protect your digital infrastructure with end-to-end security audits, penetration testing, and threat mitigation strategies.',
+    fullDescription: 'Protect your digital infrastructure with end-to-end security audits, penetration testing, and threat mitigation strategies.',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
+    features: ['Threat Detection', 'Data Protection', 'Risk Mitigation', 'Secure Access'],
+    benefits: ['Enhanced Security Posture', 'Risk Mitigation', 'Regulatory Compliance', 'Business Continuity', 'Customer Trust', 'Data Protection'],
+    technologies: ['SIEM Tools', 'Firewalls', 'IDS/IPS', 'Multi-factor Authentication', 'Encryption', 'Security Frameworks']
   },
   {
     id: 'ui-ux-design',
